@@ -1,0 +1,21 @@
+{
+  "name": "alexa-couchpotato",
+  "version": "1.0.0",
+  "description": "A skill to ask Alexa about your Couch Potato queue.",
+  "main": "index.js",
+  "scripts": {
+    "bundle": "mkdir -p bundle && cp -r {.env,index.js,lib,node_modules} bundle/ && cd bundle && bestzip ../lambda.zip * .env && rm -rf ../bundle"
+  },
+  "author": "Joe Schmitt",
+  "license": "MIT",
+  "dependencies": {
+    "alexa-app": "^2.3.2",
+    "dotenv": "^2.0.0",
+    "node-couchpotato": "^0.1.4",
+    "node-lambda": "^0.7.1"
+  },
+  "devDependencies": {
+    "bestzip": "^1.1.3",
+    "node-lambda": "^0.7.1"
+  }
+}

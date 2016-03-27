@@ -1,0 +1,26 @@
+{
+  "session": {
+    "sessionId": "SessionId.1234",
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.1234"
+    },
+    "user": {
+      "userId": "amzn1.echo-sdk-account.1234"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.1234",
+    "timestamp": "2016-01-01T00:00:00Z",
+    "intent": {
+      "name": "FindMovie",
+      "slots": {
+        "movieName": {
+          "name": "movieName",
+          "value": "the godfather"
+        }
+      }
+    }
+  }
+}

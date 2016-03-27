@@ -1,0 +1,34 @@
+AddMovie add {The Godfather|movieName}
+AddMovie add {Star Wars|movieName}
+AddMovie add {Star Wars Episode Four A New Hope|movieName}
+AddMovie add {The Avengers|movieName}
+AddMovie add {The Dark Knight|movieName}
+AddMovie add {Live or Let Die|movieName}
+
+FindMovie is {The Godfather|movieName} on the list
+FindMovie is {Star Wars|movieName} on the list
+FindMovie is {Star Wars Episode Four A New Hope|movieName} on the list
+FindMovie is {The Avengers|movieName} on the list
+FindMovie is {The Dark Knight|movieName} on the list
+FindMovie is {Live or Let Die|movieName} on the list
+
+FindMovie if {The Godfather|movieName} is on the list
+FindMovie if {Star Wars|movieName} is on the list
+FindMovie if {Star Wars Episode Four A New Hope|movieName} is on the list
+FindMovie if {The Avengers|movieName} is on the list
+FindMovie if {The Dark Knight|movieName} is on the list
+FindMovie if {Live or Let Die|movieName} is on the list
+
+FindMovie is {The Godfather|movieName} already
+FindMovie is {Star Wars|movieName} already
+FindMovie is {Star Wars Episode Four A New Hope|movieName} already
+FindMovie is {The Avengers|movieName} already
+FindMovie is {The Dark Knight|movieName} already
+FindMovie is {Live or Let Die|movieName} already
+
+FindMovie if {The Godfather|movieName} is already
+FindMovie if {Star Wars|movieName} is already
+FindMovie if {Star Wars Episode Four A New Hope|movieName} is already
+FindMovie if {The Avengers|movieName} is already
+FindMovie if {The Dark Knight|movieName} is already
+FindMovie if {Live or Let Die| movieName} is already
