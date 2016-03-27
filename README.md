@@ -40,7 +40,9 @@ in the Sample Utterances field, copy and paste the contents of
 
 The skill is built to be easily hosted on Amazon's [AWS
 Lambda service](https://aws.amazon.com/lambda/). Create your Lambda function (using the
-alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime.
+alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime. After 
+you've created your Lambda function, look at the top right of the page to get your Lambda ARN
+number and put that in the Alexa Skill Information Endpoint field.
 
 To deploy to Lambda, first makes sure you do an `npm install` at the root of the project.
 Once all the dependencies are installed, run `npm run bundle`, which will create a lambda.zip file.
