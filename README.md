@@ -15,7 +15,7 @@ Function](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/d
 
 ## Configuring The Skill
 
-To configure the skill, open up the `.env` file and fill in the correct values for `CP_URL`, which
+To configure the skill, copy `default.env` to `.env` and fill in the correct values for `CP_URL`, which
 should point to your Couch Potato server, and `CP_API_KEY` which should have your server's API key.
 
 ## Testing The Skill Locally
@@ -40,7 +40,7 @@ in the Sample Utterances field, copy and paste the contents of
 
 The skill is built to be easily hosted on Amazon's [AWS
 Lambda service](https://aws.amazon.com/lambda/). Create your Lambda function (using the
-alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime. After 
+alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime. After
 you've created your Lambda function, look at the top right of the page to get your Lambda ARN
 number and put that in the Alexa Skill Information Endpoint field.
 
