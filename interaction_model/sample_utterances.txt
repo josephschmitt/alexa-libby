@@ -5,6 +5,27 @@ AddMovie add {The Avengers|movieName}
 AddMovie add {The Dark Knight|movieName}
 AddMovie add {Live or Let Die|movieName}
 
+AddMovieDate add {The Godfather|movieName} came out in {releaseDate}
+AddMovieDate add {Star Wars|movieName} came out in {releaseDate}
+AddMovieDate add {Star Wars Episode Four A New Hope|movieName} came out in {releaseDate}
+AddMovieDate add {The Avengers|movieName} came out in {releaseDate}
+AddMovieDate add {The Dark Knight|movieName} came out in {releaseDate}
+AddMovieDate add {Live or Let Die|movieName} came out in {releaseDate}
+
+AddMovieDate add {The Godfather|movieName} from {releaseDate}
+AddMovieDate add {Star Wars|movieName} from {releaseDate}
+AddMovieDate add {Star Wars Episode Four A New Hope|movieName} from {releaseDate}
+AddMovieDate add {The Avengers|movieName} from {releaseDate}
+AddMovieDate add {The Dark Knight|movieName} from {releaseDate}
+AddMovieDate add {Live or Let Die|movieName} from {releaseDate}
+
+AddMovieDate add {The Godfather|movieName} released in {releaseDate}
+AddMovieDate add {Star Wars|movieName} released in {releaseDate}
+AddMovieDate add {Star Wars Episode Four A New Hope|movieName} released in {releaseDate}
+AddMovieDate add {The Avengers|movieName} released in {releaseDate}
+AddMovieDate add {The Dark Knight|movieName} released in {releaseDate}
+AddMovieDate add {Live or Let Die|movieName} released in {releaseDate}
+
 FindMovie is {The Godfather|movieName} on the list
 FindMovie is {Star Wars|movieName} on the list
 FindMovie is {Star Wars Episode Four A New Hope|movieName} on the list

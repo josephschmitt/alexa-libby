@@ -10,6 +10,19 @@
       ]
     },
     {
+      "intent": "AddMovieDate",
+      "slots": [
+        {
+          "name": "movieName",
+          "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "releaseDate",
+          "type": "AMAZON.DATE"
+        }
+      ]
+    },
+    {
       "intent": "FindMovie",
       "slots": [
         {

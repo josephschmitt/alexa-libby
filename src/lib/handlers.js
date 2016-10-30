@@ -14,6 +14,8 @@ import {
   CANCEL_RESPONSE
 } from './responses.js';
 
+const NUM_RESULTS = 5;
+
 const config = require('dotenv').config();
 const cp = new CouchPotato({
   url: config.CP_URL,
@@ -31,7 +33,7 @@ export default function handleLaunchIntent(req, resp) {
 export function handleFindMovieIntent(req, resp) {
   const movieName = req.slot('movieName');
 
-  cp.movie.list({search: movieName, limit_offset: 5}).then(function (searchResp) {
+  cp.movie.list({search: movieName, limit_offset: NUM_RESULTS}).then(function (searchResp) {
     const movies = searchResp.movies;
 
     if (!movies || !movies.length) {
@@ -56,8 +58,22 @@ export function handleFindMovieIntent(req, resp) {
 export function handleAddMovieIntent(req, resp) {
   const movieName = req.slot('movieName');
 
-  cp.movie.search(movieName, 5).then(function (movies) {
+  cp.movie.search(movieName, NUM_RESULTS).then(function (movies) {
     movies = formatSearchResults(movies);
+    sendSearchResponse(movies, movieName, resp);
+  });
+
+  //Async response
+  return false;
+}
+
+export function handleAddMovieDateIntent(req, resp) {
+  const movieName = req.slot('movieName');
+  const releaseDate = new Date(req.slot('releaseDate')).getUTCFullYear();
+
+  // Grab more results since we'll end up filtering by date
+  cp.movie.search(movieName, NUM_RESULTS * 2).then(function (movies) {
+    movies = formatSearchResults(movies).filter((movie) => movie.year == releaseDate);
     sendSearchResponse(movies, movieName, resp);
   });
 
