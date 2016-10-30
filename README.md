@@ -4,8 +4,9 @@ This is a skill built for Amazon's Alexa service that tells you about your Couch
 allows you to ask Alexa the following:
 
 > Alexa, ask Couch Potato to add The Godfather
-
+> Alexa, ask Couch Potato to add The Godfather released in 1974
 > Alexa, ask Couch Potato if The Dark Knight is on the list
+> Alexa, ask Couch Potato if Batman 1989 is on the list
 
 If you're just getting started developing skills for Alexa, I'd recommend reading [Getting Started
 with the Alexa Skills

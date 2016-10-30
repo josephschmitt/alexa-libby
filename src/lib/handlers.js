@@ -4,9 +4,9 @@ import CouchPotato from 'node-couchpotato';
 
 import {
   buildPrompt,
+  buildMovieQuery,
   sendSearchResponse,
-  formatSearchResults,
-  parseDate
+  formatSearchResults
 } from './utils.js';
 
 import {
@@ -32,16 +32,19 @@ export default function handleLaunchIntent(req, resp) {
 }
 
 export function handleFindMovieIntent(req, resp) {
-  const movieName = req.slot('movieName');
+  const query = buildMovieQuery(req);
 
-  cp.movie.list({search: movieName, limit_offset: NUM_RESULTS}).then(function (searchResp) {
+  cp.movie.list({
+    search: query,
+    limit_offset: NUM_RESULTS
+  }).then(function (searchResp) {
     const movies = searchResp.movies;
 
     if (!movies || !movies.length) {
-      resp.say(`Couldn't find ${movieName} queued for download. `);
+      resp.say(`Couldn't find ${query} queued for download. `);
 
-      cp.movie.search(movieName).then(function (searchResults) {
-        sendSearchResponse(searchResults, resp);
+      cp.movie.search(query).then(function (searchResults) {
+        sendSearchResponse(searchResults, null, resp);
       });
     }
     else {
@@ -57,13 +60,8 @@ export function handleFindMovieIntent(req, resp) {
 }
 
 export function handleAddMovieIntent(req, resp) {
-  const movieName = req.slot('movieName');
-  const releaseDate = parseDate(req.slot('releaseDate'));
-  const filterFn = (movie) => movie.year === releaseDate.year;
-
-  // Grab more results since we'll end up filtering by date
-  cp.movie.search(movieName, NUM_RESULTS * 2).then(function (movies) {
-    movies = formatSearchResults(movies, releaseDate ? filterFn : undefined);
+  cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then(function (movies) {
+    movies = formatSearchResults(movies);
     sendSearchResponse(movies, movieName, resp);
   });
 
