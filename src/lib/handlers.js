@@ -5,7 +5,8 @@ import CouchPotato from 'node-couchpotato';
 import {
   buildPrompt,
   sendSearchResponse,
-  formatSearchResults
+  formatSearchResults,
+  parseDate
 } from './utils.js';
 
 import {
@@ -57,23 +58,12 @@ export function handleFindMovieIntent(req, resp) {
 
 export function handleAddMovieIntent(req, resp) {
   const movieName = req.slot('movieName');
-
-  cp.movie.search(movieName, NUM_RESULTS).then(function (movies) {
-    movies = formatSearchResults(movies);
-    sendSearchResponse(movies, movieName, resp);
-  });
-
-  //Async response
-  return false;
-}
-
-export function handleAddMovieDateIntent(req, resp) {
-  const movieName = req.slot('movieName');
-  const releaseDate = new Date(req.slot('releaseDate')).getUTCFullYear();
+  const releaseDate = parseDate(req.slot('releaseDate'));
+  const filterFn = (movie) => movie.year === releaseDate.year;
 
   // Grab more results since we'll end up filtering by date
   cp.movie.search(movieName, NUM_RESULTS * 2).then(function (movies) {
-    movies = formatSearchResults(movies).filter((movie) => movie.year == releaseDate);
+    movies = formatSearchResults(movies, releaseDate ? filterFn : undefined);
     sendSearchResponse(movies, movieName, resp);
   });
 

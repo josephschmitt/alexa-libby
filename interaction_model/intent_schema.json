@@ -6,15 +6,6 @@
         {
           "name": "movieName",
           "type": "AMAZON.LITERAL"
-        }
-      ]
-    },
-    {
-      "intent": "AddMovieDate",
-      "slots": [
-        {
-          "name": "movieName",
-          "type": "AMAZON.LITERAL"
         },
         {
           "name": "releaseDate",
@@ -28,6 +19,10 @@
         {
           "name": "movieName",
           "type": "AMAZON.LITERAL"
+        },
+        {
+          "name": "releaseDate",
+          "type": "AMAZON.DATE"
         }
       ]
     },

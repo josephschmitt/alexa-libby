@@ -29,7 +29,7 @@ export function sendSearchResponse(movies, movieName, resp) {
     .send();
 }
 
-export function formatSearchResults(movies) {
+export function formatSearchResults(movies, filterFn = () => { return true }) {
   if (movies) {
     return movies.map((movie) => {
       return {
@@ -39,8 +39,23 @@ export function formatSearchResults(movies) {
         titles: movie.titles,
         imdb: movie.imdb
       }
-    });
+    }).filter(filterFn);
   }
 
   return [];
+}
+
+export function parseDate(dateStr) {
+  if (!dateStr) {
+    return null;
+  }
+
+  const parts = dateStr.split('-');
+  const date = new Date(dateStr);
+
+  return {
+    year: date.getUTCFullYear(),
+    month: parts.length > 1 ? date.getUTCMonth() + 1 : null,
+    date: parts.length > 2 ? date.getUTCDate() + 1 : null
+  };
 }

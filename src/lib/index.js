@@ -5,7 +5,6 @@ import Alexa from 'alexa-app';
 import handleLaunchIntent, {
   handleFindMovieIntent,
   handleAddMovieIntent,
-  handleAddMovieDateIntent,
   handleYesIntent,
   handleNoIntent,
   handleCancelIntent,
@@ -17,7 +16,6 @@ const app = new Alexa.app('couchPotato');
 app.launch(handleLaunchIntent);
 app.intent('FindMovie', handleFindMovieIntent);
 app.intent('AddMovie', handleAddMovieIntent);
-app.intent('AddMovieDate', handleAddMovieDateIntent);
 app.intent('AMAZON.YesIntent', handleYesIntent);
 app.intent('AMAZON.NoIntent', handleNoIntent);
 app.intent('AMAZON.CancelIntent', handleCancelIntent);
