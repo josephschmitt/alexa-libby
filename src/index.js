@@ -1,4 +1,5 @@
 'use strict';
 
-var app = require('./lib');
+import app from './lib';
+
 exports.handler = app.lambda();

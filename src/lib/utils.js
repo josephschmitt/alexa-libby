@@ -1,5 +1,5 @@
-function buildPrompt(movies) {
-  var promptData = {
+export function buildPrompt(movies) {
+  const promptData = {
       searchResults: movies,
       yesAction  : 'addMovie',
       yesResponse: 'Added ' + movies[0].original_title + ' (' + movies[0].year + ')' + ' to your list of movies to download.'
@@ -17,9 +17,8 @@ function buildPrompt(movies) {
   return promptData;
 }
 
-function sendSearchResponse(movies, movieName, resp) {
-
-  if(!movies || !movies.length > 0) {
+export function sendSearchResponse(movies, movieName, resp) {
+  if (!movies || !movies.length > 0) {
     return resp.say('No movie found for ' + movieName).send();
   }
 
@@ -30,29 +29,18 @@ function sendSearchResponse(movies, movieName, resp) {
     .send();
 }
 
-function formatSearchResults(movies) {
-
-  var newMovies = [];
-
-    if (movies != undefined) {
-
-      for (var i = 0; i < movies.length; i++) {
-
-        newMovies.push({
-          original_title: movies[i].original_title,
-          in_library: movies[i].in_library,
-          year: movies[i].year,
-          titles: movies[i].titles,
-          imdb: movies[i].imdb
-        });
+export function formatSearchResults(movies) {
+  if (movies) {
+    return movies.map((movie) => {
+      return {
+        original_title: movie.original_title,
+        in_library: movie.in_library,
+        year: movie.year,
+        titles: movie.titles,
+        imdb: movie.imdb
       }
-    }
+    });
+  }
 
-    return newMovies;
+  return [];
 }
-
-module.exports = {
-  buildPrompt: buildPrompt,
-  sendSearchResponse: sendSearchResponse,
-  formatSearchResults: formatSearchResults
-};

@@ -23,8 +23,8 @@ should point to your Couch Potato server, and `CP_API_KEY` which should have you
 You can use [node-lambda](https://github.com/motdotla/node-lambda) to test this skill locally. In
 the `test_events` directory are several event files you can use for testing, and they should map
 pretty well to each Intent. To test an intent, simply copy the contents of one of the json files in
-that directory and overwrite the contents of `event.json`. Then run `node-lambda run` from the
-command line.
+that directory and overwrite the contents of `event.json`. Make sure you run `npm install` from the
+command line to get the the latest npm packages, and then run `npm run test-lambda`.
 
 ## Setting up the Skill
 
