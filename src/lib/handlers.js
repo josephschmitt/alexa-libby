@@ -61,8 +61,10 @@ export function handleFindMovieIntent(req, resp) {
 
 export function handleAddMovieIntent(req, resp) {
   cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then(function (movies) {
-    movies = formatSearchResults(movies);
-    sendSearchResponse(movies, movieName, resp);
+    const formattedResults = formatSearchResults(movies);
+    const movieName = req.slot('movieName');
+
+    sendSearchResponse(formattedResults, movieName, resp);
   });
 
   //Async response

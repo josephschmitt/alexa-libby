@@ -19,6 +19,10 @@
         "movieName": {
           "name": "movieName",
           "value": "the godfather"
+        },
+        "releaseDate": {
+          "name": "releaseDate",
+          "value": "1972"
         }
       }
     }

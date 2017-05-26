@@ -16,16 +16,17 @@ Function](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/d
 
 ## Configuring The Skill
 
-To configure the skill, copy `default.env` to `.env` and fill in the correct values for `CP_URL`, which
-should point to your Couch Potato server, and `CP_API_KEY` which should have your server's API key.
+To configure the skill, copy `default.env` to `.env` and fill in the correct values for `CP_URL`,
+which should point to your Couch Potato server, and `CP_API_KEY` which should have your server's
+API key.
 
 ## Testing The Skill Locally
 
 You can use [node-lambda](https://github.com/motdotla/node-lambda) to test this skill locally. In
 the `test_events` directory are several event files you can use for testing, and they should map
-pretty well to each Intent. To test an intent, simply copy the contents of one of the json files in
-that directory and overwrite the contents of `event.json`. Make sure you run `npm install` from the
-command line to get the the latest npm packages, and then run `npm run test-lambda`.
+pretty well to each Intent. To test an intent, simply update the `EVENT_FILE` value in your `.env`
+config file to point to the event to test against. Make sure you run `npm install` from the command
+line to get the the latest npm packages, and then run `npm run test-lambda`.
 
 ## Setting up the Skill
 
@@ -46,11 +47,12 @@ you've created your Lambda function, look at the top right of the page to get yo
 number and put that in the Alexa Skill Information Endpoint field.
 
 To deploy to Lambda, first makes sure you do an `npm install` at the root of the project.
-Once all the dependencies are installed, run `npm run bundle`, which will create a lambda.zip file.
-You can then upload that zip file to Lambda for use in your function and skill.
+Once all the dependencies are installed, run `npm run package`, which will create a an
+`alexa-couchpotato.zip` file in your project directory. You can then upload that zip file to Lambda
+for use in your function and skill.
 
 You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
 function directly from the command line. Simply add a deploy.env file with your environment
-configuration (and double check the supplied .env file in this repository) and then run
-`node-lambda deploy`. Please visit the [node-lambda](https://github.com/motdotla/node-lambda)
+configuration (and double check the supplied `.env file` in this repository) and then run
+`npm run deploy`. Please visit the [node-lambda](https://github.com/motdotla/node-lambda)
 project page for more information on deploying from the command line.

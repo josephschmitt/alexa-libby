@@ -19,6 +19,9 @@
         "movieName": {
           "name": "movieName",
           "value": "the godfather"
+        },
+        "releaseDate": {
+          "name": "releaseDate"
         }
       }
     }

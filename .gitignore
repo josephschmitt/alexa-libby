@@ -1,5 +1,6 @@
-deploy.env
-lambda.zip
-node_modules/
+.DS_Store
 .env
+deploy.env
+alexa-couchpotato.zip
 dist/
+node_modules/
