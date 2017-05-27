@@ -34,7 +34,7 @@ export default function handleLaunchIntent(req, resp) {
 export function handleFindMovieIntent(req, resp) {
   const query = buildMovieQuery(req);
 
-  cp.movie.list({
+  return cp.movie.list({
     search: query,
     limit_offset: NUM_RESULTS
   }).then(function (searchResp) {
@@ -54,21 +54,15 @@ export function handleFindMovieIntent(req, resp) {
         .send();
     }
   });
-
-  //Async response
-  return false;
 }
 
 export function handleAddMovieIntent(req, resp) {
-  cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then(function (movies) {
+  return cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then(function (movies) {
     const formattedResults = formatSearchResults(movies);
     const movieName = req.slot('movieName');
 
     sendSearchResponse(formattedResults, movieName, resp);
   });
-
-  //Async response
-  return false;
 }
 
 export function handleYesIntent(req, resp) {
@@ -81,7 +75,7 @@ export function handleYesIntent(req, resp) {
   else if (promptData.yesAction === 'addMovie') {
     const movie = promptData.searchResults[0];
 
-    cp.movie.add({
+    return cp.movie.add({
       title: movie.titles[0],
       identifier: movie.imdb
     }).then(function () {
@@ -89,9 +83,6 @@ export function handleYesIntent(req, resp) {
         .say(promptData.yesResponse)
         .send();
     });
-
-    //Async response
-    return false;
   }
   else {
     console.log('Got an unexpected yesAction. PromptData:');

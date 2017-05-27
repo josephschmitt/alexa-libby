@@ -26,7 +26,7 @@ You can use [node-lambda](https://github.com/motdotla/node-lambda) to test this 
 the `test_events` directory are several event files you can use for testing, and they should map
 pretty well to each Intent. To test an intent, simply update the `EVENT_FILE` value in your `.env`
 config file to point to the event to test against. Make sure you run `npm install` from the command
-line to get the the latest npm packages, and then run `npm run test-lambda`.
+line to get the the latest npm packages, and then run `npm start`.
 
 ## Setting up the Skill
 
