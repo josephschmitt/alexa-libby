@@ -16,9 +16,9 @@ Function](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/d
 
 ## Configuring The Skill
 
-To configure the skill, copy `default.env` to `.env` and fill in the correct values for `CP_URL`,
-which should point to your Couch Potato server, and `CP_API_KEY` which should have your server's
-API key.
+To configure the skill, duplicate `default.env`, rename it `.env`, and fill in the correct values
+for `CP_URL`, which should point to your Couch Potato server (including the port number if it's not
+80), and `CP_API_KEY` which should have your server's API key.
 
 ## Testing The Skill Locally
 
@@ -28,31 +28,68 @@ pretty well to each Intent. To test an intent, simply update the `EVENT_FILE` va
 config file to point to the event to test against. Make sure you run `npm install` from the command
 line to get the the latest npm packages, and then run `npm start`.
 
-## Setting up the Skill
-
-To set up the skill, head on over to [Alexa skills kit
-development console](https://developer.amazon.com/edw/home.html) and add a new skill. Fill in the
-basic skill information however you choose. For Endpoint, you'll need to fill in your Lambda ARN
-which you'll get in the next step. Next, head on over to Interaction Model. In the Intent
-Schema field, copy and paste the contents of the `interaction_model/intent_schema.json` file. Then
-in the Sample Utterances field, copy and paste the contents of
-`interaction_model/sample_utterances.txt`.
-
-## Hosting the Skill
+## Creating a Lambda function
 
 The skill is built to be easily hosted on Amazon's [AWS
-Lambda service](https://aws.amazon.com/lambda/). Create your Lambda function (using the
-alexa-skills-kit-color-expert blueprint) and make sure you choose Node.js as the runtime. After
-you've created your Lambda function, look at the top right of the page to get your Lambda ARN
-number and put that in the Alexa Skill Information Endpoint field.
+Lambda service](https://aws.amazon.com/lambda/). You'll need to create an Amazon AWS account,
+and then head over to the [Lambda Dashboard](https://console.aws.amazon.com/lambda/home). Once
+there, click "Create a Lambda function", and provide the following settings:
+
+1. **Select blueprint**: Click on _Blank Function_.
+2. **Configure triggers**: This one can be easy to miss. You should see a dotted out rounded square
+to the left of the Lambda logo. Click on it and from the dropdown, choose _Alexa Skills Kit_.
+3. **Configure function**:
+  - Name: `alexa-couchpotato`. Honestly this can be whatever you want, but if you want to use the
+    deploy function later, it's best to use the same name as the project here.
+  - Description: Doesn't matter. Feel free to copy the project description.
+  - Runtime: _Node.js 6.10_. You can choose the older version if you want, but if you do make
+    sure to update the `.babelrc` file to tell babel to target the older verison of Node. If you
+    don't know what that means, just go with 6.10.
+  - Code entry type: _Upload a .ZIP file_. (Instructions on generating this ZIP file are below)
+  - Lambda function handler and role: Under **Existing role** choose `lambda_basic_execution_`.
+
+Click Create lambda function and you're done. After you've created your Lambda function, look at the
+top right of the page to get your Lambda ARN number. You'll need this in the next step, so either
+write that number down, or keep this page open.
+
+## Deploying the Skill
 
 To deploy to Lambda, first makes sure you do an `npm install` at the root of the project.
-Once all the dependencies are installed, run `npm run package`, which will create a an
-`alexa-couchpotato.zip` file in your project directory. You can then upload that zip file to Lambda
-for use in your function and skill.
+Once all the dependencies are installed, run `npm run package`, which will create an
+`alexa-couchpotato.zip` file in your project directory. Then, back in the Lambda dashboard, look
+to see where it says "Upload" next to "Function package". Click upload, choose the zip file, and
+click save.
 
 You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
 function directly from the command line. Simply add a deploy.env file with your environment
 configuration (and double check the supplied `.env file` in this repository) and then run
 `npm run deploy`. Please visit the [node-lambda](https://github.com/motdotla/node-lambda)
 project page for more information on deploying from the command line.
+
+## Setting up the Skill
+
+To set up the skill, head on over to [Alexa skills kit
+development console](https://developer.amazon.com/edw/home.html) and add a new skill by following
+these steps:
+
+1. **Skill Information**: Fill in the basic skill information however you choose. If you're feeling
+uncreative, you can put `alexa-couchpotato` for the name, and `couch potato` for the _Invocation
+Name_.
+2. **Interaction Model**: In the Intent Schema field, copy the contents of the
+`interaction_model/intent_schema.json` file and paste them in. Then in the Sample Utterances field,
+copy the contents of `interaction_model/sample_utterances.txt` and paste those in. Make sure to Save
+your changes.
+3. **Configuration**: Set the Service Endpoint Type to AWS Lambda ARN, and choose your region. Now
+comes the time to grab the ARN from the previous step that you hopefully either wrote down or kept
+open in a different tab or browser window.
+4. **Test**: Make sure the toggle at the top is Enabled. You should now be able to test to make sure
+everything's working. Scroll down to the Service Simulator and in the Enter Utterance field, try
+asking Couch Potato one of the phrases from up top, like "is The Dark Knight is on the list". If
+everything's working correctly, you should see data get filled in in both the Request and Response
+boxes. If you do, then you're pretty much done and all set.
+5. **Publishing Information**: This isn't necessary, but it helps the skill look nice in your Alexa
+app. You can fill in as much of the metadata as you like, but the one I'd really recommend is
+uploading an icon. An icon is included in this project and should work well for the 108x108 small
+icon slot.
+
+And that's it, all done.
