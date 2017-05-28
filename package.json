@@ -1,6 +1,6 @@
 {
   "name": "alexa-couchpotato",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A skill to ask Alexa about your Couch Potato queue.",
   "main": "dist/index.js",
   "scripts": {
@@ -22,7 +22,10 @@
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-root-import": "^5.1.0",
     "babel-preset-env": "^1.5.1",
+    "eslint": "^3.19.0",
+    "eslint-plugin-import": "^2.3.0",
     "node-lambda": "^0.8.15"
   }
 }

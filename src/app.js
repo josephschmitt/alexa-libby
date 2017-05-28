@@ -1,5 +1,3 @@
-'use strict';
-
 import Alexa from 'alexa-app';
 
 import handleLaunchIntent, {
@@ -9,7 +7,7 @@ import handleLaunchIntent, {
   handleNoIntent,
   handleCancelIntent,
   handleHelpIntent
-} from './handlers.js';
+} from '~/lib/handlers.js';
 
 const app = new Alexa.app('couchPotato');
 
@@ -21,11 +19,11 @@ app.intent('AMAZON.NoIntent', handleNoIntent);
 app.intent('AMAZON.CancelIntent', handleCancelIntent);
 app.intent('AMAZON.HelpIntent', handleHelpIntent);
 
-app.post = function(request, response, type, exception) {
+app.post = function (request, response, type, exception) {
   if (exception) {
     // Always turn an exception into a successful response
     response.clear().say('An error occured: ' + exception).send();
   }
 };
 
-export default app;
+export default app.lambda();

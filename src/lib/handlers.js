@@ -1,27 +1,24 @@
-'use strict';
-
 import CouchPotato from 'node-couchpotato';
 
-import {
-  buildPrompt,
-  buildMovieQuery,
-  sendSearchResponse,
-  formatSearchResults
-} from './utils.js';
+import buildPrompt from '~/lib/buildPrompt.js';
+import buildMovieQuery from '~/lib/buildMovieQuery.js';
+import sendSearchResponse from '~/lib/sendSearchResponse.js';
+import formatSearchResults from '~/lib/formatSearchResults.js';
 
 import {
   WELCOME_DESCRIPTION,
   HELP_RESPONSE,
   CANCEL_RESPONSE
-} from './responses.js';
-
-const NUM_RESULTS = 5;
+} from '~/lib/responses.js';
 
 const config = require('dotenv').config();
-const cp = new CouchPotato({
+
+export const NUM_RESULTS = 5;
+
+export const cp = new CouchPotato({
   url: config.CP_URL,
   apikey: config.CP_API_KEY,
-  debug:true
+  debug: true
 });
 
 export default function handleLaunchIntent(req, resp) {
@@ -37,13 +34,13 @@ export function handleFindMovieIntent(req, resp) {
   return cp.movie.list({
     search: query,
     limit_offset: NUM_RESULTS
-  }).then(function (searchResp) {
+  }).then((searchResp) => {
     const movies = searchResp.movies;
 
     if (!movies || !movies.length) {
       resp.say(`Couldn't find ${query} queued for download. `);
 
-      cp.movie.search(query).then(function (searchResults) {
+      cp.movie.search(query).then((searchResults) => {
         sendSearchResponse(searchResults, null, resp);
       });
     }
@@ -57,7 +54,7 @@ export function handleFindMovieIntent(req, resp) {
 }
 
 export function handleAddMovieIntent(req, resp) {
-  return cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then(function (movies) {
+  return cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then((movies) => {
     const formattedResults = formatSearchResults(movies);
     const movieName = req.slot('movieName');
 
@@ -78,7 +75,7 @@ export function handleYesIntent(req, resp) {
     return cp.movie.add({
       title: movie.titles[0],
       identifier: movie.imdb
-    }).then(function () {
+    }).then(() => {
       resp
         .say(promptData.yesResponse)
         .send();
