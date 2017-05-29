@@ -1,6 +1,18 @@
 {
   "intents": [
     {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
       "intent": "AddMovie",
       "slots": [
         {
@@ -25,18 +37,6 @@
           "type": "AMAZON.DATE"
         }
       ]
-    },
-    {
-      "intent": "AMAZON.YesIntent"
-    },
-    {
-      "intent": "AMAZON.NoIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    },
-    {
-      "intent": "AMAZON.HelpIntent"
     }
   ]
 }
