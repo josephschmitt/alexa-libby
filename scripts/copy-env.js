@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
-import path from 'path';
+const fs = require('fs-extra');
+const path = require('path');
 
 /**
  * Makes a .env file from the default.env if the .env doesn't exist.

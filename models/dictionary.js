@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   // Top 100 movies on Trakt.tv
   movieSamples: [
     'Deadpool',

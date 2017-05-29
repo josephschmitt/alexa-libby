@@ -1,9 +1,9 @@
-import utterances from 'alexa-utterances';
-import fs from 'fs-extra';
-import path from 'path';
+const utterances = require('alexa-utterances');
+const fs = require('fs-extra');
+const path = require('path');
 
-import dictionary from '~/models/dictionary.js';
-import * as schemas from '~/models/schemas';
+const dictionary = require('../models/dictionary.js');
+const schemas = require('../models/schemas');
 
 const sampleUtterances = Object.keys(schemas).map((name) => {
   const schema = schemas[name];

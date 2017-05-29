@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
+    "copy-env": "node scripts/copy-env.js",
     "deploy": "npm run build; node-lambda deploy",
-    "gen-interaction": "npm run build; node dist/gen-interaction.js",
+    "gen-interaction": "node scripts/gen-interaction.js",
     "package": "npm run build; node-lambda package --packageDirectory=./",
-    "prepare": "npm run build; node dist/copy-env.js; npm run gen-interaction",
+    "prepare": "npm run build; npm run copy-env; npm run gen-interaction",
     "start": "npm run build; node-lambda run"
   },
   "author": "Joe Schmitt",
