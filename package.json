@@ -7,7 +7,7 @@
     "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "npm run prepare; node dist/gen-interaction.js",
     "package": "npm run prepare; node-lambda package --packageDirectory=./",
-    "postinstall": "npm run gen-interaction",
+    "postinstall": "npm run gen-interaction; node postinstall.js",
     "prepare": "babel src -d dist",
     "start": "npm run prepare; node-lambda run"
   },
