@@ -11,6 +11,7 @@ import {
   CANCEL_RESPONSE,
   HELP_RESPONSE,
   NO_MOVIE_FOUND,
+  NO_MOVIE_SLOT,
   WELCOME_DESCRIPTION
 } from '~/lib/responses.js';
 
@@ -32,6 +33,10 @@ export default function handleLaunchIntent(req, resp) {
 }
 
 export function handleFindMovieIntent(req, resp) {
+  if (!req.slot('movieName')) {
+    return resp.say(NO_MOVIE_SLOT()).send();
+  }
+
   const query = buildMovieQuery(req);
 
   return cp.get('movie.list', {
@@ -63,6 +68,10 @@ export function handleFindMovieIntent(req, resp) {
 }
 
 export function handleAddMovieIntent(req, resp) {
+  if (!req.slot('movieName')) {
+    return resp.say(NO_MOVIE_SLOT()).send();
+  }
+
   return cp.get('movie.search', {
     q: buildMovieQuery(req)
   }, NUM_RESULTS).then(({movies}) => {
