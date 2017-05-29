@@ -1,14 +1,16 @@
 import CouchPotato from 'node-couchpotato';
 
-import buildPrompt from '~/lib/buildPrompt.js';
+import buildReprompt from '~/lib/buildReprompt.js';
 import buildMovieQuery from '~/lib/buildMovieQuery.js';
-import sendSearchResponse from '~/lib/sendSearchResponse.js';
+import buildSearchResponse from '~/lib/buildSearchResponse.js';
 import formatSearchResults from '~/lib/formatSearchResults.js';
 
 import {
-  WELCOME_DESCRIPTION,
+  ALREADY_ON_LIST,
+  CANCEL_RESPONSE,
   HELP_RESPONSE,
-  CANCEL_RESPONSE
+  NO_MOVIE_FOUND,
+  WELCOME_DESCRIPTION
 } from '~/lib/responses.js';
 
 const config = require('dotenv').config();
@@ -23,8 +25,8 @@ export const cp = new CouchPotato({
 
 export default function handleLaunchIntent(req, resp) {
   resp
-    .say(WELCOME_DESCRIPTION)
-    .say(HELP_RESPONSE)
+    .say(WELCOME_DESCRIPTION())
+    .say(HELP_RESPONSE())
     .send();
 }
 
@@ -38,16 +40,16 @@ export function handleFindMovieIntent(req, resp) {
     const movies = searchResp.movies;
 
     if (!movies || !movies.length) {
-      resp.say(`Couldn't find ${query} queued for download. `);
+      resp.say(NO_MOVIE_FOUND(query));
 
       cp.movie.search(query).then((searchResults) => {
-        sendSearchResponse(searchResults, null, resp);
+        buildSearchResponse(searchResults, null, resp).send();
       });
     }
     else {
       const result = movies[0].info;
       resp
-        .say(`It looks like ${result.original_title} (${result.year}) is already on your list.`)
+        .say(ALREADY_ON_LIST(result.original_title, result.year))
         .send();
     }
   });
@@ -58,7 +60,7 @@ export function handleAddMovieIntent(req, resp) {
     const formattedResults = formatSearchResults(movies);
     const movieName = req.slot('movieName');
 
-    sendSearchResponse(formattedResults, movieName, resp);
+    buildSearchResponse(formattedResults, movieName, resp).send();
   });
 }
 
@@ -102,7 +104,7 @@ export function handleNoIntent(req, resp) {
     const movies = promptData.searchResults;
     resp
       .say(promptData.noResponse)
-      .session('promptData', buildPrompt(movies.slice(1)))
+      .session('promptData', buildReprompt(movies.slice(1)))
       .shouldEndSession(false)
       .send();
   }
@@ -114,9 +116,9 @@ export function handleNoIntent(req, resp) {
 }
 
 export function handleCancelIntent(req, resp) {
-  resp.say(CANCEL_RESPONSE).shouldEndSession(true).send();
+  resp.say(CANCEL_RESPONSE()).shouldEndSession(true).send();
 }
 
 export function handleHelpIntent(req, resp) {
-  resp.say(HELP_RESPONSE).send();
+  resp.say(HELP_RESPONSE()).send();
 }
