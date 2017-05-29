@@ -1,4 +1,4 @@
-import CouchPotato from 'node-couchpotato';
+import CouchPotato from 'couchpotato-api';
 
 import buildReprompt from '~/lib/buildReprompt.js';
 import buildMovieQuery from '~/lib/buildMovieQuery.js';
@@ -18,9 +18,9 @@ const config = require('dotenv').config();
 export const NUM_RESULTS = 5;
 
 export const cp = new CouchPotato({
-  url: config.CP_URL,
-  apikey: config.CP_API_KEY,
-  debug: true
+  hostname: config.CP_URL,
+  apiKey: config.CP_API_KEY,
+  port: config.CP_PORT
 });
 
 export default function handleLaunchIntent(req, resp) {
@@ -33,7 +33,7 @@ export default function handleLaunchIntent(req, resp) {
 export function handleFindMovieIntent(req, resp) {
   const query = buildMovieQuery(req);
 
-  return cp.movie.list({
+  return cp.get('movie.list', {
     search: query,
     limit_offset: NUM_RESULTS
   }).then((searchResp) => {
@@ -42,7 +42,7 @@ export function handleFindMovieIntent(req, resp) {
     if (!movies || !movies.length) {
       resp.say(NO_MOVIE_FOUND(query));
 
-      cp.movie.search(query).then((searchResults) => {
+      cp.get('movie.search', {q: query}).then((searchResults) => {
         buildSearchResponse(searchResults, null, resp).send();
       });
     }
@@ -56,7 +56,7 @@ export function handleFindMovieIntent(req, resp) {
 }
 
 export function handleAddMovieIntent(req, resp) {
-  return cp.movie.search(buildMovieQuery(req), NUM_RESULTS).then((movies) => {
+  return cp.get('movie.search', {q: buildMovieQuery(req)}, NUM_RESULTS).then((movies) => {
     const formattedResults = formatSearchResults(movies);
     const movieName = req.slot('movieName');
 
@@ -74,7 +74,7 @@ export function handleYesIntent(req, resp) {
   else if (promptData.yesAction === 'addMovie') {
     const movie = promptData.searchResults[0];
 
-    return cp.movie.add({
+    return cp.get('movie.add', {
       title: movie.titles[0],
       identifier: movie.imdb
     }).then(() => {

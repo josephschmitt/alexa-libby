@@ -23,7 +23,7 @@ export const HELP_RESPONSE = tmpl`You can ask Couch Potato about the movies in y
     it, try saying "Add The Godfather"`;
 
 /** ${0: Search query} */
-export const NO_MOVIE_FOUND = tmpl`Couldn't find ${0} queued for download.`;
+export const NO_MOVIE_FOUND = tmpl`Couldn't find ${0} in your wanted list.`;
 
 export const REPROMPT_END = tmpl`Ok, I'm out of suggestions.`;
 
@@ -31,7 +31,7 @@ export const REPROMPT_END = tmpl`Ok, I'm out of suggestions.`;
 export const REPROMPT_NO = tmpl`Ok, did you mean ${0} (${1})?`;
 
 /** ${0: Movie Title}, ${1: Release date} */
-export const REPROMPT_YES = tmpl`Added ${0} (${1}) to your list of movies to download.`;
+export const REPROMPT_YES = tmpl`Added ${0} (${1}) to your wanted list.`;
 
 export const WELCOME_DESCRIPTION = tmpl`This skill allows you to manage your Couch Potato movie
     list.`;

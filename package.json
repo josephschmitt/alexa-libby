@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "alexa-app": "^4.0.1",
-    "dotenv": "^2.0.0",
-    "node-couchpotato": "^0.1.4"
+    "couchpotato-api": "^0.1.0",
+    "dotenv": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
