@@ -2,11 +2,12 @@ import CouchPotato from 'couchpotato-api';
 
 import buildReprompt from '~/lib/buildReprompt.js';
 import buildMovieQuery from '~/lib/buildMovieQuery.js';
-import buildSearchResponse from '~/lib/buildSearchResponse.js';
 import formatSearchResults from '~/lib/formatSearchResults.js';
 
 import {
-  ALREADY_ON_LIST,
+  ADD_NOT_FOUND,
+  ADD_PROMPT,
+  ALREADY_WANTED,
   CANCEL_RESPONSE,
   HELP_RESPONSE,
   NO_MOVIE_FOUND,
@@ -36,31 +37,50 @@ export function handleFindMovieIntent(req, resp) {
   return cp.get('movie.list', {
     search: query,
     limit_offset: NUM_RESULTS
-  }).then((searchResp) => {
-    const movies = searchResp.movies;
-
+  }).then(({movies}) => {
     if (!movies || !movies.length) {
       resp.say(NO_MOVIE_FOUND(query));
 
-      cp.get('movie.search', {q: query}).then((searchResults) => {
-        buildSearchResponse(searchResults, null, resp).send();
+      return cp.get('movie.search', {q: query}).then(({movies}) => {
+        if (movies) {
+          const [topResult] = movies;
+          resp
+            .say(ADD_PROMPT(topResult.original_title, topResult.year))
+            .session('promptData', buildReprompt(movies))
+            .shouldEndSession(false);
+        }
+
+        resp.send();
       });
     }
     else {
       const result = movies[0].info;
       resp
-        .say(ALREADY_ON_LIST(result.original_title, result.year))
+        .say(ALREADY_WANTED(result.original_title, result.year))
         .send();
     }
   });
 }
 
 export function handleAddMovieIntent(req, resp) {
-  return cp.get('movie.search', {q: buildMovieQuery(req)}, NUM_RESULTS).then((movies) => {
-    const formattedResults = formatSearchResults(movies);
+  return cp.get('movie.search', {
+    q: buildMovieQuery(req)
+  }, NUM_RESULTS).then(({movies}) => {
+    movies = formatSearchResults(movies);
     const movieName = req.slot('movieName');
 
-    buildSearchResponse(formattedResults, movieName, resp).send();
+    if (!movies || !movies.length) {
+      resp.say(ADD_NOT_FOUND(movieName));
+    }
+    else {
+      const [topResult] = movies;
+      resp
+        .say(ADD_PROMPT(topResult.original_title, topResult.year))
+        .session('promptData', buildReprompt(movies))
+        .shouldEndSession(false);
+    }
+
+    resp.send();
   });
 }
 

@@ -14,7 +14,7 @@ export const ADD_NOT_FOUND = tmpl`No movie found for ${0}`;
 export const ADD_PROMPT = tmpl`Add ${0} (${1}) to your list?`;
 
 /** ${0: Movie Title}, ${1: Release date} */
-export const ALREADY_ON_LIST = tmpl`It looks like ${0} (${1}) is already on your list.`;
+export const ALREADY_WANTED = tmpl`It looks like ${0} (${1}) is already on your list.`;
 
 export const CANCEL_RESPONSE = tmpl`Exiting Couch Potato`;
 
