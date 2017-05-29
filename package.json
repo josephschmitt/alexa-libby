@@ -4,12 +4,12 @@
   "description": "A skill to ask Alexa about your Couch Potato queue.",
   "main": "dist/index.js",
   "scripts": {
-    "deploy": "npm run prepare; node-lambda deploy",
-    "gen-interaction": "npm run prepare; node dist/gen-interaction.js",
-    "package": "npm run prepare; node-lambda package --packageDirectory=./",
-    "postinstall": "npm run gen-interaction; node postinstall.js",
-    "prepare": "babel src -d dist",
-    "start": "npm run prepare; node-lambda run"
+    "build": "babel src -d dist",
+    "deploy": "npm run build; node-lambda deploy",
+    "gen-interaction": "npm run build; node dist/gen-interaction.js",
+    "package": "npm run build; node-lambda package --packageDirectory=./",
+    "prepare": "npm run build; node postinstall.js; npm run gen-interaction",
+    "start": "npm run build; node-lambda run"
   },
   "author": "Joe Schmitt",
   "license": "MIT",
