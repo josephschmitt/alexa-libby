@@ -5,7 +5,7 @@
       "slots": [
         {
           "name": "movieName",
-          "type": "AMAZON.LITERAL"
+          "type": "AMAZON.Movie"
         },
         {
           "name": "releaseDate",
@@ -18,7 +18,7 @@
       "slots": [
         {
           "name": "movieName",
-          "type": "AMAZON.LITERAL"
+          "type": "AMAZON.Movie"
         },
         {
           "name": "releaseDate",
