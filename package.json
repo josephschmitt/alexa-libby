@@ -6,11 +6,11 @@
   "scripts": {
     "build": "babel src -d dist",
     "copy-env": "node scripts/copy-env.js",
-    "deploy": "npm run build; node-lambda deploy",
+    "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "node scripts/gen-interaction.js",
-    "package": "npm run build; node-lambda package --packageDirectory=./",
+    "package": "npm run prepare; node-lambda package --packageDirectory=./",
     "prepare": "npm run build; npm run copy-env; npm run gen-interaction",
-    "start": "npm run build; node-lambda run"
+    "start": "npm run prepare; node-lambda run"
   },
   "author": "Joe Schmitt",
   "license": "MIT",
