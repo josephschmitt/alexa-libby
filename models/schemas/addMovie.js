@@ -14,12 +14,9 @@ module.exports = {
   ],
   samples: [
     // Just the movie name
-    'add {movieSamples|movieName}',
-    'add {movie|film} {movieSamples|movieName}',
-    'add the {movie|film} {movieSamples|movieName}',
+    'add {the |}{movie |film |}{-|movieName}{ to the list| to the wanted list|}',
 
     // Movie and release date
-    'add {movieSamples|movieName} {from|released in|year|came out in} {-|releaseDate}',
-    'add the {-|releaseDate} {movie|film} {movieSamples|movieName}',
+    'add {the |}{-|movieName} {from|released in|yearcame out in} {-|releaseDate}{ to the list| to the wanted list|}',
   ]
 };

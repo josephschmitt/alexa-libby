@@ -1,808 +1,148 @@
-AddMovie add {Deadpool|movieName}
-AddMovie add {Guardians of the Galaxy|movieName}
-AddMovie add {The Dark Knight|movieName}
-AddMovie add {Inception|movieName}
-AddMovie add {The Avengers|movieName}
-AddMovie add {Suicide Squad|movieName}
-AddMovie add {Doctor Strange|movieName}
-AddMovie add {The Matrix|movieName}
-AddMovie add {Interstellar|movieName}
-AddMovie add {Arrival|movieName}
-AddMovie add {Star Wars The Force Awakens|movieName}
-AddMovie add {Captain America Civil War|movieName}
-AddMovie add {Frozen|movieName}
-AddMovie add {Avatar|movieName}
-AddMovie add {The Martian|movieName}
-AddMovie add {Fight Club|movieName}
-AddMovie add {Passengers|movieName}
-AddMovie add {Zootopia|movieName}
-AddMovie add {X Men Apocalypse|movieName}
-AddMovie add {Moana|movieName}
-AddMovie add {Iron Man|movieName}
-AddMovie add {Logan|movieName}
-AddMovie add {The Lord of the Rings The Fellowship of the Ring|movieName}
-AddMovie add {The Dark Knight Rises|movieName}
-AddMovie add {The Secret Life of Pets|movieName}
-AddMovie add {Batman v Superman Dawn of Justice|movieName}
-AddMovie add {Django Unchained|movieName}
-AddMovie add {Rogue One A Star Wars Story|movieName}
-AddMovie add {The Wolf of Wall Street|movieName}
-AddMovie add {Star Wars|movieName}
-AddMovie add {The Accountant|movieName}
-AddMovie add {Fantastic Beasts and Where to Find Them|movieName}
-AddMovie add {Finding Nemo|movieName}
-AddMovie add {The Lord of the Rings The Return of the King|movieName}
-AddMovie add {Mad Max Fury Road|movieName}
-AddMovie add {Batman Begins|movieName}
-AddMovie add {The Lord of the Rings The Two Towers|movieName}
-AddMovie add {Inside Out|movieName}
-AddMovie add {Captain America The Winter Soldier|movieName}
-AddMovie add {Edge of Tomorrow|movieName}
-AddMovie add {The Hunger Games|movieName}
-AddMovie add {The Hobbit An Unexpected Journey|movieName}
-AddMovie add {Pulp Fiction|movieName}
-AddMovie add {Up|movieName}
-AddMovie add {WALL E|movieName}
-AddMovie add {The Shawshank Redemption|movieName}
-AddMovie add {The Empire Strikes Back|movieName}
-AddMovie add {Forrest Gump|movieName}
-AddMovie add {Jurassic World|movieName}
-AddMovie add {Ant Man|movieName}
-AddMovie add {Finding Dory|movieName}
-AddMovie add {Now You See Me|movieName}
-AddMovie add {X Men Days of Future Past|movieName}
-AddMovie add {Despicable Me|movieName}
-AddMovie add {Back to the Future|movieName}
-AddMovie add {Avengers Age of Ultron|movieName}
-AddMovie add {Big Hero Six|movieName}
-AddMovie add {Star Trek Beyond|movieName}
-AddMovie add {The Hunger Games Catching Fire|movieName}
-AddMovie add {Iron Man Three|movieName}
-AddMovie add {Jason Bourne|movieName}
-AddMovie add {Return of the Jedi|movieName}
-AddMovie add {Monsters Inc|movieName}
-AddMovie add {The Lion King|movieName}
-AddMovie add {Hacksaw Ridge|movieName}
-AddMovie add {Kingsman The Secret Service|movieName}
-AddMovie add {John Wick|movieName}
-AddMovie add {Iron Man Two|movieName}
-AddMovie add {The Revenant|movieName}
-AddMovie add {Harry Potter and the Philosophers Stone|movieName}
-AddMovie add {Toy Story|movieName}
-AddMovie add {Captain America The First Avenger|movieName}
-AddMovie add {Gravity|movieName}
-AddMovie add {The Magnificent Seven|movieName}
-AddMovie add {Central Intelligence|movieName}
-AddMovie add {Independence Day Resurgence|movieName}
-AddMovie add {Now You See Me Two|movieName}
-AddMovie add {Jack Reacher Never Go Back|movieName}
-AddMovie add {Gone Girl|movieName}
-AddMovie add {The Hobbit The Desolation of Smaug|movieName}
-AddMovie add {Inglourious Basterds|movieName}
-AddMovie add {Thor|movieName}
-AddMovie add {Sing|movieName}
-AddMovie add {The Jungle Book|movieName}
-AddMovie add {V for Vendetta|movieName}
-AddMovie add {Trolls|movieName}
-AddMovie add {Man of Steel|movieName}
-AddMovie add {Star Trek Into Darkness|movieName}
-AddMovie add {The Imitation Game|movieName}
-AddMovie add {Seven|movieName}
-AddMovie add {Ex Machina|movieName}
-AddMovie add {The Incredibles|movieName}
-AddMovie add {Harry Potter and the Deathly Hallows Part Two|movieName}
-AddMovie add {Pirates of the Caribbean The Curse of the Black Pearl|movieName}
-AddMovie add {Thor The Dark World|movieName}
-AddMovie add {Harry Potter and the Chamber of Secrets|movieName}
-AddMovie add {Harry Potter and the Prisoner of Azkaban|movieName}
-AddMovie add {How to Train Your Dragon|movieName}
-AddMovie add {Star Trek|movieName}
-AddMovie add {Gladiator|movieName}
+AddMovie add the movie {movieName} to the list
+AddMovie add movie {movieName} to the list
+AddMovie add the film {movieName} to the list
+AddMovie add film {movieName} to the list
+AddMovie add the {movieName} to the list
+AddMovie add {movieName} to the list
+AddMovie add the movie {movieName} to the wanted list
+AddMovie add movie {movieName} to the wanted list
+AddMovie add the film {movieName} to the wanted list
+AddMovie add film {movieName} to the wanted list
+AddMovie add the {movieName} to the wanted list
+AddMovie add {movieName} to the wanted list
+AddMovie add the movie {movieName}
+AddMovie add movie {movieName}
+AddMovie add the film {movieName}
+AddMovie add film {movieName}
+AddMovie add the {movieName}
+AddMovie add {movieName}
 
-AddMovie add movie {Deadpool|movieName}
-AddMovie add film {Guardians of the Galaxy|movieName}
-AddMovie add movie {The Dark Knight|movieName}
-AddMovie add film {Inception|movieName}
-AddMovie add movie {The Avengers|movieName}
-AddMovie add film {Suicide Squad|movieName}
-AddMovie add movie {Doctor Strange|movieName}
-AddMovie add film {The Matrix|movieName}
-AddMovie add movie {Interstellar|movieName}
-AddMovie add film {Arrival|movieName}
-AddMovie add movie {Star Wars The Force Awakens|movieName}
-AddMovie add film {Captain America Civil War|movieName}
-AddMovie add movie {Frozen|movieName}
-AddMovie add film {Avatar|movieName}
-AddMovie add movie {The Martian|movieName}
-AddMovie add film {Fight Club|movieName}
-AddMovie add movie {Passengers|movieName}
-AddMovie add film {Zootopia|movieName}
-AddMovie add movie {X Men Apocalypse|movieName}
-AddMovie add film {Moana|movieName}
-AddMovie add movie {Iron Man|movieName}
-AddMovie add film {Logan|movieName}
-AddMovie add movie {The Lord of the Rings The Fellowship of the Ring|movieName}
-AddMovie add film {The Dark Knight Rises|movieName}
-AddMovie add movie {The Secret Life of Pets|movieName}
-AddMovie add film {Batman v Superman Dawn of Justice|movieName}
-AddMovie add movie {Django Unchained|movieName}
-AddMovie add film {Rogue One A Star Wars Story|movieName}
-AddMovie add movie {The Wolf of Wall Street|movieName}
-AddMovie add film {Star Wars|movieName}
-AddMovie add movie {The Accountant|movieName}
-AddMovie add film {Fantastic Beasts and Where to Find Them|movieName}
-AddMovie add movie {Finding Nemo|movieName}
-AddMovie add film {The Lord of the Rings The Return of the King|movieName}
-AddMovie add movie {Mad Max Fury Road|movieName}
-AddMovie add film {Batman Begins|movieName}
-AddMovie add movie {The Lord of the Rings The Two Towers|movieName}
-AddMovie add film {Inside Out|movieName}
-AddMovie add movie {Captain America The Winter Soldier|movieName}
-AddMovie add film {Edge of Tomorrow|movieName}
-AddMovie add movie {The Hunger Games|movieName}
-AddMovie add film {The Hobbit An Unexpected Journey|movieName}
-AddMovie add movie {Pulp Fiction|movieName}
-AddMovie add film {Up|movieName}
-AddMovie add movie {WALL E|movieName}
-AddMovie add film {The Shawshank Redemption|movieName}
-AddMovie add movie {The Empire Strikes Back|movieName}
-AddMovie add film {Forrest Gump|movieName}
-AddMovie add movie {Jurassic World|movieName}
-AddMovie add film {Ant Man|movieName}
-AddMovie add movie {Finding Dory|movieName}
-AddMovie add film {Now You See Me|movieName}
-AddMovie add movie {X Men Days of Future Past|movieName}
-AddMovie add film {Despicable Me|movieName}
-AddMovie add movie {Back to the Future|movieName}
-AddMovie add film {Avengers Age of Ultron|movieName}
-AddMovie add movie {Big Hero Six|movieName}
-AddMovie add film {Star Trek Beyond|movieName}
-AddMovie add movie {The Hunger Games Catching Fire|movieName}
-AddMovie add film {Iron Man Three|movieName}
-AddMovie add movie {Jason Bourne|movieName}
-AddMovie add film {Return of the Jedi|movieName}
-AddMovie add movie {Monsters Inc|movieName}
-AddMovie add film {The Lion King|movieName}
-AddMovie add movie {Hacksaw Ridge|movieName}
-AddMovie add film {Kingsman The Secret Service|movieName}
-AddMovie add movie {John Wick|movieName}
-AddMovie add film {Iron Man Two|movieName}
-AddMovie add movie {The Revenant|movieName}
-AddMovie add film {Harry Potter and the Philosophers Stone|movieName}
-AddMovie add movie {Toy Story|movieName}
-AddMovie add film {Captain America The First Avenger|movieName}
-AddMovie add movie {Gravity|movieName}
-AddMovie add film {The Magnificent Seven|movieName}
-AddMovie add movie {Central Intelligence|movieName}
-AddMovie add film {Independence Day Resurgence|movieName}
-AddMovie add movie {Now You See Me Two|movieName}
-AddMovie add film {Jack Reacher Never Go Back|movieName}
-AddMovie add movie {Gone Girl|movieName}
-AddMovie add film {The Hobbit The Desolation of Smaug|movieName}
-AddMovie add movie {Inglourious Basterds|movieName}
-AddMovie add film {Thor|movieName}
-AddMovie add movie {Sing|movieName}
-AddMovie add film {The Jungle Book|movieName}
-AddMovie add movie {V for Vendetta|movieName}
-AddMovie add film {Trolls|movieName}
-AddMovie add movie {Man of Steel|movieName}
-AddMovie add film {Star Trek Into Darkness|movieName}
-AddMovie add movie {The Imitation Game|movieName}
-AddMovie add film {Seven|movieName}
-AddMovie add movie {Ex Machina|movieName}
-AddMovie add film {The Incredibles|movieName}
-AddMovie add movie {Harry Potter and the Deathly Hallows Part Two|movieName}
-AddMovie add film {Pirates of the Caribbean The Curse of the Black Pearl|movieName}
-AddMovie add movie {Thor The Dark World|movieName}
-AddMovie add film {Harry Potter and the Chamber of Secrets|movieName}
-AddMovie add movie {Harry Potter and the Prisoner of Azkaban|movieName}
-AddMovie add film {How to Train Your Dragon|movieName}
-AddMovie add movie {Star Trek|movieName}
-AddMovie add film {Gladiator|movieName}
-
-AddMovie add the movie {Deadpool|movieName}
-AddMovie add the film {Guardians of the Galaxy|movieName}
-AddMovie add the movie {The Dark Knight|movieName}
-AddMovie add the film {Inception|movieName}
-AddMovie add the movie {The Avengers|movieName}
-AddMovie add the film {Suicide Squad|movieName}
-AddMovie add the movie {Doctor Strange|movieName}
-AddMovie add the film {The Matrix|movieName}
-AddMovie add the movie {Interstellar|movieName}
-AddMovie add the film {Arrival|movieName}
-AddMovie add the movie {Star Wars The Force Awakens|movieName}
-AddMovie add the film {Captain America Civil War|movieName}
-AddMovie add the movie {Frozen|movieName}
-AddMovie add the film {Avatar|movieName}
-AddMovie add the movie {The Martian|movieName}
-AddMovie add the film {Fight Club|movieName}
-AddMovie add the movie {Passengers|movieName}
-AddMovie add the film {Zootopia|movieName}
-AddMovie add the movie {X Men Apocalypse|movieName}
-AddMovie add the film {Moana|movieName}
-AddMovie add the movie {Iron Man|movieName}
-AddMovie add the film {Logan|movieName}
-AddMovie add the movie {The Lord of the Rings The Fellowship of the Ring|movieName}
-AddMovie add the film {The Dark Knight Rises|movieName}
-AddMovie add the movie {The Secret Life of Pets|movieName}
-AddMovie add the film {Batman v Superman Dawn of Justice|movieName}
-AddMovie add the movie {Django Unchained|movieName}
-AddMovie add the film {Rogue One A Star Wars Story|movieName}
-AddMovie add the movie {The Wolf of Wall Street|movieName}
-AddMovie add the film {Star Wars|movieName}
-AddMovie add the movie {The Accountant|movieName}
-AddMovie add the film {Fantastic Beasts and Where to Find Them|movieName}
-AddMovie add the movie {Finding Nemo|movieName}
-AddMovie add the film {The Lord of the Rings The Return of the King|movieName}
-AddMovie add the movie {Mad Max Fury Road|movieName}
-AddMovie add the film {Batman Begins|movieName}
-AddMovie add the movie {The Lord of the Rings The Two Towers|movieName}
-AddMovie add the film {Inside Out|movieName}
-AddMovie add the movie {Captain America The Winter Soldier|movieName}
-AddMovie add the film {Edge of Tomorrow|movieName}
-AddMovie add the movie {The Hunger Games|movieName}
-AddMovie add the film {The Hobbit An Unexpected Journey|movieName}
-AddMovie add the movie {Pulp Fiction|movieName}
-AddMovie add the film {Up|movieName}
-AddMovie add the movie {WALL E|movieName}
-AddMovie add the film {The Shawshank Redemption|movieName}
-AddMovie add the movie {The Empire Strikes Back|movieName}
-AddMovie add the film {Forrest Gump|movieName}
-AddMovie add the movie {Jurassic World|movieName}
-AddMovie add the film {Ant Man|movieName}
-AddMovie add the movie {Finding Dory|movieName}
-AddMovie add the film {Now You See Me|movieName}
-AddMovie add the movie {X Men Days of Future Past|movieName}
-AddMovie add the film {Despicable Me|movieName}
-AddMovie add the movie {Back to the Future|movieName}
-AddMovie add the film {Avengers Age of Ultron|movieName}
-AddMovie add the movie {Big Hero Six|movieName}
-AddMovie add the film {Star Trek Beyond|movieName}
-AddMovie add the movie {The Hunger Games Catching Fire|movieName}
-AddMovie add the film {Iron Man Three|movieName}
-AddMovie add the movie {Jason Bourne|movieName}
-AddMovie add the film {Return of the Jedi|movieName}
-AddMovie add the movie {Monsters Inc|movieName}
-AddMovie add the film {The Lion King|movieName}
-AddMovie add the movie {Hacksaw Ridge|movieName}
-AddMovie add the film {Kingsman The Secret Service|movieName}
-AddMovie add the movie {John Wick|movieName}
-AddMovie add the film {Iron Man Two|movieName}
-AddMovie add the movie {The Revenant|movieName}
-AddMovie add the film {Harry Potter and the Philosophers Stone|movieName}
-AddMovie add the movie {Toy Story|movieName}
-AddMovie add the film {Captain America The First Avenger|movieName}
-AddMovie add the movie {Gravity|movieName}
-AddMovie add the film {The Magnificent Seven|movieName}
-AddMovie add the movie {Central Intelligence|movieName}
-AddMovie add the film {Independence Day Resurgence|movieName}
-AddMovie add the movie {Now You See Me Two|movieName}
-AddMovie add the film {Jack Reacher Never Go Back|movieName}
-AddMovie add the movie {Gone Girl|movieName}
-AddMovie add the film {The Hobbit The Desolation of Smaug|movieName}
-AddMovie add the movie {Inglourious Basterds|movieName}
-AddMovie add the film {Thor|movieName}
-AddMovie add the movie {Sing|movieName}
-AddMovie add the film {The Jungle Book|movieName}
-AddMovie add the movie {V for Vendetta|movieName}
-AddMovie add the film {Trolls|movieName}
-AddMovie add the movie {Man of Steel|movieName}
-AddMovie add the film {Star Trek Into Darkness|movieName}
-AddMovie add the movie {The Imitation Game|movieName}
-AddMovie add the film {Seven|movieName}
-AddMovie add the movie {Ex Machina|movieName}
-AddMovie add the film {The Incredibles|movieName}
-AddMovie add the movie {Harry Potter and the Deathly Hallows Part Two|movieName}
-AddMovie add the film {Pirates of the Caribbean The Curse of the Black Pearl|movieName}
-AddMovie add the movie {Thor The Dark World|movieName}
-AddMovie add the film {Harry Potter and the Chamber of Secrets|movieName}
-AddMovie add the movie {Harry Potter and the Prisoner of Azkaban|movieName}
-AddMovie add the film {How to Train Your Dragon|movieName}
-AddMovie add the movie {Star Trek|movieName}
-AddMovie add the film {Gladiator|movieName}
-
-AddMovie add {Deadpool|movieName} from {releaseDate}
-AddMovie add {Guardians of the Galaxy|movieName} released in {releaseDate}
-AddMovie add {The Dark Knight|movieName} year {releaseDate}
-AddMovie add {Inception|movieName} came out in {releaseDate}
-AddMovie add {The Avengers|movieName} from {releaseDate}
-AddMovie add {Suicide Squad|movieName} released in {releaseDate}
-AddMovie add {Doctor Strange|movieName} year {releaseDate}
-AddMovie add {The Matrix|movieName} came out in {releaseDate}
-AddMovie add {Interstellar|movieName} from {releaseDate}
-AddMovie add {Arrival|movieName} released in {releaseDate}
-AddMovie add {Star Wars The Force Awakens|movieName} year {releaseDate}
-AddMovie add {Captain America Civil War|movieName} came out in {releaseDate}
-AddMovie add {Frozen|movieName} from {releaseDate}
-AddMovie add {Avatar|movieName} released in {releaseDate}
-AddMovie add {The Martian|movieName} year {releaseDate}
-AddMovie add {Fight Club|movieName} came out in {releaseDate}
-AddMovie add {Passengers|movieName} from {releaseDate}
-AddMovie add {Zootopia|movieName} released in {releaseDate}
-AddMovie add {X Men Apocalypse|movieName} year {releaseDate}
-AddMovie add {Moana|movieName} came out in {releaseDate}
-AddMovie add {Iron Man|movieName} from {releaseDate}
-AddMovie add {Logan|movieName} released in {releaseDate}
-AddMovie add {The Lord of the Rings The Fellowship of the Ring|movieName} year {releaseDate}
-AddMovie add {The Dark Knight Rises|movieName} came out in {releaseDate}
-AddMovie add {The Secret Life of Pets|movieName} from {releaseDate}
-AddMovie add {Batman v Superman Dawn of Justice|movieName} released in {releaseDate}
-AddMovie add {Django Unchained|movieName} year {releaseDate}
-AddMovie add {Rogue One A Star Wars Story|movieName} came out in {releaseDate}
-AddMovie add {The Wolf of Wall Street|movieName} from {releaseDate}
-AddMovie add {Star Wars|movieName} released in {releaseDate}
-AddMovie add {The Accountant|movieName} year {releaseDate}
-AddMovie add {Fantastic Beasts and Where to Find Them|movieName} came out in {releaseDate}
-AddMovie add {Finding Nemo|movieName} from {releaseDate}
-AddMovie add {The Lord of the Rings The Return of the King|movieName} released in {releaseDate}
-AddMovie add {Mad Max Fury Road|movieName} year {releaseDate}
-AddMovie add {Batman Begins|movieName} came out in {releaseDate}
-AddMovie add {The Lord of the Rings The Two Towers|movieName} from {releaseDate}
-AddMovie add {Inside Out|movieName} released in {releaseDate}
-AddMovie add {Captain America The Winter Soldier|movieName} year {releaseDate}
-AddMovie add {Edge of Tomorrow|movieName} came out in {releaseDate}
-AddMovie add {The Hunger Games|movieName} from {releaseDate}
-AddMovie add {The Hobbit An Unexpected Journey|movieName} released in {releaseDate}
-AddMovie add {Pulp Fiction|movieName} year {releaseDate}
-AddMovie add {Up|movieName} came out in {releaseDate}
-AddMovie add {WALL E|movieName} from {releaseDate}
-AddMovie add {The Shawshank Redemption|movieName} released in {releaseDate}
-AddMovie add {The Empire Strikes Back|movieName} year {releaseDate}
-AddMovie add {Forrest Gump|movieName} came out in {releaseDate}
-AddMovie add {Jurassic World|movieName} from {releaseDate}
-AddMovie add {Ant Man|movieName} released in {releaseDate}
-AddMovie add {Finding Dory|movieName} year {releaseDate}
-AddMovie add {Now You See Me|movieName} came out in {releaseDate}
-AddMovie add {X Men Days of Future Past|movieName} from {releaseDate}
-AddMovie add {Despicable Me|movieName} released in {releaseDate}
-AddMovie add {Back to the Future|movieName} year {releaseDate}
-AddMovie add {Avengers Age of Ultron|movieName} came out in {releaseDate}
-AddMovie add {Big Hero Six|movieName} from {releaseDate}
-AddMovie add {Star Trek Beyond|movieName} released in {releaseDate}
-AddMovie add {The Hunger Games Catching Fire|movieName} year {releaseDate}
-AddMovie add {Iron Man Three|movieName} came out in {releaseDate}
-AddMovie add {Jason Bourne|movieName} from {releaseDate}
-AddMovie add {Return of the Jedi|movieName} released in {releaseDate}
-AddMovie add {Monsters Inc|movieName} year {releaseDate}
-AddMovie add {The Lion King|movieName} came out in {releaseDate}
-AddMovie add {Hacksaw Ridge|movieName} from {releaseDate}
-AddMovie add {Kingsman The Secret Service|movieName} released in {releaseDate}
-AddMovie add {John Wick|movieName} year {releaseDate}
-AddMovie add {Iron Man Two|movieName} came out in {releaseDate}
-AddMovie add {The Revenant|movieName} from {releaseDate}
-AddMovie add {Harry Potter and the Philosophers Stone|movieName} released in {releaseDate}
-AddMovie add {Toy Story|movieName} year {releaseDate}
-AddMovie add {Captain America The First Avenger|movieName} came out in {releaseDate}
-AddMovie add {Gravity|movieName} from {releaseDate}
-AddMovie add {The Magnificent Seven|movieName} released in {releaseDate}
-AddMovie add {Central Intelligence|movieName} year {releaseDate}
-AddMovie add {Independence Day Resurgence|movieName} came out in {releaseDate}
-AddMovie add {Now You See Me Two|movieName} from {releaseDate}
-AddMovie add {Jack Reacher Never Go Back|movieName} released in {releaseDate}
-AddMovie add {Gone Girl|movieName} year {releaseDate}
-AddMovie add {The Hobbit The Desolation of Smaug|movieName} came out in {releaseDate}
-AddMovie add {Inglourious Basterds|movieName} from {releaseDate}
-AddMovie add {Thor|movieName} released in {releaseDate}
-AddMovie add {Sing|movieName} year {releaseDate}
-AddMovie add {The Jungle Book|movieName} came out in {releaseDate}
-AddMovie add {V for Vendetta|movieName} from {releaseDate}
-AddMovie add {Trolls|movieName} released in {releaseDate}
-AddMovie add {Man of Steel|movieName} year {releaseDate}
-AddMovie add {Star Trek Into Darkness|movieName} came out in {releaseDate}
-AddMovie add {The Imitation Game|movieName} from {releaseDate}
-AddMovie add {Seven|movieName} released in {releaseDate}
-AddMovie add {Ex Machina|movieName} year {releaseDate}
-AddMovie add {The Incredibles|movieName} came out in {releaseDate}
-AddMovie add {Harry Potter and the Deathly Hallows Part Two|movieName} from {releaseDate}
-AddMovie add {Pirates of the Caribbean The Curse of the Black Pearl|movieName} released in {releaseDate}
-AddMovie add {Thor The Dark World|movieName} year {releaseDate}
-AddMovie add {Harry Potter and the Chamber of Secrets|movieName} came out in {releaseDate}
-AddMovie add {Harry Potter and the Prisoner of Azkaban|movieName} from {releaseDate}
-AddMovie add {How to Train Your Dragon|movieName} released in {releaseDate}
-AddMovie add {Star Trek|movieName} year {releaseDate}
-AddMovie add {Gladiator|movieName} came out in {releaseDate}
-
-AddMovie add the {releaseDate} movie {Deadpool|movieName}
-AddMovie add the {releaseDate} film {Guardians of the Galaxy|movieName}
-AddMovie add the {releaseDate} movie {The Dark Knight|movieName}
-AddMovie add the {releaseDate} film {Inception|movieName}
-AddMovie add the {releaseDate} movie {The Avengers|movieName}
-AddMovie add the {releaseDate} film {Suicide Squad|movieName}
-AddMovie add the {releaseDate} movie {Doctor Strange|movieName}
-AddMovie add the {releaseDate} film {The Matrix|movieName}
-AddMovie add the {releaseDate} movie {Interstellar|movieName}
-AddMovie add the {releaseDate} film {Arrival|movieName}
-AddMovie add the {releaseDate} movie {Star Wars The Force Awakens|movieName}
-AddMovie add the {releaseDate} film {Captain America Civil War|movieName}
-AddMovie add the {releaseDate} movie {Frozen|movieName}
-AddMovie add the {releaseDate} film {Avatar|movieName}
-AddMovie add the {releaseDate} movie {The Martian|movieName}
-AddMovie add the {releaseDate} film {Fight Club|movieName}
-AddMovie add the {releaseDate} movie {Passengers|movieName}
-AddMovie add the {releaseDate} film {Zootopia|movieName}
-AddMovie add the {releaseDate} movie {X Men Apocalypse|movieName}
-AddMovie add the {releaseDate} film {Moana|movieName}
-AddMovie add the {releaseDate} movie {Iron Man|movieName}
-AddMovie add the {releaseDate} film {Logan|movieName}
-AddMovie add the {releaseDate} movie {The Lord of the Rings The Fellowship of the Ring|movieName}
-AddMovie add the {releaseDate} film {The Dark Knight Rises|movieName}
-AddMovie add the {releaseDate} movie {The Secret Life of Pets|movieName}
-AddMovie add the {releaseDate} film {Batman v Superman Dawn of Justice|movieName}
-AddMovie add the {releaseDate} movie {Django Unchained|movieName}
-AddMovie add the {releaseDate} film {Rogue One A Star Wars Story|movieName}
-AddMovie add the {releaseDate} movie {The Wolf of Wall Street|movieName}
-AddMovie add the {releaseDate} film {Star Wars|movieName}
-AddMovie add the {releaseDate} movie {The Accountant|movieName}
-AddMovie add the {releaseDate} film {Fantastic Beasts and Where to Find Them|movieName}
-AddMovie add the {releaseDate} movie {Finding Nemo|movieName}
-AddMovie add the {releaseDate} film {The Lord of the Rings The Return of the King|movieName}
-AddMovie add the {releaseDate} movie {Mad Max Fury Road|movieName}
-AddMovie add the {releaseDate} film {Batman Begins|movieName}
-AddMovie add the {releaseDate} movie {The Lord of the Rings The Two Towers|movieName}
-AddMovie add the {releaseDate} film {Inside Out|movieName}
-AddMovie add the {releaseDate} movie {Captain America The Winter Soldier|movieName}
-AddMovie add the {releaseDate} film {Edge of Tomorrow|movieName}
-AddMovie add the {releaseDate} movie {The Hunger Games|movieName}
-AddMovie add the {releaseDate} film {The Hobbit An Unexpected Journey|movieName}
-AddMovie add the {releaseDate} movie {Pulp Fiction|movieName}
-AddMovie add the {releaseDate} film {Up|movieName}
-AddMovie add the {releaseDate} movie {WALL E|movieName}
-AddMovie add the {releaseDate} film {The Shawshank Redemption|movieName}
-AddMovie add the {releaseDate} movie {The Empire Strikes Back|movieName}
-AddMovie add the {releaseDate} film {Forrest Gump|movieName}
-AddMovie add the {releaseDate} movie {Jurassic World|movieName}
-AddMovie add the {releaseDate} film {Ant Man|movieName}
-AddMovie add the {releaseDate} movie {Finding Dory|movieName}
-AddMovie add the {releaseDate} film {Now You See Me|movieName}
-AddMovie add the {releaseDate} movie {X Men Days of Future Past|movieName}
-AddMovie add the {releaseDate} film {Despicable Me|movieName}
-AddMovie add the {releaseDate} movie {Back to the Future|movieName}
-AddMovie add the {releaseDate} film {Avengers Age of Ultron|movieName}
-AddMovie add the {releaseDate} movie {Big Hero Six|movieName}
-AddMovie add the {releaseDate} film {Star Trek Beyond|movieName}
-AddMovie add the {releaseDate} movie {The Hunger Games Catching Fire|movieName}
-AddMovie add the {releaseDate} film {Iron Man Three|movieName}
-AddMovie add the {releaseDate} movie {Jason Bourne|movieName}
-AddMovie add the {releaseDate} film {Return of the Jedi|movieName}
-AddMovie add the {releaseDate} movie {Monsters Inc|movieName}
-AddMovie add the {releaseDate} film {The Lion King|movieName}
-AddMovie add the {releaseDate} movie {Hacksaw Ridge|movieName}
-AddMovie add the {releaseDate} film {Kingsman The Secret Service|movieName}
-AddMovie add the {releaseDate} movie {John Wick|movieName}
-AddMovie add the {releaseDate} film {Iron Man Two|movieName}
-AddMovie add the {releaseDate} movie {The Revenant|movieName}
-AddMovie add the {releaseDate} film {Harry Potter and the Philosophers Stone|movieName}
-AddMovie add the {releaseDate} movie {Toy Story|movieName}
-AddMovie add the {releaseDate} film {Captain America The First Avenger|movieName}
-AddMovie add the {releaseDate} movie {Gravity|movieName}
-AddMovie add the {releaseDate} film {The Magnificent Seven|movieName}
-AddMovie add the {releaseDate} movie {Central Intelligence|movieName}
-AddMovie add the {releaseDate} film {Independence Day Resurgence|movieName}
-AddMovie add the {releaseDate} movie {Now You See Me Two|movieName}
-AddMovie add the {releaseDate} film {Jack Reacher Never Go Back|movieName}
-AddMovie add the {releaseDate} movie {Gone Girl|movieName}
-AddMovie add the {releaseDate} film {The Hobbit The Desolation of Smaug|movieName}
-AddMovie add the {releaseDate} movie {Inglourious Basterds|movieName}
-AddMovie add the {releaseDate} film {Thor|movieName}
-AddMovie add the {releaseDate} movie {Sing|movieName}
-AddMovie add the {releaseDate} film {The Jungle Book|movieName}
-AddMovie add the {releaseDate} movie {V for Vendetta|movieName}
-AddMovie add the {releaseDate} film {Trolls|movieName}
-AddMovie add the {releaseDate} movie {Man of Steel|movieName}
-AddMovie add the {releaseDate} film {Star Trek Into Darkness|movieName}
-AddMovie add the {releaseDate} movie {The Imitation Game|movieName}
-AddMovie add the {releaseDate} film {Seven|movieName}
-AddMovie add the {releaseDate} movie {Ex Machina|movieName}
-AddMovie add the {releaseDate} film {The Incredibles|movieName}
-AddMovie add the {releaseDate} movie {Harry Potter and the Deathly Hallows Part Two|movieName}
-AddMovie add the {releaseDate} film {Pirates of the Caribbean The Curse of the Black Pearl|movieName}
-AddMovie add the {releaseDate} movie {Thor The Dark World|movieName}
-AddMovie add the {releaseDate} film {Harry Potter and the Chamber of Secrets|movieName}
-AddMovie add the {releaseDate} movie {Harry Potter and the Prisoner of Azkaban|movieName}
-AddMovie add the {releaseDate} film {How to Train Your Dragon|movieName}
-AddMovie add the {releaseDate} movie {Star Trek|movieName}
-AddMovie add the {releaseDate} film {Gladiator|movieName}
+AddMovie add the {movieName} from {releaseDate} to the list
+AddMovie add {movieName} from {releaseDate} to the list
+AddMovie add the {movieName} released in {releaseDate} to the list
+AddMovie add {movieName} released in {releaseDate} to the list
+AddMovie add the {movieName} yearcame out in {releaseDate} to the list
+AddMovie add {movieName} yearcame out in {releaseDate} to the list
+AddMovie add the {movieName} from {releaseDate} to the wanted list
+AddMovie add {movieName} from {releaseDate} to the wanted list
+AddMovie add the {movieName} released in {releaseDate} to the wanted list
+AddMovie add {movieName} released in {releaseDate} to the wanted list
+AddMovie add the {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add the {movieName} from {releaseDate}
+AddMovie add {movieName} from {releaseDate}
+AddMovie add the {movieName} released in {releaseDate}
+AddMovie add {movieName} released in {releaseDate}
+AddMovie add the {movieName} yearcame out in {releaseDate}
+AddMovie add {movieName} yearcame out in {releaseDate}
 
 
-FindMovie is {Deadpool|movieName} on the list
-FindMovie if {Guardians of the Galaxy|movieName} on the list
-FindMovie is {The Dark Knight|movieName} is on the list
-FindMovie if {Inception|movieName} is on the list
-FindMovie is {The Avengers|movieName} already
-FindMovie if {Suicide Squad|movieName} already
-FindMovie is {Doctor Strange|movieName} is already
-FindMovie if {The Matrix|movieName} is already
-FindMovie is {Interstellar|movieName} is wanted
-FindMovie if {Arrival|movieName} is wanted
-FindMovie is {Star Wars The Force Awakens|movieName} is in wanted
-FindMovie if {Captain America Civil War|movieName} is in wanted
-FindMovie is {Frozen|movieName} on the list
-FindMovie if {Avatar|movieName} on the list
-FindMovie is {The Martian|movieName} is on the list
-FindMovie if {Fight Club|movieName} is on the list
-FindMovie is {Passengers|movieName} already
-FindMovie if {Zootopia|movieName} already
-FindMovie is {X Men Apocalypse|movieName} is already
-FindMovie if {Moana|movieName} is already
-FindMovie is {Iron Man|movieName} is wanted
-FindMovie if {Logan|movieName} is wanted
-FindMovie is {The Lord of the Rings The Fellowship of the Ring|movieName} is in wanted
-FindMovie if {The Dark Knight Rises|movieName} is in wanted
-FindMovie is {The Secret Life of Pets|movieName} on the list
-FindMovie if {Batman v Superman Dawn of Justice|movieName} on the list
-FindMovie is {Django Unchained|movieName} is on the list
-FindMovie if {Rogue One A Star Wars Story|movieName} is on the list
-FindMovie is {The Wolf of Wall Street|movieName} already
-FindMovie if {Star Wars|movieName} already
-FindMovie is {The Accountant|movieName} is already
-FindMovie if {Fantastic Beasts and Where to Find Them|movieName} is already
-FindMovie is {Finding Nemo|movieName} is wanted
-FindMovie if {The Lord of the Rings The Return of the King|movieName} is wanted
-FindMovie is {Mad Max Fury Road|movieName} is in wanted
-FindMovie if {Batman Begins|movieName} is in wanted
-FindMovie is {The Lord of the Rings The Two Towers|movieName} on the list
-FindMovie if {Inside Out|movieName} on the list
-FindMovie is {Captain America The Winter Soldier|movieName} is on the list
-FindMovie if {Edge of Tomorrow|movieName} is on the list
-FindMovie is {The Hunger Games|movieName} already
-FindMovie if {The Hobbit An Unexpected Journey|movieName} already
-FindMovie is {Pulp Fiction|movieName} is already
-FindMovie if {Up|movieName} is already
-FindMovie is {WALL E|movieName} is wanted
-FindMovie if {The Shawshank Redemption|movieName} is wanted
-FindMovie is {The Empire Strikes Back|movieName} is in wanted
-FindMovie if {Forrest Gump|movieName} is in wanted
-FindMovie is {Jurassic World|movieName} on the list
-FindMovie if {Ant Man|movieName} on the list
-FindMovie is {Finding Dory|movieName} is on the list
-FindMovie if {Now You See Me|movieName} is on the list
-FindMovie is {X Men Days of Future Past|movieName} already
-FindMovie if {Despicable Me|movieName} already
-FindMovie is {Back to the Future|movieName} is already
-FindMovie if {Avengers Age of Ultron|movieName} is already
-FindMovie is {Big Hero Six|movieName} is wanted
-FindMovie if {Star Trek Beyond|movieName} is wanted
-FindMovie is {The Hunger Games Catching Fire|movieName} is in wanted
-FindMovie if {Iron Man Three|movieName} is in wanted
-FindMovie is {Jason Bourne|movieName} on the list
-FindMovie if {Return of the Jedi|movieName} on the list
-FindMovie is {Monsters Inc|movieName} is on the list
-FindMovie if {The Lion King|movieName} is on the list
-FindMovie is {Hacksaw Ridge|movieName} already
-FindMovie if {Kingsman The Secret Service|movieName} already
-FindMovie is {John Wick|movieName} is already
-FindMovie if {Iron Man Two|movieName} is already
-FindMovie is {The Revenant|movieName} is wanted
-FindMovie if {Harry Potter and the Philosophers Stone|movieName} is wanted
-FindMovie is {Toy Story|movieName} is in wanted
-FindMovie if {Captain America The First Avenger|movieName} is in wanted
-FindMovie is {Gravity|movieName} on the list
-FindMovie if {The Magnificent Seven|movieName} on the list
-FindMovie is {Central Intelligence|movieName} is on the list
-FindMovie if {Independence Day Resurgence|movieName} is on the list
-FindMovie is {Now You See Me Two|movieName} already
-FindMovie if {Jack Reacher Never Go Back|movieName} already
-FindMovie is {Gone Girl|movieName} is already
-FindMovie if {The Hobbit The Desolation of Smaug|movieName} is already
-FindMovie is {Inglourious Basterds|movieName} is wanted
-FindMovie if {Thor|movieName} is wanted
-FindMovie is {Sing|movieName} is in wanted
-FindMovie if {The Jungle Book|movieName} is in wanted
-FindMovie is {V for Vendetta|movieName} on the list
-FindMovie if {Trolls|movieName} on the list
-FindMovie is {Man of Steel|movieName} is on the list
-FindMovie if {Star Trek Into Darkness|movieName} is on the list
-FindMovie is {The Imitation Game|movieName} already
-FindMovie if {Seven|movieName} already
-FindMovie is {Ex Machina|movieName} is already
-FindMovie if {The Incredibles|movieName} is already
-FindMovie is {Harry Potter and the Deathly Hallows Part Two|movieName} is wanted
-FindMovie if {Pirates of the Caribbean The Curse of the Black Pearl|movieName} is wanted
-FindMovie is {Thor The Dark World|movieName} is in wanted
-FindMovie if {Harry Potter and the Chamber of Secrets|movieName} is in wanted
-FindMovie is {Harry Potter and the Prisoner of Azkaban|movieName} on the list
-FindMovie if {How to Train Your Dragon|movieName} on the list
-FindMovie is {Star Trek|movieName} is on the list
-FindMovie if {Gladiator|movieName} is on the list
+FindMovie is {movieName} on the list
+FindMovie if {movieName} on the list
+FindMovie is {movieName} is on the list
+FindMovie if {movieName} is on the list
+FindMovie is {movieName} already
+FindMovie if {movieName} already
+FindMovie is {movieName} is already
+FindMovie if {movieName} is already
+FindMovie is {movieName} is wanted
+FindMovie if {movieName} is wanted
+FindMovie is {movieName} is in wanted
+FindMovie if {movieName} is in wanted
 
-FindMovie is {Deadpool|movieName} from {releaseDate} on the list
-FindMovie if {Guardians of the Galaxy|movieName} from {releaseDate} on the list
-FindMovie is {The Dark Knight|movieName} released in {releaseDate} on the list
-FindMovie if {Inception|movieName} released in {releaseDate} on the list
-FindMovie is {The Avengers|movieName} year {releaseDate} on the list
-FindMovie if {Suicide Squad|movieName} year {releaseDate} on the list
-FindMovie is {Doctor Strange|movieName} came out in {releaseDate} on the list
-FindMovie if {The Matrix|movieName} came out in {releaseDate} on the list
-FindMovie is {Interstellar|movieName} from {releaseDate} already
-FindMovie if {Arrival|movieName} from {releaseDate} already
-FindMovie is {Star Wars The Force Awakens|movieName} released in {releaseDate} already
-FindMovie if {Captain America Civil War|movieName} released in {releaseDate} already
-FindMovie is {Frozen|movieName} year {releaseDate} already
-FindMovie if {Avatar|movieName} year {releaseDate} already
-FindMovie is {The Martian|movieName} came out in {releaseDate} already
-FindMovie if {Fight Club|movieName} came out in {releaseDate} already
-FindMovie is {Passengers|movieName} from {releaseDate} in wanted
-FindMovie if {Zootopia|movieName} from {releaseDate} in wanted
-FindMovie is {X Men Apocalypse|movieName} released in {releaseDate} in wanted
-FindMovie if {Moana|movieName} released in {releaseDate} in wanted
-FindMovie is {Iron Man|movieName} year {releaseDate} in wanted
-FindMovie if {Logan|movieName} year {releaseDate} in wanted
-FindMovie is {The Lord of the Rings The Fellowship of the Ring|movieName} came out in {releaseDate} in wanted
-FindMovie if {The Dark Knight Rises|movieName} came out in {releaseDate} in wanted
-FindMovie is {The Secret Life of Pets|movieName} from {releaseDate} in the wanted list
-FindMovie if {Batman v Superman Dawn of Justice|movieName} from {releaseDate} in the wanted list
-FindMovie is {Django Unchained|movieName} released in {releaseDate} in the wanted list
-FindMovie if {Rogue One A Star Wars Story|movieName} released in {releaseDate} in the wanted list
-FindMovie is {The Wolf of Wall Street|movieName} year {releaseDate} in the wanted list
-FindMovie if {Star Wars|movieName} year {releaseDate} in the wanted list
-FindMovie is {The Accountant|movieName} came out in {releaseDate} in the wanted list
-FindMovie if {Fantastic Beasts and Where to Find Them|movieName} came out in {releaseDate} in the wanted list
-FindMovie is {Finding Nemo|movieName} from {releaseDate} on the list
-FindMovie if {The Lord of the Rings The Return of the King|movieName} from {releaseDate} on the list
-FindMovie is {Mad Max Fury Road|movieName} released in {releaseDate} on the list
-FindMovie if {Batman Begins|movieName} released in {releaseDate} on the list
-FindMovie is {The Lord of the Rings The Two Towers|movieName} year {releaseDate} on the list
-FindMovie if {Inside Out|movieName} year {releaseDate} on the list
-FindMovie is {Captain America The Winter Soldier|movieName} came out in {releaseDate} on the list
-FindMovie if {Edge of Tomorrow|movieName} came out in {releaseDate} on the list
-FindMovie is {The Hunger Games|movieName} from {releaseDate} already
-FindMovie if {The Hobbit An Unexpected Journey|movieName} from {releaseDate} already
-FindMovie is {Pulp Fiction|movieName} released in {releaseDate} already
-FindMovie if {Up|movieName} released in {releaseDate} already
-FindMovie is {WALL E|movieName} year {releaseDate} already
-FindMovie if {The Shawshank Redemption|movieName} year {releaseDate} already
-FindMovie is {The Empire Strikes Back|movieName} came out in {releaseDate} already
-FindMovie if {Forrest Gump|movieName} came out in {releaseDate} already
-FindMovie is {Jurassic World|movieName} from {releaseDate} in wanted
-FindMovie if {Ant Man|movieName} from {releaseDate} in wanted
-FindMovie is {Finding Dory|movieName} released in {releaseDate} in wanted
-FindMovie if {Now You See Me|movieName} released in {releaseDate} in wanted
-FindMovie is {X Men Days of Future Past|movieName} year {releaseDate} in wanted
-FindMovie if {Despicable Me|movieName} year {releaseDate} in wanted
-FindMovie is {Back to the Future|movieName} came out in {releaseDate} in wanted
-FindMovie if {Avengers Age of Ultron|movieName} came out in {releaseDate} in wanted
-FindMovie is {Big Hero Six|movieName} from {releaseDate} in the wanted list
-FindMovie if {Star Trek Beyond|movieName} from {releaseDate} in the wanted list
-FindMovie is {The Hunger Games Catching Fire|movieName} released in {releaseDate} in the wanted list
-FindMovie if {Iron Man Three|movieName} released in {releaseDate} in the wanted list
-FindMovie is {Jason Bourne|movieName} year {releaseDate} in the wanted list
-FindMovie if {Return of the Jedi|movieName} year {releaseDate} in the wanted list
-FindMovie is {Monsters Inc|movieName} came out in {releaseDate} in the wanted list
-FindMovie if {The Lion King|movieName} came out in {releaseDate} in the wanted list
-FindMovie is {Hacksaw Ridge|movieName} from {releaseDate} on the list
-FindMovie if {Kingsman The Secret Service|movieName} from {releaseDate} on the list
-FindMovie is {John Wick|movieName} released in {releaseDate} on the list
-FindMovie if {Iron Man Two|movieName} released in {releaseDate} on the list
-FindMovie is {The Revenant|movieName} year {releaseDate} on the list
-FindMovie if {Harry Potter and the Philosophers Stone|movieName} year {releaseDate} on the list
-FindMovie is {Toy Story|movieName} came out in {releaseDate} on the list
-FindMovie if {Captain America The First Avenger|movieName} came out in {releaseDate} on the list
-FindMovie is {Gravity|movieName} from {releaseDate} already
-FindMovie if {The Magnificent Seven|movieName} from {releaseDate} already
-FindMovie is {Central Intelligence|movieName} released in {releaseDate} already
-FindMovie if {Independence Day Resurgence|movieName} released in {releaseDate} already
-FindMovie is {Now You See Me Two|movieName} year {releaseDate} already
-FindMovie if {Jack Reacher Never Go Back|movieName} year {releaseDate} already
-FindMovie is {Gone Girl|movieName} came out in {releaseDate} already
-FindMovie if {The Hobbit The Desolation of Smaug|movieName} came out in {releaseDate} already
-FindMovie is {Inglourious Basterds|movieName} from {releaseDate} in wanted
-FindMovie if {Thor|movieName} from {releaseDate} in wanted
-FindMovie is {Sing|movieName} released in {releaseDate} in wanted
-FindMovie if {The Jungle Book|movieName} released in {releaseDate} in wanted
-FindMovie is {V for Vendetta|movieName} year {releaseDate} in wanted
-FindMovie if {Trolls|movieName} year {releaseDate} in wanted
-FindMovie is {Man of Steel|movieName} came out in {releaseDate} in wanted
-FindMovie if {Star Trek Into Darkness|movieName} came out in {releaseDate} in wanted
-FindMovie is {The Imitation Game|movieName} from {releaseDate} in the wanted list
-FindMovie if {Seven|movieName} from {releaseDate} in the wanted list
-FindMovie is {Ex Machina|movieName} released in {releaseDate} in the wanted list
-FindMovie if {The Incredibles|movieName} released in {releaseDate} in the wanted list
-FindMovie is {Harry Potter and the Deathly Hallows Part Two|movieName} year {releaseDate} in the wanted list
-FindMovie if {Pirates of the Caribbean The Curse of the Black Pearl|movieName} year {releaseDate} in the wanted list
-FindMovie is {Thor The Dark World|movieName} came out in {releaseDate} in the wanted list
-FindMovie if {Harry Potter and the Chamber of Secrets|movieName} came out in {releaseDate} in the wanted list
-FindMovie is {Harry Potter and the Prisoner of Azkaban|movieName} from {releaseDate} on the list
-FindMovie if {How to Train Your Dragon|movieName} from {releaseDate} on the list
-FindMovie is {Star Trek|movieName} released in {releaseDate} on the list
-FindMovie if {Gladiator|movieName} released in {releaseDate} on the list
-
-FindMovie is the {releaseDate} movie {Deadpool|movieName} on the list
-FindMovie if the {releaseDate} movie {Guardians of the Galaxy|movieName} on the list
-FindMovie is the {releaseDate} film {The Dark Knight|movieName} on the list
-FindMovie if the {releaseDate} film {Inception|movieName} on the list
-FindMovie is the {releaseDate} movie {The Avengers|movieName} in wanted
-FindMovie if the {releaseDate} movie {Suicide Squad|movieName} in wanted
-FindMovie is the {releaseDate} film {Doctor Strange|movieName} in wanted
-FindMovie if the {releaseDate} film {The Matrix|movieName} in wanted
-FindMovie is the {releaseDate} movie {Interstellar|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Arrival|movieName} in the wanted list
-FindMovie is the {releaseDate} film {Star Wars The Force Awakens|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Captain America Civil War|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {Frozen|movieName} on the list
-FindMovie if the {releaseDate} movie {Avatar|movieName} on the list
-FindMovie is the {releaseDate} film {The Martian|movieName} on the list
-FindMovie if the {releaseDate} film {Fight Club|movieName} on the list
-FindMovie is the {releaseDate} movie {Passengers|movieName} in wanted
-FindMovie if the {releaseDate} movie {Zootopia|movieName} in wanted
-FindMovie is the {releaseDate} film {X Men Apocalypse|movieName} in wanted
-FindMovie if the {releaseDate} film {Moana|movieName} in wanted
-FindMovie is the {releaseDate} movie {Iron Man|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Logan|movieName} in the wanted list
-FindMovie is the {releaseDate} film {The Lord of the Rings The Fellowship of the Ring|movieName} in the wanted list
-FindMovie if the {releaseDate} film {The Dark Knight Rises|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {The Secret Life of Pets|movieName} on the list
-FindMovie if the {releaseDate} movie {Batman v Superman Dawn of Justice|movieName} on the list
-FindMovie is the {releaseDate} film {Django Unchained|movieName} on the list
-FindMovie if the {releaseDate} film {Rogue One A Star Wars Story|movieName} on the list
-FindMovie is the {releaseDate} movie {The Wolf of Wall Street|movieName} in wanted
-FindMovie if the {releaseDate} movie {Star Wars|movieName} in wanted
-FindMovie is the {releaseDate} film {The Accountant|movieName} in wanted
-FindMovie if the {releaseDate} film {Fantastic Beasts and Where to Find Them|movieName} in wanted
-FindMovie is the {releaseDate} movie {Finding Nemo|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {The Lord of the Rings The Return of the King|movieName} in the wanted list
-FindMovie is the {releaseDate} film {Mad Max Fury Road|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Batman Begins|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {The Lord of the Rings The Two Towers|movieName} on the list
-FindMovie if the {releaseDate} movie {Inside Out|movieName} on the list
-FindMovie is the {releaseDate} film {Captain America The Winter Soldier|movieName} on the list
-FindMovie if the {releaseDate} film {Edge of Tomorrow|movieName} on the list
-FindMovie is the {releaseDate} movie {The Hunger Games|movieName} in wanted
-FindMovie if the {releaseDate} movie {The Hobbit An Unexpected Journey|movieName} in wanted
-FindMovie is the {releaseDate} film {Pulp Fiction|movieName} in wanted
-FindMovie if the {releaseDate} film {Up|movieName} in wanted
-FindMovie is the {releaseDate} movie {WALL E|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {The Shawshank Redemption|movieName} in the wanted list
-FindMovie is the {releaseDate} film {The Empire Strikes Back|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Forrest Gump|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {Jurassic World|movieName} on the list
-FindMovie if the {releaseDate} movie {Ant Man|movieName} on the list
-FindMovie is the {releaseDate} film {Finding Dory|movieName} on the list
-FindMovie if the {releaseDate} film {Now You See Me|movieName} on the list
-FindMovie is the {releaseDate} movie {X Men Days of Future Past|movieName} in wanted
-FindMovie if the {releaseDate} movie {Despicable Me|movieName} in wanted
-FindMovie is the {releaseDate} film {Back to the Future|movieName} in wanted
-FindMovie if the {releaseDate} film {Avengers Age of Ultron|movieName} in wanted
-FindMovie is the {releaseDate} movie {Big Hero Six|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Star Trek Beyond|movieName} in the wanted list
-FindMovie is the {releaseDate} film {The Hunger Games Catching Fire|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Iron Man Three|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {Jason Bourne|movieName} on the list
-FindMovie if the {releaseDate} movie {Return of the Jedi|movieName} on the list
-FindMovie is the {releaseDate} film {Monsters Inc|movieName} on the list
-FindMovie if the {releaseDate} film {The Lion King|movieName} on the list
-FindMovie is the {releaseDate} movie {Hacksaw Ridge|movieName} in wanted
-FindMovie if the {releaseDate} movie {Kingsman The Secret Service|movieName} in wanted
-FindMovie is the {releaseDate} film {John Wick|movieName} in wanted
-FindMovie if the {releaseDate} film {Iron Man Two|movieName} in wanted
-FindMovie is the {releaseDate} movie {The Revenant|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Harry Potter and the Philosophers Stone|movieName} in the wanted list
-FindMovie is the {releaseDate} film {Toy Story|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Captain America The First Avenger|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {Gravity|movieName} on the list
-FindMovie if the {releaseDate} movie {The Magnificent Seven|movieName} on the list
-FindMovie is the {releaseDate} film {Central Intelligence|movieName} on the list
-FindMovie if the {releaseDate} film {Independence Day Resurgence|movieName} on the list
-FindMovie is the {releaseDate} movie {Now You See Me Two|movieName} in wanted
-FindMovie if the {releaseDate} movie {Jack Reacher Never Go Back|movieName} in wanted
-FindMovie is the {releaseDate} film {Gone Girl|movieName} in wanted
-FindMovie if the {releaseDate} film {The Hobbit The Desolation of Smaug|movieName} in wanted
-FindMovie is the {releaseDate} movie {Inglourious Basterds|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Thor|movieName} in the wanted list
-FindMovie is the {releaseDate} film {Sing|movieName} in the wanted list
-FindMovie if the {releaseDate} film {The Jungle Book|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {V for Vendetta|movieName} on the list
-FindMovie if the {releaseDate} movie {Trolls|movieName} on the list
-FindMovie is the {releaseDate} film {Man of Steel|movieName} on the list
-FindMovie if the {releaseDate} film {Star Trek Into Darkness|movieName} on the list
-FindMovie is the {releaseDate} movie {The Imitation Game|movieName} in wanted
-FindMovie if the {releaseDate} movie {Seven|movieName} in wanted
-FindMovie is the {releaseDate} film {Ex Machina|movieName} in wanted
-FindMovie if the {releaseDate} film {The Incredibles|movieName} in wanted
-FindMovie is the {releaseDate} movie {Harry Potter and the Deathly Hallows Part Two|movieName} in the wanted list
-FindMovie if the {releaseDate} movie {Pirates of the Caribbean The Curse of the Black Pearl|movieName} in the wanted list
-FindMovie is the {releaseDate} film {Thor The Dark World|movieName} in the wanted list
-FindMovie if the {releaseDate} film {Harry Potter and the Chamber of Secrets|movieName} in the wanted list
-FindMovie is the {releaseDate} movie {Harry Potter and the Prisoner of Azkaban|movieName} on the list
-FindMovie if the {releaseDate} movie {How to Train Your Dragon|movieName} on the list
-FindMovie is the {releaseDate} film {Star Trek|movieName} on the list
-FindMovie if the {releaseDate} film {Gladiator|movieName} on the list
+FindMovie is the {movieName} from {releaseDate} on the list
+FindMovie if the {movieName} from {releaseDate} on the list
+FindMovie is {movieName} from {releaseDate} on the list
+FindMovie if {movieName} from {releaseDate} on the list
+FindMovie is the {movieName} released in {releaseDate} on the list
+FindMovie if the {movieName} released in {releaseDate} on the list
+FindMovie is {movieName} released in {releaseDate} on the list
+FindMovie if {movieName} released in {releaseDate} on the list
+FindMovie is the {movieName} year {releaseDate} on the list
+FindMovie if the {movieName} year {releaseDate} on the list
+FindMovie is {movieName} year {releaseDate} on the list
+FindMovie if {movieName} year {releaseDate} on the list
+FindMovie is the {movieName} came out in {releaseDate} on the list
+FindMovie if the {movieName} came out in {releaseDate} on the list
+FindMovie is {movieName} came out in {releaseDate} on the list
+FindMovie if {movieName} came out in {releaseDate} on the list
+FindMovie is the {movieName} from {releaseDate} is on the list
+FindMovie if the {movieName} from {releaseDate} is on the list
+FindMovie is {movieName} from {releaseDate} is on the list
+FindMovie if {movieName} from {releaseDate} is on the list
+FindMovie is the {movieName} released in {releaseDate} is on the list
+FindMovie if the {movieName} released in {releaseDate} is on the list
+FindMovie is {movieName} released in {releaseDate} is on the list
+FindMovie if {movieName} released in {releaseDate} is on the list
+FindMovie is the {movieName} year {releaseDate} is on the list
+FindMovie if the {movieName} year {releaseDate} is on the list
+FindMovie is {movieName} year {releaseDate} is on the list
+FindMovie if {movieName} year {releaseDate} is on the list
+FindMovie is the {movieName} came out in {releaseDate} is on the list
+FindMovie if the {movieName} came out in {releaseDate} is on the list
+FindMovie is {movieName} came out in {releaseDate} is on the list
+FindMovie if {movieName} came out in {releaseDate} is on the list
+FindMovie is the {movieName} from {releaseDate} already
+FindMovie if the {movieName} from {releaseDate} already
+FindMovie is {movieName} from {releaseDate} already
+FindMovie if {movieName} from {releaseDate} already
+FindMovie is the {movieName} released in {releaseDate} already
+FindMovie if the {movieName} released in {releaseDate} already
+FindMovie is {movieName} released in {releaseDate} already
+FindMovie if {movieName} released in {releaseDate} already
+FindMovie is the {movieName} year {releaseDate} already
+FindMovie if the {movieName} year {releaseDate} already
+FindMovie is {movieName} year {releaseDate} already
+FindMovie if {movieName} year {releaseDate} already
+FindMovie is the {movieName} came out in {releaseDate} already
+FindMovie if the {movieName} came out in {releaseDate} already
+FindMovie is {movieName} came out in {releaseDate} already
+FindMovie if {movieName} came out in {releaseDate} already
+FindMovie is the {movieName} from {releaseDate} is already
+FindMovie if the {movieName} from {releaseDate} is already
+FindMovie is {movieName} from {releaseDate} is already
+FindMovie if {movieName} from {releaseDate} is already
+FindMovie is the {movieName} released in {releaseDate} is already
+FindMovie if the {movieName} released in {releaseDate} is already
+FindMovie is {movieName} released in {releaseDate} is already
+FindMovie if {movieName} released in {releaseDate} is already
+FindMovie is the {movieName} year {releaseDate} is already
+FindMovie if the {movieName} year {releaseDate} is already
+FindMovie is {movieName} year {releaseDate} is already
+FindMovie if {movieName} year {releaseDate} is already
+FindMovie is the {movieName} came out in {releaseDate} is already
+FindMovie if the {movieName} came out in {releaseDate} is already
+FindMovie is {movieName} came out in {releaseDate} is already
+FindMovie if {movieName} came out in {releaseDate} is already
+FindMovie is the {movieName} from {releaseDate} is wanted
+FindMovie if the {movieName} from {releaseDate} is wanted
+FindMovie is {movieName} from {releaseDate} is wanted
+FindMovie if {movieName} from {releaseDate} is wanted
+FindMovie is the {movieName} released in {releaseDate} is wanted
+FindMovie if the {movieName} released in {releaseDate} is wanted
+FindMovie is {movieName} released in {releaseDate} is wanted
+FindMovie if {movieName} released in {releaseDate} is wanted
+FindMovie is the {movieName} year {releaseDate} is wanted
+FindMovie if the {movieName} year {releaseDate} is wanted
+FindMovie is {movieName} year {releaseDate} is wanted
+FindMovie if {movieName} year {releaseDate} is wanted
+FindMovie is the {movieName} came out in {releaseDate} is wanted
+FindMovie if the {movieName} came out in {releaseDate} is wanted
+FindMovie is {movieName} came out in {releaseDate} is wanted
+FindMovie if {movieName} came out in {releaseDate} is wanted
+FindMovie is the {movieName} from {releaseDate} is in wanted
+FindMovie if the {movieName} from {releaseDate} is in wanted
+FindMovie is {movieName} from {releaseDate} is in wanted
+FindMovie if {movieName} from {releaseDate} is in wanted
+FindMovie is the {movieName} released in {releaseDate} is in wanted
+FindMovie if the {movieName} released in {releaseDate} is in wanted
+FindMovie is {movieName} released in {releaseDate} is in wanted
+FindMovie if {movieName} released in {releaseDate} is in wanted
+FindMovie is the {movieName} year {releaseDate} is in wanted
+FindMovie if the {movieName} year {releaseDate} is in wanted
+FindMovie is {movieName} year {releaseDate} is in wanted
+FindMovie if {movieName} year {releaseDate} is in wanted
+FindMovie is the {movieName} came out in {releaseDate} is in wanted
+FindMovie if the {movieName} came out in {releaseDate} is in wanted
+FindMovie is {movieName} came out in {releaseDate} is in wanted
+FindMovie if {movieName} came out in {releaseDate} is in wanted
