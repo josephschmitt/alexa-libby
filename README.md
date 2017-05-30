@@ -75,10 +75,13 @@ these steps:
 1. **Skill Information**: Fill in the basic skill information however you choose. If you're feeling
 uncreative, you can put `alexa-couchpotato` for the name, and `couch potato` for the _Invocation
 Name_.
-2. **Interaction Model**: In the Intent Schema field, copy the contents of the
-`interaction_model/intent_schema.json` file and paste them in. Then in the Sample Utterances field,
-copy the contents of `interaction_model/sample_utterances.txt` and paste those in. Make sure to Save
-your changes.
+2. **Interaction Model**: There are two ways to do this. The first is the old/traditional way. In
+the Intent Schema field, copy the contents of the `interaction_model/intent_schema.json` file and
+paste them in. Then in the Sample Utterances field, copy the contents of
+`interaction_model/sample_utterances.txt` and paste those in. Make sure to Save your changes. The
+second way is to use the new Skill Builder. Once you have it loaded, click on Code Editor, click on
+the area titled "Drag and drop your .json file", and choose the
+`interaction_model/skill_builder.json` file. Click Save Model.
 3. **Configuration**: Set the Service Endpoint Type to AWS Lambda ARN, and choose your region. Now
 comes the time to grab the ARN from the previous step that you hopefully either wrote down or kept
 open in a different tab or browser window.

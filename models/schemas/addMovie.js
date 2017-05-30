@@ -3,11 +3,13 @@ module.exports = {
   slots: [
     {
       name: 'movieName',
-      type: 'AMAZON.Movie'
+      type: 'AMAZON.Movie',
+      samples: []
     },
     {
       name: 'releaseDate',
-      type: 'AMAZON.DATE'
+      type: 'AMAZON.DATE',
+      samples: []
     }
   ],
   samples: [
