@@ -1,0 +1,8 @@
+title: Alexa-couchpotato
+description: A skill to ask Alexa about your Couch Potato queue.
+google_analytics:
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
