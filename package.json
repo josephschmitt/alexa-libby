@@ -8,9 +8,10 @@
     "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "node scripts/gen-interaction.js",
     "package": "npm run prepare; node-lambda package --packageDirectory=./",
-    "prepare": "npm run build; npm run gen-interaction",
+    "prepare": "npm run build; npm run gen-interaction; npm run upgrade-config",
     "prepublishOnly": "npm run package",
-    "start": "npm run prepare; node-lambda run"
+    "start": "npm run prepare; node-lambda run",
+    "upgrade-config": "node ./scripts/upgrade-config.js"
   },
   "author": "Joe Schmitt",
   "license": "MIT",
@@ -27,6 +28,7 @@
     "babel-cli": "^6.24.1",
     "babel-plugin-root-import": "^5.1.0",
     "babel-preset-env": "^1.5.1",
+    "dotenv": "^2.0.0",
     "eslint": "^3.19.0",
     "eslint-plugin-import": "^2.3.0",
     "fs-extra": "^3.0.1",
