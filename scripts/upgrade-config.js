@@ -39,7 +39,7 @@ if (needsUpgrade) {
             configJson);
 
         // Output new local.json file
-        fs.outputFile(localConfigFilePath, JSON.stringify(configObj, null, 4)).then(() => {
+        fs.outputFile(localConfigFilePath, JSON.stringify(configObj, null, 2)).then(() => {
           console.log(`Config saved to ${chalk.green(path.resolve(localConfigFilePath))}`);
           console.log('Please ' + chalk.yellow('remove your CP settings from the .env file') +
               ' to prevent this from running again in the future.');
