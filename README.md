@@ -17,6 +17,10 @@ Kit](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/gettin
 [Developing an Alexa Skill as a Lambda
 Function](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/developing-an-alexa-skill-as-a-lambda-function) to get familiar with the process.
 
+You can download a [pre-packaged version of the
+app](https://github.com/josephschmitt/alexa-couchpotato/releases/latest/) if you don't want to run
+from source..
+
 ## Configuring The Skill
 
 Open the `config/default.json` file and fill in the right values for your server configuration. If
@@ -54,16 +58,15 @@ write that number down, or keep this page open.
 ## Deploying the Skill
 
 If you don't care about the nitty-gritty of NodeJS projects, you can just download the
-`alexa-couchpotato.zip` file from the
-[latest release](https://github.com/josephschmitt/alexa-couchpotato/releases/), update the
+`alexa-couchpotato.zip` file from the [latest
+release](https://github.com/josephschmitt/alexa-couchpotato/releases/latest/), update the
 `config/default.json` file with your server settings, re-zip, and upload to lambda.
 
 _If you want more control, or to make your own updates to the project, check out the master branch
 and then do an `npm install` at the project root. Once all the dependencies are  installed, run
-`npm run package`, which will create an `alexa-couchpotato.zip` file in your project  directory._
-
+`npm run package`, which will create an `alexa-couchpotato.zip` file in your project  directory.
 Back in the Lambda dashboard, look to see where it says "Upload" next to "Function package". Click
-upload, choose the zip file, and click save.
+upload, choose the zip file, and click save._
 
 _You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
 function directly from the command line. Simply add a deploy.env file with your environment
