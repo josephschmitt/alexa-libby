@@ -1,3 +1,4 @@
+import config from 'config';
 import CouchPotato from 'couchpotato-api';
 
 import buildReprompt from '~/lib/buildReprompt.js';
@@ -15,15 +16,9 @@ import {
   WELCOME_DESCRIPTION
 } from '~/lib/responses.js';
 
-const config = require('dotenv').config();
-
 export const NUM_RESULTS = 5;
 
-export const cp = new CouchPotato({
-  hostname: config.CP_URL,
-  apiKey: config.CP_API_KEY,
-  port: config.CP_PORT
-});
+export const cp = new CouchPotato(config.get('alexa-couchpotato.server'));
 
 export default function handleLaunchIntent(req, resp) {
   resp

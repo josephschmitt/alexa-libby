@@ -4,8 +4,11 @@ This is a skill built for Amazon's Alexa service that tells you about your Couch
 allows you to ask Alexa the following:
 
 > Alexa, ask Couch Potato to add The Godfather
+>
 > Alexa, ask Couch Potato to add The Godfather released in 1974
+>
 > Alexa, ask Couch Potato if The Dark Knight is on the list
+>
 > Alexa, ask Couch Potato if Batman 1989 is on the list
 
 If you're just getting started developing skills for Alexa, I'd recommend reading [Getting Started
@@ -16,24 +19,20 @@ Function](https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/d
 
 ## Configuring The Skill
 
-To configure the skill, duplicate `default.env`, rename it `.env`, and fill in the correct values
-for `CP_URL`, which should point to your Couch Potato server (including the port number if it's not
-80), and `CP_API_KEY` which should have your server's API key.
+Open the `config/default.json` file and fill in the right values for your server configuration. If
+you use an `apiKey` (which you should), then you can leave `username` and `password` blank.
+Otherwise fill those in instead.
 
-## Testing The Skill Locally
-
-You can use [node-lambda](https://github.com/motdotla/node-lambda) to test this skill locally. In
-the `test_events` directory are several event files you can use for testing, and they should map
-pretty well to each Intent. To test an intent, simply update the `EVENT_FILE` value in your `.env`
-config file to point to the event to test against. Make sure you run `npm install` from the command
-line to get the the latest npm packages, and then run `npm start`.
+If you don't want to accidentally commit your configuration, then make a duplicate of the
+`default.json` file and call it `local.json`. It will override any configuration from default and
+is ignored by git.
 
 ## Creating a Lambda function
 
-The skill is built to be easily hosted on Amazon's [AWS
-Lambda service](https://aws.amazon.com/lambda/). You'll need to create an Amazon AWS account,
-and then head over to the [Lambda Dashboard](https://console.aws.amazon.com/lambda/home). Once
-there, click "Create a Lambda function", and provide the following settings:
+The skill is built to be easily hosted on Amazon's [AWS Lambda
+service](https://aws.amazon.com/lambda/). You'll need to create an Amazon AWS account, and then head
+over to the [Lambda Dashboard](https://console.aws.amazon.com/lambda/home). Once there, click
+"Create a Lambda function", and provide the following settings:
 
 1. **Select blueprint**: Click on _Blank Function_.
 2. **Configure triggers**: This one can be easy to miss. You should see a dotted out rounded square
@@ -46,7 +45,7 @@ to the left of the Lambda logo. Click on it and from the dropdown, choose _Alexa
     sure to update the `.babelrc` file to tell babel to target the older verison of Node. If you
     don't know what that means, just go with 6.10.
   - Code entry type: _Upload a .ZIP file_. (Instructions on generating this ZIP file are below)
-  - Lambda function handler and role: Under **Existing role** choose `lambda_basic_execution_`.
+  - Lambda function handler and role: Under **Existing role** choose `lambda_basic_execution`.
 
 Click Create lambda function and you're done. After you've created your Lambda function, look at the
 top right of the page to get your Lambda ARN number. You'll need this in the next step, so either
@@ -54,17 +53,23 @@ write that number down, or keep this page open.
 
 ## Deploying the Skill
 
-To deploy to Lambda, first makes sure you do an `npm install` at the root of the project.
-Once all the dependencies are installed, run `npm run package`, which will create an
-`alexa-couchpotato.zip` file in your project directory. Then, back in the Lambda dashboard, look
-to see where it says "Upload" next to "Function package". Click upload, choose the zip file, and
-click save.
+If you don't care about the nitty-gritty of NodeJS projects, you can just download the
+`alexa-couchpotato.zip` file from the
+[latest release](https://github.com/josephschmitt/alexa-couchpotato/releases/), update the
+`config/default.json` file with your server settings, re-zip, and upload to lambda.
 
-You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
+_If you want more control, or to make your own updates to the project, check out the master branch
+and then do an `npm install` at the project root. Once all the dependencies are  installed, run
+`npm run package`, which will create an `alexa-couchpotato.zip` file in your project  directory._
+
+Back in the Lambda dashboard, look to see where it says "Upload" next to "Function package". Click
+upload, choose the zip file, and click save.
+
+_You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
 function directly from the command line. Simply add a deploy.env file with your environment
 configuration (and double check the supplied `.env file` in this repository) and then run
 `npm run deploy`. Please visit the [node-lambda](https://github.com/motdotla/node-lambda)
-project page for more information on deploying from the command line.
+project page for more information on deploying from the command line._
 
 ## Setting up the Skill
 
@@ -96,3 +101,11 @@ uploading an icon. An icon is included in this project and should work well for 
 icon slot.
 
 And that's it, all done.
+
+## Testing The Skill Locally
+
+You can use [node-lambda](https://github.com/motdotla/node-lambda) to test this skill locally. In
+the `test_events` directory are several event files you can use for testing, and they should map
+pretty well to each Intent. To test an intent, simply update the `EVENT_FILE` value in your `.env`
+config file to point to the event to test against. Make sure you run `npm install` from the command
+line to get the the latest npm packages, and then run `npm start`.

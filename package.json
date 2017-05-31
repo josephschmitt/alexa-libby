@@ -1,15 +1,15 @@
 {
   "name": "alexa-couchpotato",
-  "version": "1.2.4",
+  "version": "1.3.0",
   "description": "A skill to ask Alexa about your Couch Potato queue.",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "copy-env": "node scripts/copy-env.js",
     "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "node scripts/gen-interaction.js",
     "package": "npm run prepare; node-lambda package --packageDirectory=./",
-    "prepare": "npm run build; npm run copy-env; npm run gen-interaction",
+    "prepare": "npm run build; npm run gen-interaction",
+    "prepublishOnly": "npm run package",
     "start": "npm run prepare; node-lambda run"
   },
   "author": "Joe Schmitt",
@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "alexa-app": "^4.0.1",
-    "couchpotato-api": "^0.1.0",
-    "dotenv": "^2.0.0"
+    "config": "^1.26.1",
+    "couchpotato-api": "^0.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

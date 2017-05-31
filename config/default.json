@@ -1,0 +1,11 @@
+{
+  "alexa-couchpotato": {
+    "server": {
+      "hostname": "http://url-to-couch-potato-server",
+      "port": 5050,
+      "apiKey": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}
