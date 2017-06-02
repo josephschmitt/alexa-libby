@@ -89,14 +89,14 @@ paste them in. Then in the Sample Utterances field, copy the contents of
 `interaction_model/sample_utterances.txt` and paste those in. Make sure to Save your changes. The
 second way is to use the new Skill Builder. Once you have it loaded, click on Code Editor, click on
 the area titled "Drag and drop your .json file", and choose the
-`interaction_model/skill_builder.json` file. Click Save Model.
+`interaction_model/skill_builder.json` file. Click Save Model, then Build Model.
 3. **Configuration**: Set the Service Endpoint Type to AWS Lambda ARN, and choose your region. Now
 comes the time to grab the ARN from the previous step that you hopefully either wrote down or kept
 open in a different tab or browser window.
 4. **Test**: Make sure the toggle at the top is Enabled. You should now be able to test to make sure
 everything's working. Scroll down to the Service Simulator and in the Enter Utterance field, try
-asking Couch Potato one of the phrases from up top, like "is The Dark Knight is on the list". If
-everything's working correctly, you should see data get filled in in both the Request and Response
+asking Couch Potato one of the phrases from up top, like "is The Dark Knight on the list". If
+everything's working correctly, you should see data get filled in on both the Request and Response
 boxes. If you do, then you're pretty much done and all set.
 5. **Publishing Information**: This isn't necessary, but it helps the skill look nice in your Alexa
 app. You can fill in as much of the metadata as you like, but the one I'd really recommend is
