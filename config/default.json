@@ -9,7 +9,7 @@
       "server": {
         "urlBase": "/",
         "port": 5050,
-        "apiKey": ""
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
       }
     },
     "shows": {
@@ -17,7 +17,7 @@
       "server": {
         "urlBase": "/",
         "port": 5050,
-        "apiKey": ""
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
       }
     }
   }
