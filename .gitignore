@@ -1,6 +1,6 @@
 .DS_Store
 deploy.env
-alexa-couchpotato.zip
+alexa-libby.zip
 config/local.json
 dist/
 node_modules/

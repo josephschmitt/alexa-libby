@@ -18,7 +18,7 @@ import {
 
 export const NUM_RESULTS = 5;
 
-export const cp = new CouchPotato(config.get('alexa-couchpotato.server'));
+export const cp = new CouchPotato(config.get('alexa-libby.server'));
 
 export default function handleLaunchIntent(req, resp) {
   resp

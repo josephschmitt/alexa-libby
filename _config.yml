@@ -1,5 +1,5 @@
-title: Alexa Couch Potato
-description: A skill to ask Alexa about your Couch Potato queue.
+title: Libby Alexa Skill
+description: A skill to ask Alexa about your Movie and TV Show library queues.
 google_analytics:
 show_downloads: true
 theme: jekyll-theme-cayman

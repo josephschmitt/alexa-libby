@@ -1,5 +1,5 @@
 {
-  "alexa-couchpotato": {
+  "alexa-libby": {
     "server": {
       "hostname": "http://localhost",
       "port": 5050,

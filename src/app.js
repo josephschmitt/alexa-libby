@@ -9,7 +9,7 @@ import handleLaunchIntent, {
   handleHelpIntent
 } from '~/lib/handlers.js';
 
-const app = new Alexa.app('couchPotato');
+const app = new Alexa.app('libby');
 
 app.launch(handleLaunchIntent);
 app.intent('FindMovie', handleFindMovieIntent);
