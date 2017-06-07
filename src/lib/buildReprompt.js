@@ -2,7 +2,7 @@ import {
   REPROMPT_END,
   REPROMPT_NO,
   REPROMPT_YES
-} from '~/lib/responses.js';
+} from '~/responses/general.js';
 
 export default function buildReprompt(searchResults, mediaType) {
   const [topResult] = searchResults;

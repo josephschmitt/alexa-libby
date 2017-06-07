@@ -9,7 +9,7 @@ import {
   ALREADY_WANTED,
   NO_MOVIE_FOUND,
   NO_MOVIE_SLOT
-} from '~/lib/responses.js';
+} from '~/responses/movie.js';
 
 export const NUM_RESULTS = 5;
 

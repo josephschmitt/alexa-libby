@@ -5,7 +5,7 @@ import {
   CANCEL_RESPONSE,
   HELP_RESPONSE,
   WELCOME_DESCRIPTION
-} from '~/lib/responses.js';
+} from '~/responses/general.js';
 
 export function handleLaunchIntent(req, resp) {
   resp
