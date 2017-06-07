@@ -19,3 +19,16 @@ export async function list() {
     };
   });
 }
+
+export async function search(name) {
+  const resp = await sickbeard.cmd('sb.searchtvdb', {name});
+  const results = Array.isArray(resp.data.results) ? resp.data.results : [];
+
+  return results.map((show) => {
+    return {
+      title: show.name,
+      year: new Date(show.first_aired).getFullYear(),
+      tvdbid: show.tvdbid
+    };
+  });
+}

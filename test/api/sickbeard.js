@@ -80,6 +80,26 @@ const sampleShowsResponse = {
   result: 'success'
 };
 
+const sampleSearchTvdbResponse = {
+  data: {
+    langid: 7,
+    results: [
+      {
+        first_aired: '1992-05-25',
+        name: 'The Tonight Show with Jay Leno',
+        tvdbid: 70336
+      },
+      {
+        first_aired: '2009-09-14',
+        name: 'The Jay Leno Show',
+        tvdbid: 113921
+      }
+    ]
+  },
+  message: '',
+  result: 'success'
+};
+
 describe('api.sickbeard', () => {
   let sbApiStub;
 
@@ -116,6 +136,26 @@ describe('api.sickbeard', () => {
         status: 'ended',
         quality: 'HD720p'
       });
+    });
+  });
+
+  describe('.search()', () => {
+    beforeEach(() => {
+      sbApiStub.withArgs('sb.searchtvdb', {name: 'leno'}).resolves(sampleSearchTvdbResponse);
+    });
+
+    it('should return a formatted result', async () => {
+      const shows = await sickbeard.search('leno');
+
+      assert.deepEqual(shows, [{
+        title: 'The Tonight Show with Jay Leno',
+        tvdbid: 70336,
+        year: '1992'
+      }, {
+        title: 'The Jay Leno Show',
+        tvdbid: 113921,
+        year: '2009'
+      }]);
     });
   });
 });

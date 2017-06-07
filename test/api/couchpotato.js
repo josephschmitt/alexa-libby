@@ -453,6 +453,10 @@ describe('api.couchpotato', () => {
       cpApiStub.withArgs('movie.list').resolves(sampleMoviesResponse);
     });
 
+    afterEach(() => {
+      sandbox.reset();
+    });
+
     it('should list all the movies', async () => {
       const movies = await couchpotato.list();
       assert.equal(movies.length, 3);
@@ -472,6 +476,28 @@ describe('api.couchpotato', () => {
         tmdbid: 333371,
         status: 'done',
         quality: '1080p'
+      });
+    });
+  });
+
+  describe('.search()', () => {
+    beforeEach(() => {
+      cpApiStub.withArgs('movie.search', {q: '10'}).resolves(sampleMoviesResponse);
+    });
+
+    afterEach(() => {
+      sandbox.reset();
+    });
+
+    it('should return a formatted result', async () => {
+      const movies = await couchpotato.search('10');
+
+      assert.deepEqual(movies[1], {
+        title: '10 Things I Hate About You',
+        year: 1999,
+        tmdbid: 4951,
+        status: 'done',
+        quality: 'brrip'
       });
     });
   });

@@ -6,16 +6,22 @@ export default couchpotato;
 
 export async function list() {
   const {movies} = await couchpotato.get('movie.list');
+  return movies.map(formatMovieResult);
+}
 
-  return movies.map((movie) => {
-    const [release] = movie.releases;
+export async function search(name) {
+  const {movies} = await couchpotato.get('movie.search', {q: name});
+  return movies.map(formatMovieResult);
+}
 
-    return {
-      title: movie.title,
-      year: movie.info.year,
-      tmdbid: movie.info.tmdb_id,
-      status: movie.status,
-      quality: release ? release.quality : null
-    };
-  });
+function formatMovieResult(movie) {
+  const [release] = movie.releases;
+
+  return {
+    title: movie.title,
+    year: movie.info.year,
+    tmdbid: movie.info.tmdb_id,
+    status: movie.status,
+    quality: release ? release.quality : null
+  };
 }
