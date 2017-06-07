@@ -19,7 +19,7 @@ export async function handleFindMovieIntent(req, resp) {
   }
 
   const api = getProvider('movies');
-  let movies = await api.list();
+  let movies = await api.list(req.slot('movieName'));
 
   if (!movies || !movies.length) {
     const query = buildQuery(req);

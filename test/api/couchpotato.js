@@ -458,6 +458,11 @@ describe('api.couchpotato', () => {
   describe('.list()', () => {
     beforeEach(() => {
       cpApiStub.withArgs('movie.list').resolves(sampleMoviesResponse);
+      cpApiStub.withArgs('movie.list', {search: '12 Angry Men'}).resolves({
+        movies: [
+          sampleMoviesResponse.movies[2]
+        ]
+      });
     });
 
     afterEach(() => {
@@ -467,6 +472,11 @@ describe('api.couchpotato', () => {
     it('should list all the movies', async () => {
       const movies = await couchpotato.list();
       assert.equal(movies.length, 3);
+    });
+
+    it('should list just movies with matching titles', async () => {
+      const movies = await couchpotato.list('12 Angry Men');
+      assert.equal(movies.length, 1);
     });
 
     it('should format the movie response to use standardized keys', async () => {
@@ -533,9 +543,9 @@ describe('api.couchpotato', () => {
       sandbox.reset();
     });
 
-    it('should return a formatted result', async () => {
+    it('should return a correct response', async () => {
       const resp = await couchpotato.add(movie);
-      assert.deepEqual(resp, movie);
+      assert.deepEqual(resp, sampleAddMovieResponse);
     });
   });
 });
