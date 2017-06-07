@@ -2,39 +2,51 @@ AddMovie add the movie {movieName} to the list
 AddMovie add movie {movieName} to the list
 AddMovie add the film {movieName} to the list
 AddMovie add film {movieName} to the list
-AddMovie add the {movieName} to the list
-AddMovie add {movieName} to the list
 AddMovie add the movie {movieName} to the wanted list
 AddMovie add movie {movieName} to the wanted list
 AddMovie add the film {movieName} to the wanted list
 AddMovie add film {movieName} to the wanted list
-AddMovie add the {movieName} to the wanted list
-AddMovie add {movieName} to the wanted list
 AddMovie add the movie {movieName}
 AddMovie add movie {movieName}
 AddMovie add the film {movieName}
 AddMovie add film {movieName}
-AddMovie add the {movieName}
-AddMovie add {movieName}
 
-AddMovie add the {movieName} from {releaseDate} to the list
-AddMovie add {movieName} from {releaseDate} to the list
-AddMovie add the {movieName} released in {releaseDate} to the list
-AddMovie add {movieName} released in {releaseDate} to the list
-AddMovie add the {movieName} yearcame out in {releaseDate} to the list
-AddMovie add {movieName} yearcame out in {releaseDate} to the list
-AddMovie add the {movieName} from {releaseDate} to the wanted list
-AddMovie add {movieName} from {releaseDate} to the wanted list
-AddMovie add the {movieName} released in {releaseDate} to the wanted list
-AddMovie add {movieName} released in {releaseDate} to the wanted list
-AddMovie add the {movieName} yearcame out in {releaseDate} to the wanted list
-AddMovie add {movieName} yearcame out in {releaseDate} to the wanted list
-AddMovie add the {movieName} from {releaseDate}
-AddMovie add {movieName} from {releaseDate}
-AddMovie add the {movieName} released in {releaseDate}
-AddMovie add {movieName} released in {releaseDate}
-AddMovie add the {movieName} yearcame out in {releaseDate}
-AddMovie add {movieName} yearcame out in {releaseDate}
+AddMovie add the movie {movieName} from {releaseDate} to the list
+AddMovie add movie {movieName} from {releaseDate} to the list
+AddMovie add the film {movieName} from {releaseDate} to the list
+AddMovie add film {movieName} from {releaseDate} to the list
+AddMovie add the movie {movieName} released in {releaseDate} to the list
+AddMovie add movie {movieName} released in {releaseDate} to the list
+AddMovie add the film {movieName} released in {releaseDate} to the list
+AddMovie add film {movieName} released in {releaseDate} to the list
+AddMovie add the movie {movieName} yearcame out in {releaseDate} to the list
+AddMovie add movie {movieName} yearcame out in {releaseDate} to the list
+AddMovie add the film {movieName} yearcame out in {releaseDate} to the list
+AddMovie add film {movieName} yearcame out in {releaseDate} to the list
+AddMovie add the movie {movieName} from {releaseDate} to the wanted list
+AddMovie add movie {movieName} from {releaseDate} to the wanted list
+AddMovie add the film {movieName} from {releaseDate} to the wanted list
+AddMovie add film {movieName} from {releaseDate} to the wanted list
+AddMovie add the movie {movieName} released in {releaseDate} to the wanted list
+AddMovie add movie {movieName} released in {releaseDate} to the wanted list
+AddMovie add the film {movieName} released in {releaseDate} to the wanted list
+AddMovie add film {movieName} released in {releaseDate} to the wanted list
+AddMovie add the movie {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add movie {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add the film {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add film {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add the movie {movieName} from {releaseDate}
+AddMovie add movie {movieName} from {releaseDate}
+AddMovie add the film {movieName} from {releaseDate}
+AddMovie add film {movieName} from {releaseDate}
+AddMovie add the movie {movieName} released in {releaseDate}
+AddMovie add movie {movieName} released in {releaseDate}
+AddMovie add the film {movieName} released in {releaseDate}
+AddMovie add film {movieName} released in {releaseDate}
+AddMovie add the movie {movieName} yearcame out in {releaseDate}
+AddMovie add movie {movieName} yearcame out in {releaseDate}
+AddMovie add the film {movieName} yearcame out in {releaseDate}
+AddMovie add film {movieName} yearcame out in {releaseDate}
 
 
 FindMovie is {movieName} on the list
