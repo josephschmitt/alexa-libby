@@ -49,6 +49,14 @@ AddMovie add the film {movieName} yearcame out in {releaseDate}
 AddMovie add film {movieName} yearcame out in {releaseDate}
 
 
+AddShow add the show {showName} to the list
+AddShow add the series {showName} to the list
+AddShow add the show {showName} to the wanted list
+AddShow add the series {showName} to the wanted list
+AddShow add the show {showName}
+AddShow add the series {showName}
+
+
 FindMovie is {movieName} on the list
 FindMovie if {movieName} on the list
 FindMovie is {movieName} is on the list
@@ -158,3 +166,29 @@ FindMovie is the {movieName} came out in {releaseDate} is in wanted
 FindMovie if the {movieName} came out in {releaseDate} is in wanted
 FindMovie is {movieName} came out in {releaseDate} is in wanted
 FindMovie if {movieName} came out in {releaseDate} is in wanted
+
+
+FindShow is the show {showName} on the list
+FindShow if the show {showName} on the list
+FindShow is the series {showName} on the list
+FindShow if the series {showName} on the list
+FindShow is the show {showName} is on the list
+FindShow if the show {showName} is on the list
+FindShow is the series {showName} is on the list
+FindShow if the series {showName} is on the list
+FindShow is the show {showName} already
+FindShow if the show {showName} already
+FindShow is the series {showName} already
+FindShow if the series {showName} already
+FindShow is the show {showName} is already
+FindShow if the show {showName} is already
+FindShow is the series {showName} is already
+FindShow if the series {showName} is already
+FindShow is the show {showName} is wanted
+FindShow if the show {showName} is wanted
+FindShow is the series {showName} is wanted
+FindShow if the series {showName} is wanted
+FindShow is the show {showName} is in wanted
+FindShow if the show {showName} is in wanted
+FindShow is the series {showName} is in wanted
+FindShow if the series {showName} is in wanted

@@ -82,6 +82,24 @@
       ]
     },
     {
+      "name": "AddShow",
+      "slots": [
+        {
+          "name": "showName",
+          "type": "AMAZON.TVSeries",
+          "samples": []
+        }
+      ],
+      "samples": [
+        "add the show {showName} to the list",
+        "add the series {showName} to the list",
+        "add the show {showName} to the wanted list",
+        "add the series {showName} to the wanted list",
+        "add the show {showName}",
+        "add the series {showName}"
+      ]
+    },
+    {
       "name": "FindMovie",
       "slots": [
         {
@@ -204,6 +222,42 @@
         "if the {movieName} came out in {releaseDate} is in wanted",
         "is {movieName} came out in {releaseDate} is in wanted",
         "if {movieName} came out in {releaseDate} is in wanted"
+      ]
+    },
+    {
+      "name": "FindShow",
+      "slots": [
+        {
+          "name": "showName",
+          "type": "AMAZON.TVSeries",
+          "samples": []
+        }
+      ],
+      "samples": [
+        "is the show {showName} on the list",
+        "if the show {showName} on the list",
+        "is the series {showName} on the list",
+        "if the series {showName} on the list",
+        "is the show {showName} is on the list",
+        "if the show {showName} is on the list",
+        "is the series {showName} is on the list",
+        "if the series {showName} is on the list",
+        "is the show {showName} already",
+        "if the show {showName} already",
+        "is the series {showName} already",
+        "if the series {showName} already",
+        "is the show {showName} is already",
+        "if the show {showName} is already",
+        "is the series {showName} is already",
+        "if the series {showName} is already",
+        "is the show {showName} is wanted",
+        "if the show {showName} is wanted",
+        "is the series {showName} is wanted",
+        "if the series {showName} is wanted",
+        "is the show {showName} is in wanted",
+        "if the show {showName} is in wanted",
+        "is the series {showName} is in wanted",
+        "if the series {showName} is in wanted"
       ]
     }
   ]

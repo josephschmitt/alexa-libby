@@ -28,6 +28,16 @@
       ]
     },
     {
+      "intent": "AddShow",
+      "slots": [
+        {
+          "name": "showName",
+          "type": "AMAZON.TVSeries",
+          "samples": []
+        }
+      ]
+    },
+    {
       "intent": "FindMovie",
       "slots": [
         {
@@ -38,6 +48,16 @@
         {
           "name": "releaseDate",
           "type": "AMAZON.DATE",
+          "samples": []
+        }
+      ]
+    },
+    {
+      "intent": "FindShow",
+      "slots": [
+        {
+          "name": "showName",
+          "type": "AMAZON.TVSeries",
           "samples": []
         }
       ]
