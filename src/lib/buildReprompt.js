@@ -4,17 +4,18 @@ import {
   REPROMPT_YES
 } from '~/lib/responses.js';
 
-export default function buildReprompt(movies) {
-  const [topResult] = movies;
+export default function buildReprompt(searchResults, mediaType) {
+  const [topResult] = searchResults;
   const promptData = {
-    searchResults: movies,
-    yesAction: 'addMovie',
+    searchResults,
+    mediaType,
+    yesAction: 'addMedia',
     yesResponse: REPROMPT_YES(topResult.title, topResult.year)
   };
 
-  if (movies.length > 1) {
-    promptData.noAction = 'suggestNextMovie';
-    promptData.noResponse = REPROMPT_NO(movies[1].title, movies[1].year);
+  if (searchResults.length > 1) {
+    promptData.noAction = 'suggestNext';
+    promptData.noResponse = REPROMPT_NO(searchResults[1].title, searchResults[1].year);
   }
   else {
     promptData.noAction = 'endSession';

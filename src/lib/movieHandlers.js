@@ -89,11 +89,11 @@ export function handleYesIntent(req, resp) {
     console.log('Got a AMAZON.YesIntent but no promptData. Ending session.');
     resp.send();
   }
-  else if (promptData.yesAction === 'addMovie') {
-    const api = getProvider('movies');
-    const movie = promptData.searchResults[0];
+  else if (promptData.yesAction === 'addMedia') {
+    const api = getProvider(promptData.mediaType);
+    const [result] = promptData.searchResults;
 
-    return api.add(movie).then(() => {
+    return api.add(result).then(() => {
       resp
         .say(promptData.yesResponse)
         .send();
@@ -116,11 +116,11 @@ export function handleNoIntent(req, resp) {
   else if (promptData.noAction === 'endSession') {
     resp.say(promptData.noResponse).send();
   }
-  else if (promptData.noAction === 'suggestNextMovie') {
-    const movies = promptData.searchResults;
+  else if (promptData.noAction === 'suggestNext') {
+    const results = promptData.searchResults;
     resp
       .say(promptData.noResponse)
-      .session('promptData', buildReprompt(movies.slice(1)))
+      .session('promptData', buildReprompt(results.slice(1)))
       .shouldEndSession(false)
       .send();
   }
