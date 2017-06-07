@@ -8,7 +8,7 @@
     "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "node scripts/gen-interaction.js",
     "package": "npm run prepare; node-lambda package --packageDirectory=./",
-    "prepare": "npm run build; npm run gen-interaction; npm run upgrade-config",
+    "prepare": "npm run build; npm run gen-interaction",
     "prepublishOnly": "npm run package",
     "start": "npm run prepare; node-lambda run",
     "test": "mocha --recursive --compilers js:babel-core/register"

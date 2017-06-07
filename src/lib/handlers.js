@@ -1,9 +1,7 @@
-import config from 'config';
-import CouchPotato from 'couchpotato-api';
+import getProvider from '~/api/getProvider.js';
 
 import buildReprompt from '~/lib/buildReprompt.js';
 import buildMovieQuery from '~/lib/buildMovieQuery.js';
-import formatSearchResults from '~/lib/formatSearchResults.js';
 
 import {
   ADD_NOT_FOUND,
@@ -18,8 +16,6 @@ import {
 
 export const NUM_RESULTS = 5;
 
-export const cp = new CouchPotato(config.get('alexa-libby.server'));
-
 export default function handleLaunchIntent(req, resp) {
   resp
     .say(WELCOME_DESCRIPTION())
@@ -32,20 +28,18 @@ export function handleFindMovieIntent(req, resp) {
     return resp.say(NO_MOVIE_SLOT()).send();
   }
 
+  const api = getProvider('movies');
   const query = buildMovieQuery(req);
 
-  return cp.get('movie.list', {
-    search: query,
-    limit_offset: NUM_RESULTS
-  }).then(({movies}) => {
+  return api.list().then((movies) => {
     if (!movies || !movies.length) {
       resp.say(NO_MOVIE_FOUND(query));
 
-      return cp.get('movie.search', {q: query}).then(({movies}) => {
+      return api.search(query).then((movies) => {
         if (movies) {
           const [topResult] = movies;
           resp
-            .say(ADD_PROMPT(topResult.original_title, topResult.year))
+            .say(ADD_PROMPT(topResult.title, topResult.year))
             .session('promptData', buildReprompt(movies))
             .shouldEndSession(false);
         }
@@ -54,9 +48,9 @@ export function handleFindMovieIntent(req, resp) {
       });
     }
     else {
-      const result = movies[0].info;
+      const [result] = movies;
       resp
-        .say(ALREADY_WANTED(result.original_title, result.year))
+        .say(ALREADY_WANTED(result.title, result.year))
         .send();
     }
   });
@@ -67,10 +61,10 @@ export function handleAddMovieIntent(req, resp) {
     return resp.say(NO_MOVIE_SLOT()).send();
   }
 
-  return cp.get('movie.search', {
-    q: buildMovieQuery(req)
-  }, NUM_RESULTS).then(({movies}) => {
-    movies = formatSearchResults(movies);
+  const api = getProvider('movies');
+  const query = buildMovieQuery(req);
+
+  return api.search(query).then((movies) => {
     const movieName = req.slot('movieName');
 
     if (!movies || !movies.length) {
@@ -79,7 +73,7 @@ export function handleAddMovieIntent(req, resp) {
     else {
       const [topResult] = movies;
       resp
-        .say(ADD_PROMPT(topResult.original_title, topResult.year))
+        .say(ADD_PROMPT(topResult.title, topResult.year))
         .session('promptData', buildReprompt(movies))
         .shouldEndSession(false);
     }
@@ -96,12 +90,10 @@ export function handleYesIntent(req, resp) {
     resp.send();
   }
   else if (promptData.yesAction === 'addMovie') {
+    const api = getProvider('movies');
     const movie = promptData.searchResults[0];
 
-    return cp.get('movie.add', {
-      title: movie.titles[0],
-      identifier: movie.imdb
-    }).then(() => {
+    return api.add(movie).then(() => {
       resp
         .say(promptData.yesResponse)
         .send();

@@ -7,7 +7,6 @@
     "movies": {
       "provider": "couchpotato",
       "server": {
-        "urlBase": "/",
         "port": 5050,
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
       }
@@ -15,7 +14,6 @@
     "shows": {
       "provider": "sickbeard",
       "server": {
-        "urlBase": "/",
         "port": 5050,
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
       }
