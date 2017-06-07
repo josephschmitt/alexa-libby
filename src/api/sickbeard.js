@@ -32,3 +32,8 @@ export async function search(name) {
     };
   });
 }
+
+export async function add(show) {
+  const resp = await sickbeard.cmd('show.addnew', {tvdbid: show.tvdbid, status: 'wanted'});
+  return resp;
+}

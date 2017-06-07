@@ -14,13 +14,19 @@ export async function search(name) {
   return movies.map(formatMovieResult);
 }
 
+export async function add(movie) {
+  const resp = await couchpotato.get('movie.add', {title: movie.title, identifier: movie.imdb});
+  return formatMovieResult(resp.movie);
+}
+
 function formatMovieResult(movie) {
   const [release] = movie.releases;
 
   return {
-    title: movie.title,
+    title: movie.title || movie.original_title || movie.titles[0],
     year: movie.info.year,
     tmdbid: movie.info.tmdb_id,
+    imdb: movie.info.imdb,
     status: movie.status,
     quality: release ? release.quality : null
   };

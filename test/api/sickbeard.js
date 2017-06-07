@@ -100,6 +100,14 @@ const sampleSearchTvdbResponse = {
   result: 'success'
 };
 
+const sampleAddNew = {
+  data: {
+    name: 'Conan (2010)'
+  },
+  message: 'Conan (2010) has been queued to be added',
+  result: 'success'
+};
+
 describe('api.sickbeard', () => {
   let sbApiStub;
 
@@ -114,6 +122,10 @@ describe('api.sickbeard', () => {
   describe('.list()', () => {
     beforeEach(() => {
       sbApiStub.withArgs('shows').resolves(sampleShowsResponse);
+    });
+
+    afterEach(() => {
+      sandbox.reset();
     });
 
     it('should list all the shows', async () => {
@@ -144,6 +156,10 @@ describe('api.sickbeard', () => {
       sbApiStub.withArgs('sb.searchtvdb', {name: 'leno'}).resolves(sampleSearchTvdbResponse);
     });
 
+    afterEach(() => {
+      sandbox.reset();
+    });
+
     it('should return a formatted result', async () => {
       const shows = await sickbeard.search('leno');
 
@@ -156,6 +172,29 @@ describe('api.sickbeard', () => {
         tvdbid: 113921,
         year: '2009'
       }]);
+    });
+  });
+
+  describe('.add()', () => {
+    let show;
+
+    beforeEach(() => {
+      show = {
+        title: 'Conan (2010)',
+        tvdbid: 194751,
+        year: '2011'
+      };
+
+      sbApiStub.withArgs('show.addnew', {tvdbid: 194751, status: 'wanted'}).resolves(sampleAddNew);
+    });
+
+    afterEach(() => {
+      sandbox.reset();
+    });
+
+    it('should add a show and return the response', async () => {
+      const resp = await sickbeard.add(show);
+      assert.deepEqual(resp, sampleAddNew);
     });
   });
 });

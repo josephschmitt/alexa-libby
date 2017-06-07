@@ -5,6 +5,7 @@ import * as couchpotato from '~/api/couchpotato.js';
 
 const sandbox = sinon.sandbox.create();
 
+/* eslint-disable max-len */
 const sampleMoviesResponse = {
   movies: [
     {
@@ -436,6 +437,12 @@ const sampleMoviesResponse = {
   empty: false,
   success: true
 };
+/* eslint-enable max-len */
+
+const sampleAddMovieResponse = {
+  movie: sampleMoviesResponse.movies[2],
+  success: true
+};
 
 describe('api.couchpotato', () => {
   let cpApiStub;
@@ -464,7 +471,8 @@ describe('api.couchpotato', () => {
 
     it('should format the movie response to use standardized keys', async () => {
       const movies = await couchpotato.list();
-      assert.deepEqual(Object.keys(movies[0]), ['title', 'year', 'tmdbid', 'status', 'quality']);
+      assert.deepEqual(Object.keys(movies[0]),
+          ['title', 'year', 'tmdbid', 'imdb', 'status', 'quality']);
     });
 
     it('should fill in the correct data in the correct fields', async () => {
@@ -474,6 +482,7 @@ describe('api.couchpotato', () => {
         title: '10 Cloverfield Lane',
         year: 2016,
         tmdbid: 333371,
+        imdb: 'tt1179933',
         status: 'done',
         quality: '1080p'
       });
@@ -496,9 +505,37 @@ describe('api.couchpotato', () => {
         title: '10 Things I Hate About You',
         year: 1999,
         tmdbid: 4951,
+        imdb: 'tt0147800',
         status: 'done',
         quality: 'brrip'
       });
+    });
+  });
+
+  describe('.add()', () => {
+    let movie;
+
+    beforeEach(() => {
+      movie = {
+        title: '12 Angry Men',
+        year: 1957,
+        tmdbid: 389,
+        imdb: 'tt0050083',
+        status: 'done',
+        quality: 'dvdr'
+      };
+
+      cpApiStub.withArgs('movie.add', {title: movie.title, identifier: movie.imdb})
+          .resolves(sampleAddMovieResponse);
+    });
+
+    afterEach(() => {
+      sandbox.reset();
+    });
+
+    it('should return a formatted result', async () => {
+      const resp = await couchpotato.add(movie);
+      assert.deepEqual(resp, movie);
     });
   });
 });
