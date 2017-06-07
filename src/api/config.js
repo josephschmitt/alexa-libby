@@ -4,13 +4,13 @@ import url from 'url';
 /**
  * Returns a config object for a given API provider.
  *
- * @param {String} mediaType -- "movies" or "shows"
+ * @param {String} providerType -- "movie" or "show"
  * @returns {Object}
  */
-export default function (mediaType = 'movies') {
+export default function (providerType = 'movies') {
   const baseConfig = config.get('alexa-libby');
   const serverConfig = baseConfig.server || {};
-  const mediaConfig = baseConfig[mediaType] || {};
+  const mediaConfig = baseConfig[providerType] || {};
   const conf = Object.assign({}, serverConfig, mediaConfig.server || {});
 
   // The node-sickbeard API module has slightly different config params

@@ -22,7 +22,7 @@ export function handleYesIntent(req, resp) {
     resp.send();
   }
   else if (promptData.yesAction === 'addMedia') {
-    const api = getProvider(promptData.mediaType);
+    const api = getProvider(promptData.providerType);
     const [result] = promptData.searchResults;
 
     return api.add(result).then(() => {

@@ -4,7 +4,7 @@ import CouchPotato from 'couchpotato-api';
 import SickBeard from 'node-sickbeard';
 import sinon from 'sinon';
 
-import getProvider from '~/api/getProvider.js';
+import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 const sandbox = sinon.sandbox.create();
 
@@ -42,12 +42,12 @@ describe('api.getProvider', () => {
   it('should get a Couch Potato API instance', () => {
     getConfig.withArgs('alexa-libby.movies.provider').returns('couchpotato');
 
-    assert(getProvider('movies').default instanceof CouchPotato);
+    assert(getProvider(PROVIDER_TYPE.MOVIES).default instanceof CouchPotato);
   });
 
   it('should get a Sickbeard API instance', () => {
     getConfig.withArgs('alexa-libby.shows.provider').returns('sickbeard');
 
-    assert(getProvider('shows').default instanceof SickBeard);
+    assert(getProvider(PROVIDER_TYPE.SHOWS).default instanceof SickBeard);
   });
 });

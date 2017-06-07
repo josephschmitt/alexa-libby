@@ -1,7 +1,8 @@
 import Alexa from 'alexa-app';
 
 import * as generalHandlers from '~/handlers/general.js';
-import * as movieHandlers from '~/handlers/movie.js';
+import * as movieHandlers from '~/handlers/movies.js';
+import * as showHandlers from '~/handlers/shows.js';
 
 const app = new Alexa.app('libby');
 
@@ -9,6 +10,9 @@ app.launch(generalHandlers.handleLaunchIntent);
 
 app.intent('FindMovie', movieHandlers.handleFindMovieIntent);
 app.intent('AddMovie', movieHandlers.handleAddMovieIntent);
+
+app.intent('FindShow', showHandlers.handleFindShowIntent);
+app.intent('AddShow', showHandlers.handleAddShowIntent);
 
 app.intent('AMAZON.YesIntent', generalHandlers.handleYesIntent);
 app.intent('AMAZON.NoIntent', generalHandlers.handleNoIntent);

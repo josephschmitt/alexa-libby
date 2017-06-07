@@ -1,15 +1,26 @@
 import config from 'config';
 import path from 'path';
 
+export const PROVIDER_TYPE = {
+  MOVIES: 'movies',
+  SHOWS: 'shows'
+};
+
 const providers = {};
 
-export default function getProvider(mediaType) {
-  let provider = providers[mediaType];
+/**
+ * Get the correct API provider for a given provider type.
+ *
+ * @param {String} providerType -- PROVIDER_TYPE.MOVIES or PROVIDER_TYPE.SHOWS
+ * @returns {Object}
+ */
+export default function getProvider(providerType) {
+  let provider = providers[providerType];
 
   if (!provider) {
-    const providerName = config.get(`alexa-libby.${mediaType}.provider`);
+    const providerName = config.get(`alexa-libby.${providerType}.provider`);
     provider = require(path.resolve(__dirname, providerName + '.js'));
-    providers[mediaType] = provider;
+    providers[providerType] = provider;
   }
 
   return provider;
