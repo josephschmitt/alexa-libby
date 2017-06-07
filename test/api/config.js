@@ -1,8 +1,16 @@
 import assert from 'assert';
+import config from 'config';
+import sinon from 'sinon';
 
-import config from '~/api/config.js';
+import serverConfig from '~/api/config.js';
+
+const sandbox = sinon.sandbox.create();
 
 describe('api.config', () => {
+  afterEach(() => {
+    sandbox.restore();
+  });
+
   it('should read the global server config', () => {
     const sampleConfig = {
       server: {
@@ -11,7 +19,8 @@ describe('api.config', () => {
       }
     };
 
-    assert.deepEqual(config({baseConfig: sampleConfig}), sampleConfig.server);
+    sandbox.stub(config, 'get').returns(sampleConfig);
+    assert.deepEqual(serverConfig(), sampleConfig.server);
   });
 
   it('should read a media type config', () => {
@@ -25,10 +34,8 @@ describe('api.config', () => {
       }
     };
 
-    assert.deepEqual(
-      config({mediaType: 'movies', baseConfig: sampleConfig}),
-      sampleConfig.movies.server
-    );
+    sandbox.stub(config, 'get').returns(sampleConfig);
+    assert.deepEqual(serverConfig('movies'), sampleConfig.movies.server);
   });
 
   it('should merge a media type config with the global config', () => {
@@ -44,8 +51,10 @@ describe('api.config', () => {
       }
     };
 
+    sandbox.stub(config, 'get').returns(sampleConfig);
+
     assert.deepEqual(
-      config({mediaType: 'movies', baseConfig: sampleConfig}),
+      serverConfig('movies'),
       {hostname: 'http://localhost', port: 8080, apiKey: 'key'}
     );
   });
@@ -64,8 +73,10 @@ describe('api.config', () => {
       }
     };
 
+    sandbox.stub(config, 'get').returns(sampleConfig);
+
     assert.deepEqual(
-      config({mediaType: 'movies', baseConfig: sampleConfig}),
+      serverConfig('movies'),
       {hostname: 'http://localhost', port: 9090, apiKey: 'key'}
     );
   });
@@ -82,8 +93,10 @@ describe('api.config', () => {
       }
     };
 
+    sandbox.stub(config, 'get').returns(sampleConfig);
+
     assert.deepEqual(
-      config({mediaType: 'shows', baseConfig: sampleConfig}),
+      serverConfig('shows'),
       {url: 'http://localhost:8080', apikey: 'key'}
     );
   });

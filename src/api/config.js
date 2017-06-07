@@ -1,17 +1,14 @@
 import config from 'config';
 import url from 'url';
 
-const libbyConfig = config.get('alexa-libby');
-
 /**
  * Returns a config object for a given API provider.
  *
- * @param {Object} options
- * @property {String} mediaType -- "movies" or "shows"
- * @property {String} baseConfig -- Config object to use. Defaults to loading one from config/ dir
+ * @param {String} mediaType -- "movies" or "shows"
  * @returns {Object}
  */
-export default function ({mediaType = 'movies', baseConfig = libbyConfig}) {
+export default function (mediaType = 'movies') {
+  const baseConfig = config.get('alexa-libby');
   const serverConfig = baseConfig.server || {};
   const mediaConfig = baseConfig[mediaType] || {};
   const conf = Object.assign({}, serverConfig, mediaConfig.server || {});
