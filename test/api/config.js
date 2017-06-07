@@ -14,9 +14,9 @@ describe('api.config', () => {
     assert.deepEqual(config({baseConfig: sampleConfig}), sampleConfig.server);
   });
 
-  it('should read a provider config', () => {
+  it('should read a media type config', () => {
     const sampleConfig = {
-      couchpotato: {
+      movies: {
         server: {
           hostname: 'http://localhost',
           port: 8080,
@@ -26,17 +26,17 @@ describe('api.config', () => {
     };
 
     assert.deepEqual(
-      config({provider: 'couchpotato', baseConfig: sampleConfig}),
-      sampleConfig.couchpotato.server
+      config({mediaType: 'movies', baseConfig: sampleConfig}),
+      sampleConfig.movies.server
     );
   });
 
-  it('should merge a provider config with the global config', () => {
+  it('should merge a media type config with the global config', () => {
     const sampleConfig = {
       server: {
         hostname: 'http://localhost',
       },
-      couchpotato: {
+      movies: {
         server: {
           port: 8080,
           apiKey: 'key'
@@ -45,18 +45,18 @@ describe('api.config', () => {
     };
 
     assert.deepEqual(
-      config({provider: 'couchpotato', baseConfig: sampleConfig}),
+      config({mediaType: 'movies', baseConfig: sampleConfig}),
       {hostname: 'http://localhost', port: 8080, apiKey: 'key'}
     );
   });
 
-  it('should overrid a global config property with a provider config property', () => {
+  it('should override a global config property with a media type config property', () => {
     const sampleConfig = {
       server: {
         hostname: 'http://localhost',
         port: 8080
       },
-      couchpotato: {
+      movies: {
         server: {
           port: 9090,
           apiKey: 'key'
@@ -65,14 +65,15 @@ describe('api.config', () => {
     };
 
     assert.deepEqual(
-      config({provider: 'couchpotato', baseConfig: sampleConfig}),
+      config({mediaType: 'movies', baseConfig: sampleConfig}),
       {hostname: 'http://localhost', port: 9090, apiKey: 'key'}
     );
   });
 
   it('should make special exceptions for sickbeard', () => {
     const sampleConfig = {
-      sickbeard: {
+      shows: {
+        provider: 'sickbeard',
         server: {
           hostname: 'http://localhost',
           port: 8080,
@@ -82,7 +83,7 @@ describe('api.config', () => {
     };
 
     assert.deepEqual(
-      config({provider: 'sickbeard', baseConfig: sampleConfig}),
+      config({mediaType: 'shows', baseConfig: sampleConfig}),
       {url: 'http://localhost:8080', apikey: 'key'}
     );
   });

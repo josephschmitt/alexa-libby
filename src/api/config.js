@@ -7,15 +7,17 @@ const libbyConfig = config.get('alexa-libby');
  * Returns a config object for a given API provider.
  *
  * @param {Object} options
- * @property {String} provider -- Name of the API provider to read the config of.
+ * @property {String} mediaType -- "movies" or "shows"
  * @property {String} baseConfig -- Config object to use. Defaults to loading one from config/ dir
  * @returns {Object}
  */
-export default function ({provider, baseConfig = libbyConfig}) {
-  const conf = Object.assign({}, baseConfig.server || {}, baseConfig[provider] ? baseConfig[provider].server : {});
+export default function ({mediaType = 'movies', baseConfig = libbyConfig}) {
+  const serverConfig = baseConfig.server || {};
+  const mediaConfig = baseConfig[mediaType] || {};
+  const conf = Object.assign({}, serverConfig, mediaConfig.server || {});
 
   // The node-sickbeard API module has slightly different config params
-  if (provider === 'sickbeard') {
+  if (mediaConfig && mediaConfig.provider === 'sickbeard') {
     if (conf.hasOwnProperty('hostname')) {
       const parsed = url.parse(conf.hostname);
       conf.url = url.format({

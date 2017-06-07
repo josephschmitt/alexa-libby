@@ -2,10 +2,23 @@
   "alexa-libby": {
     "server": {
       "hostname": "http://localhost",
-      "port": 5050,
-      "apiKey": "",
-      "username": "",
-      "password": ""
+      "port": 8080
+    },
+    "movies": {
+      "provider": "couchpotato",
+      "server": {
+        "urlBase": "/",
+        "port": 5050,
+        "apiKey": ""
+      }
+    },
+    "shows": {
+      "provider": "sickbeard",
+      "server": {
+        "urlBase": "/",
+        "port": 5050,
+        "apiKey": ""
+      }
     }
   }
 }
