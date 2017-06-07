@@ -1,85 +1,17 @@
 import getProvider from '~/api/getProvider.js';
-
 import buildReprompt from '~/lib/buildReprompt.js';
-import buildMovieQuery from '~/lib/buildMovieQuery.js';
 
 import {
-  ADD_NOT_FOUND,
-  ADD_PROMPT,
-  ALREADY_WANTED,
   CANCEL_RESPONSE,
   HELP_RESPONSE,
-  NO_MOVIE_FOUND,
-  NO_MOVIE_SLOT,
   WELCOME_DESCRIPTION
 } from '~/lib/responses.js';
 
-export const NUM_RESULTS = 5;
-
-export default function handleLaunchIntent(req, resp) {
+export function handleLaunchIntent(req, resp) {
   resp
     .say(WELCOME_DESCRIPTION())
     .say(HELP_RESPONSE())
     .send();
-}
-
-export function handleFindMovieIntent(req, resp) {
-  if (!req.slot('movieName')) {
-    return resp.say(NO_MOVIE_SLOT()).send();
-  }
-
-  const api = getProvider('movies');
-  const query = buildMovieQuery(req);
-
-  return api.list().then((movies) => {
-    if (!movies || !movies.length) {
-      resp.say(NO_MOVIE_FOUND(query));
-
-      return api.search(query).then((movies) => {
-        if (movies) {
-          const [topResult] = movies;
-          resp
-            .say(ADD_PROMPT(topResult.title, topResult.year))
-            .session('promptData', buildReprompt(movies))
-            .shouldEndSession(false);
-        }
-
-        resp.send();
-      });
-    }
-    else {
-      const [result] = movies;
-      resp
-        .say(ALREADY_WANTED(result.title, result.year))
-        .send();
-    }
-  });
-}
-
-export function handleAddMovieIntent(req, resp) {
-  if (!req.slot('movieName')) {
-    return resp.say(NO_MOVIE_SLOT()).send();
-  }
-
-  const api = getProvider('movies');
-  const query = buildMovieQuery(req);
-
-  return api.search(query).then((movies) => {
-    const movieName = req.slot('movieName');
-
-    if (!movies || !movies.length) {
-      resp.say(ADD_NOT_FOUND(movieName));
-    }
-    else {
-      const [topResult] = movies;
-      resp
-        .say(ADD_PROMPT(topResult.title, topResult.year))
-        .session('promptData', buildReprompt(movies))
-        .shouldEndSession(false);
-    }
-
-    resp.send();
-  });
 }
 
 export function handleYesIntent(req, resp) {

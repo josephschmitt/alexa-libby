@@ -1,16 +1,19 @@
 import Alexa from 'alexa-app';
 
-import * as movieHandlers from '~/lib/movieHandlers.js';
+import * as amazonHandlers from '~/handlers/amazon.js';
+import * as movieHandlers from '~/handlers/movie.js';
 
 const app = new Alexa.app('libby');
 
-app.launch(movieHandlers.default);
+app.launch(amazonHandlers.handleLaunchIntent);
+
 app.intent('FindMovie', movieHandlers.handleFindMovieIntent);
 app.intent('AddMovie', movieHandlers.handleAddMovieIntent);
-app.intent('AMAZON.YesIntent', movieHandlers.handleYesIntent);
-app.intent('AMAZON.NoIntent', movieHandlers.handleNoIntent);
-app.intent('AMAZON.CancelIntent', movieHandlers.handleCancelIntent);
-app.intent('AMAZON.HelpIntent', movieHandlers.handleHelpIntent);
+
+app.intent('AMAZON.YesIntent', amazonHandlers.handleYesIntent);
+app.intent('AMAZON.NoIntent', amazonHandlers.handleNoIntent);
+app.intent('AMAZON.CancelIntent', amazonHandlers.handleCancelIntent);
+app.intent('AMAZON.HelpIntent', amazonHandlers.handleHelpIntent);
 
 app.post = function (request, response, type, exception) {
   if (exception) {
