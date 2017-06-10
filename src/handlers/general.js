@@ -18,8 +18,7 @@ export function handleYesIntent(req, resp) {
   const promptData = req.session('promptData');
 
   if (!promptData) {
-    console.log('Got a AMAZON.YesIntent but no promptData. Ending session.');
-    resp.send();
+    throw new Error('Got a AMAZON.YesIntent but no promptData. Ending session.');
   }
   else if (promptData.yesAction === 'addMedia') {
     const api = getProvider(promptData.providerType);
@@ -32,9 +31,7 @@ export function handleYesIntent(req, resp) {
     });
   }
   else {
-    console.log('Got an unexpected yesAction. PromptData:');
-    console.log(promptData);
-    resp.send();
+    throw new Error('Got an unexpected yesAction. PromptData:', promptData);
   }
 }
 
@@ -42,8 +39,7 @@ export function handleNoIntent(req, resp) {
   const promptData = req.session('promptData');
 
   if (!promptData) {
-    console.log('Got a AMAZON.NoIntent but no promptData. Ending session.');
-    resp.send();
+    throw new Error('Got a AMAZON.NoIntent but no promptData. Ending session.');
   }
   else if (promptData.noAction === 'endSession') {
     resp.say(promptData.noResponse).send();
@@ -57,9 +53,7 @@ export function handleNoIntent(req, resp) {
       .send();
   }
   else {
-    console.log('Got an unexpected noAction. PromptData:');
-    console.log(promptData);
-    resp.send();
+    throw new Error('Got an unexpected noAction. PromptData:', promptData);
   }
 }
 
