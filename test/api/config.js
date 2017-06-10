@@ -4,9 +4,13 @@ import sinon from 'sinon';
 
 import serverConfig from '~/api/config.js';
 
-const sandbox = sinon.sandbox.create();
-
 describe('api.config', () => {
+  let sandbox;
+
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
+  });
+
   afterEach(() => {
     sandbox.restore();
   });

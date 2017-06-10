@@ -3,8 +3,6 @@ import sinon from 'sinon';
 
 import * as couchpotato from '~/api/couchpotato.js';
 
-const sandbox = sinon.sandbox.create();
-
 /* eslint-disable max-len */
 const sampleMoviesResponse = {
   movies: [
@@ -445,14 +443,15 @@ const sampleAddMovieResponse = {
 };
 
 describe('api.couchpotato', () => {
-  let cpApiStub;
+  let cpApiStub, sandbox;
 
-  before(() => {
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
     cpApiStub = sandbox.stub(couchpotato.default, 'get');
   });
 
-  after(() => {
-    sandbox.reset();
+  afterEach(() => {
+    sandbox.restore();
   });
 
   describe('.list()', () => {

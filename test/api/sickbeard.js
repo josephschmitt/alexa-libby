@@ -3,8 +3,6 @@ import sinon from 'sinon';
 
 import * as sickbeard from '~/api/sickbeard.js';
 
-const sandbox = sinon.sandbox.create();
-
 const sampleShowsResponse = {
   data: {
     71489: {
@@ -109,14 +107,15 @@ const sampleAddNew = {
 };
 
 describe('api.sickbeard', () => {
-  let sbApiStub;
+  let sbApiStub, sandbox;
 
-  before(() => {
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
     sbApiStub = sandbox.stub(sickbeard.default, 'cmd');
   });
 
-  after(() => {
-    sandbox.reset();
+  afterEach(() => {
+    sandbox.restore();
   });
 
   describe('.list()', () => {

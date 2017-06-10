@@ -15,6 +15,10 @@ const providers = {};
  * @returns {Object}
  */
 export default function getProvider(providerType) {
+  if (!providerType) {
+    throw new Error('Missing a provider type');
+  }
+
   let provider = providers[providerType];
 
   if (!provider) {

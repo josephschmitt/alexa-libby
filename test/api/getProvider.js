@@ -6,12 +6,11 @@ import sinon from 'sinon';
 
 import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
-const sandbox = sinon.sandbox.create();
-
 describe('api.getProvider', () => {
-  let getConfig;
+  let getConfig, sandbox;
 
-  before(() => {
+  beforeEach(() => {
+    sandbox = sinon.sandbox.create();
     getConfig = sandbox.stub(config, 'get');
 
     getConfig.withArgs('alexa-libby').returns({
@@ -35,8 +34,8 @@ describe('api.getProvider', () => {
     });
   });
 
-  after(() => {
-    sandbox.reset();
+  afterEach(() => {
+    sandbox.restore();
   });
 
   it('should get a Couch Potato API instance', () => {
