@@ -15,7 +15,12 @@ export function handleLaunchIntent(req, resp) {
 }
 
 export function handleYesIntent(req, resp) {
-  const promptData = req.session('promptData');
+  if (!req.hasSession()) {
+    throw new Error('No session data in yesAction.');
+  }
+
+  const session = req.getSession();
+  const promptData = session.get('promptData');
 
   if (!promptData) {
     throw new Error('Got a AMAZON.YesIntent but no promptData. Ending session.');
@@ -36,7 +41,12 @@ export function handleYesIntent(req, resp) {
 }
 
 export function handleNoIntent(req, resp) {
-  const promptData = req.session('promptData');
+  if (!req.hasSession()) {
+    throw new Error('No session data in noAction.');
+  }
+
+  const session = req.getSession();
+  const promptData = session.get('promptData');
 
   if (!promptData) {
     throw new Error('Got a AMAZON.NoIntent but no promptData. Ending session.');
@@ -46,6 +56,7 @@ export function handleNoIntent(req, resp) {
   }
   else if (promptData.noAction === 'suggestNext') {
     const results = promptData.searchResults;
+
     resp
       .say(promptData.noResponse)
       .session('promptData', buildReprompt(results.slice(1)))

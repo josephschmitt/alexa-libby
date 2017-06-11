@@ -1,10 +1,10 @@
 import Alexa from 'alexa-app';
 import SSML from 'alexa-app/lib/to-ssml.js';
 import assert from 'assert';
-import config from 'config';
+import merge from 'deepmerge';
 import sinon from 'sinon';
 
-import {PROVIDER_TYPE} from '~/api/getProvider.js';
+import * as provider from '~/api/getProvider.js';
 
 import {
   handleLaunchIntent,
@@ -31,11 +31,25 @@ const sampleSession = {
   }
 };
 
+const yesPromptSession = merge(sampleSession, {
+  session: {
+    attributes: {
+      promptData: {
+        yesAction: 'addMedia',
+        yesResponse: 'Yes response.',
+        providerType: provider.PROVIDER_TYPE.MOVIES,
+        searchResults: []
+      }
+    }
+  }
+});
+
 describe('handlers.general', () => {
-  const sandbox = sinon.sandbox.create();
-  let request, response;
+  let request, response, sandbox;
 
   beforeEach(() => {
+    sandbox = sinon.sandbox.create();
+
     request = new Alexa.request({});
     response = new Alexa.response(request.getSession());
     response.send = () => {};
@@ -69,8 +83,15 @@ it, try saying "Add The Godfather"`;
     });
 
     it('should throw an error when there\'s an unknown yesAction', () => {
-      const yesSession = Object.assign({session: {promptData: {yesAction: 'randomAction'}}},
-          sampleSession);
+      const yesSession = merge(sampleSession, {
+        session: {
+          attributes: {
+            promptData: {
+              yesAction: 'randomAction'
+            }
+          }
+        }
+      });
 
       request = new Alexa.request(yesSession);
 
@@ -78,12 +99,40 @@ it, try saying "Add The Godfather"`;
     });
 
     it('should throw an error when there\'s no providerType', () => {
-      const yesSession = Object.assign({session: {promptData: {yesAction: 'addMedia'}}},
-          sampleSession);
+      const yesSession = merge(sampleSession, {
+        session: {
+          attributes: {
+            promptData: {
+              yesAction: 'addMedia'
+            }
+          }
+        }
+      });
 
       request = new Alexa.request(yesSession);
 
       assert.throws(() => handleYesIntent(request, response), Error);
+    });
+
+    it('should call the add API provider when confirming adding new media', () => {
+      const apiAdd = sandbox.stub().resolves();
+      sandbox.stub(provider, 'default').returns({add: apiAdd});
+
+      request = new Alexa.request(yesPromptSession);
+      handleYesIntent(request, response);
+
+      assert(apiAdd.called);
+    });
+
+    it('should respond with a confirmation after adding new media', (done) => {
+      sandbox.stub(provider, 'default').returns({add: sandbox.stub().resolves()});
+
+      request = new Alexa.request(yesPromptSession);
+      handleYesIntent(request, response).then(() => {
+        assert.equal(getResponseSSML(response),
+            yesPromptSession.session.attributes.promptData.yesResponse);
+        done();
+      });
     });
   });
 });
