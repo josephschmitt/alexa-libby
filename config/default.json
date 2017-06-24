@@ -8,14 +8,16 @@
       "provider": "couchpotato",
       "server": {
         "port": 5050,
-        "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "urlBase": ""
       }
     },
     "shows": {
       "provider": "sickbeard",
       "server": {
-        "port": 5050,
-        "apiKey": "abcdefghijklmnopqrstuvwxyz123456"
+        "port": 9090,
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "urlBase": ""
       }
     }
   }

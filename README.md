@@ -1,7 +1,7 @@
 # Libby Alexa Skill
 
-This is a skill built for Amazon's Alexa service that tells you about your Couch Potato and
-Sickbeard queue. It allows you to ask Alexa the following:
+This is a skill built for Amazon's Alexa service that tells you about your Couch Potato,
+Sickbeard, Sonnar, or Radarr queue. It allows you to ask Alexa the following:
 
 > Alexa, ask Libby to add the movie The Godfather
 >
@@ -27,9 +27,23 @@ from source..
 
 ## Configuring The Skill
 
-Open the `config/default.json` file and fill in the right values for your server configuration. If
-you use an `apiKey` (which you should), then you can leave `username` and `password` blank.
-Otherwise fill those in instead.
+Open the `config/default.json` file and fill in the right values for your server configuration.
+There are 3 sections to the `alexa-libby` config:
+
+1. `"server"`: This contains basic information about your server. Inside this config are keys for
+`"hostname"` and `"port"`. If you set these values here, they will be inherited by configurations
+for movies and shows.
+2. `"movies"`: This contains information about what service you use to track movies. It inherits
+from `"server"`, so if your `"hostname"` and `"port"` for your movies service is the same, you can
+delete those values. Otherwise, fill them in. The `"provider"` field tells Libby what service you
+use to track movies. Valid values are `"couchpotato"` and `"radarr"`. Most importantly, you should
+fill in the `"apiKey"` field from your service, and a `"urlBase"` if you use one (you'd know it if
+you did).
+3. `"shows"`: Same as movies, but for shows. Valid `"provider"` field values are `"sickbeard"` and
+`"sonarr"`. Make sure you fill in the `"apiKey"` and `"urlBase"` if you have one set.
+
+If you don't use a provider (for example you only track tv shows and not movies), make sure to
+delete that entire section of the config, otherwise you'll get an error.
 
 If you don't want to accidentally commit your configuration, then make a duplicate of the
 `default.json` file and call it `local.json`. It will override any configuration from default and
