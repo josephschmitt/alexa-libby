@@ -1,4 +1,6 @@
 .DS_Store
+.env
+.lambda
 .vscode
 deploy.env
 alexa-libby.zip

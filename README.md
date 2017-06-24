@@ -66,17 +66,38 @@ If you don't care about the nitty-gritty of NodeJS projects, you can just downlo
 release](https://github.com/josephschmitt/alexa-libby/releases/latest/), update the
 `config/default.json` file with your server settings, re-zip, and upload to lambda.
 
-_If you want more control, or to make your own updates to the project, check out the master branch
-and then do an `npm install` at the project root. Once all the dependencies are  installed, run
-`npm run package`, which will create an `alexa-libby.zip` file in your project  directory.
-Back in the Lambda dashboard, look to see where it says "Upload" next to "Function package". Click
-upload, choose the zip file, and click save._
+If you want more control, or to make your own updates to the project, check out the master branch
+and then do an `npm install` at the project root. Once all the dependencies are installed you have 2
+options:
 
-_You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
-function directly from the command line. Simply add a deploy.env file with your environment
-configuration (and double check the supplied `.env file` in this repository) and then run
-`npm run deploy`. Please visit the [node-lambda](https://github.com/motdotla/node-lambda)
-project page for more information on deploying from the command line._
+### Manually package and upload
+
+Run `npm run package`, which will create an `alexa-libby.zip` file in your project  directory.
+Back in the Lambda dashboard, look to see where it says "Upload" next to "Function package". Click
+upload, choose the zip file, and click save.
+
+### Deploy from the command line
+
+You can also use [node-lambda](https://github.com/motdotla/node-lambda) to deploy to your Lambda
+function directly from the command line. After running `npm install`, a `.env` file was created in
+the root of the project. Open the `.env` file and enter the 3 missing pieces of information
+necessary for deployment:
+
+1. Your AWS Access Key Id
+2. Your AWS Secret Access Key
+3. The role used to execute the function. This will be in the format of
+  `arn:aws:iam::ACCOUNT_ID:role/ROLENAME`
+
+You canm get an access key id and secret by creating a new user in the
+[IAM console](https://console.aws.amazon.com/iam/home). Make sure you enable the "Programmatic
+access" access type. For the role, just click on the Roles tab, choose a role, and copy its ARN.
+Make sure your Role has access to create lambda functions. Unless you're an AWS IAM wizard, choosing
+the `AWSLambdaFullAccess` should work.
+
+Finally, run `npm run deploy` and if you set everything up correctly, it should finish successfully and
+you'll now have a function on lambda called `alexa-libby`. Please visit the
+[node-lambda](https://github.com/motdotla/node-lambda) project page for more information on
+deploying from the command line.
 
 ## Setting up the Skill
 
