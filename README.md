@@ -94,8 +94,11 @@ access" access type. For the role, just click on the Roles tab, choose a role, a
 Make sure your Role has access to create lambda functions. Unless you're an AWS IAM wizard, choosing
 the `AWSLambdaFullAccess` should work.
 
-Finally, run `npm run deploy` and if you set everything up correctly, it should finish successfully and
-you'll now have a function on lambda called `alexa-libby`. Please visit the
+Finally, run `npm run deploy` and if you set everything up correctly, it should finish successfully
+and you'll now have a function on lambda called `alexa-libby`. If this is the first time you've
+created] this function, you'll also have to make sure to go to the lambda console, edit your
+function, click on "Triggers", and set "Alexa Skills Kit" as your trigger. If you're just updating
+an existing function, then you're fine. Please visit the
 [node-lambda](https://github.com/motdotla/node-lambda) project page for more information on
 deploying from the command line.
 
