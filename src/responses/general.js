@@ -12,8 +12,8 @@ import tmpl from '~/lib/tmpl.js';
 export const CANCEL_RESPONSE = tmpl`Exiting Couch Potato`;
 
 export const HELP_RESPONSE = tmpl`You can ask Couch Potato about the movies in your queue or add
-    new movies to it. Try asking "Is The Godfather on the list?". If it's not and you want to add
-    it, try saying "Add The Godfather"`;
+new movies to it. Try asking "Is The Godfather on the list?". If it's not and you want to add
+it, try saying "Add The Godfather"`;
 
 export const WELCOME_DESCRIPTION = tmpl`This skill allows you to manage your Couch Potato movie
-    list.`;
+list.`;

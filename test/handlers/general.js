@@ -14,6 +14,12 @@ import {
   handleHelpIntent
 } from '~/handlers/general.js';
 
+import {
+  CANCEL_RESPONSE,
+  HELP_RESPONSE,
+  WELCOME_DESCRIPTION
+} from '~/responses/general.js';
+
 const sampleSession = {
   version: '1.0',
   session: {
@@ -63,12 +69,31 @@ describe('handlers.general', () => {
 
     it('should respond with a welcome and help message', () => {
       handleLaunchIntent(request, response);
+      assert.equal(getResponseSSML(response), `${WELCOME_DESCRIPTION()} ${HELP_RESPONSE()}`);
+    });
+  });
 
-      const expectedResponse = `This skill allows you to manage your Couch Potato movie
-list. You can ask Couch Potato about the movies in your queue or add
-new movies to it. Try asking "Is The Godfather on the list?". If it's not and you want to add
-it, try saying "Add The Godfather"`;
-      assert.equal(getResponseSSML(response), expectedResponse);
+  describe('.handleCancelIntent()', () => {
+    beforeEach(() => {
+      request = new Alexa.request({});
+      response = new Alexa.response(request.getSession());
+    });
+
+    it('should respond with a cancel message', () => {
+      handleCancelIntent(request, response);
+      assert.equal(getResponseSSML(response), CANCEL_RESPONSE());
+    });
+  });
+
+  describe('.handleHelpIntent()', () => {
+    beforeEach(() => {
+      request = new Alexa.request({});
+      response = new Alexa.response(request.getSession());
+    });
+
+    it('should respond with a help message', () => {
+      handleHelpIntent(request, response);
+      assert.equal(getResponseSSML(response), HELP_RESPONSE());
     });
   });
 
