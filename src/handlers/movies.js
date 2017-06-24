@@ -30,7 +30,7 @@ export async function handleFindMovieIntent(req, resp) {
       const [topResult] = movies;
       resp
         .say(ADD_PROMPT(topResult.title, topResult.year))
-        .session('promptData', buildReprompt(movies))
+        .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
         .shouldEndSession(false);
     }
 
@@ -62,7 +62,7 @@ export function handleAddMovieIntent(req, resp) {
       const [topResult] = movies;
       resp
         .say(ADD_PROMPT(topResult.title, topResult.year))
-        .session('promptData', buildReprompt(movies))
+        .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
         .shouldEndSession(false);
     }
 

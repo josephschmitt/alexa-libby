@@ -8,10 +8,11 @@ import {
 } from '~/responses/general.js';
 
 export function handleLaunchIntent(req, resp) {
-  resp
+  return Promise.resolve(
+    resp
     .say(WELCOME_DESCRIPTION())
     .say(HELP_RESPONSE())
-    .send();
+  );
 }
 
 export function handleYesIntent(req, resp) {
@@ -30,14 +31,11 @@ export function handleYesIntent(req, resp) {
     const [result] = promptData.searchResults;
 
     return api.add(result).then(() => {
-      resp
-        .say(promptData.yesResponse)
-        .send();
+      return Promise.resolve(resp.say(promptData.yesResponse));
     });
   }
-  else {
-    throw new Error('Got an unexpected yesAction. PromptData:', promptData);
-  }
+
+  throw new Error('Got an unexpected yesAction. PromptData:', promptData);
 }
 
 export function handleNoIntent(req, resp) {
@@ -52,26 +50,26 @@ export function handleNoIntent(req, resp) {
     throw new Error('Got a AMAZON.NoIntent but no promptData. Ending session.');
   }
   else if (promptData.noAction === 'endSession') {
-    resp.say(promptData.noResponse).send();
+    return Promise.resolve(resp.say(promptData.noResponse).shouldEndSession(true));
   }
   else if (promptData.noAction === 'suggestNext') {
     const results = promptData.searchResults;
 
-    resp
-      .say(promptData.noResponse)
-      .session('promptData', buildReprompt(results.slice(1)))
-      .shouldEndSession(false)
-      .send();
+    return Promise.resolve(
+      resp
+        .say(promptData.noResponse)
+        .session('promptData', buildReprompt(results))
+        .shouldEndSession(results.length <= 1)
+    );
   }
-  else {
-    throw new Error('Got an unexpected noAction. PromptData:', promptData);
-  }
+
+  throw new Error('Got an unexpected noAction. PromptData:', promptData);
 }
 
 export function handleCancelIntent(req, resp) {
-  resp.say(CANCEL_RESPONSE()).shouldEndSession(true).send();
+  return resp.say(CANCEL_RESPONSE()).shouldEndSession(true);
 }
 
 export function handleHelpIntent(req, resp) {
-  resp.say(HELP_RESPONSE()).send();
+  return resp.say(HELP_RESPONSE());
 }

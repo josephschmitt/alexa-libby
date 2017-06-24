@@ -1,25 +1,41 @@
-import {
-  REPROMPT_END,
-  REPROMPT_NO,
-  REPROMPT_YES
-} from '~/responses/general.js';
+import {PROVIDER_TYPE} from '~/api/getProvider.js';
+
+import * as movieResponses from '~/responses/movies.js';
+import * as showResponses from '~/responses/shows.js';
 
 export default function buildReprompt(searchResults, providerType) {
-  const [topResult] = searchResults;
+  const [topResult, nextResult] = searchResults;
+  const responses = {};
+
+  if (providerType === PROVIDER_TYPE.MOVIES) {
+    Object.assign(responses, {
+      yes: movieResponses.REPROMPT_YES(topResult.title, topResult.year),
+      no: nextResult ? movieResponses.REPROMPT_NO(nextResult.title, nextResult.year) : '',
+      end: movieResponses.REPROMPT_END()
+    });
+  }
+  else {
+    Object.assign(responses, {
+      yes: showResponses.REPROMPT_YES(topResult.title),
+      no: nextResult ? showResponses.REPROMPT_NO(nextResult.title) : '',
+      end: showResponses.REPROMPT_END()
+    });
+  }
+
   const promptData = {
-    searchResults,
+    searchResults: searchResults.slice(1),
     providerType,
     yesAction: 'addMedia',
-    yesResponse: REPROMPT_YES(topResult.title, topResult.year)
+    yesResponse: responses.yes
   };
 
-  if (searchResults.length > 1) {
+  if (nextResult) {
     promptData.noAction = 'suggestNext';
-    promptData.noResponse = REPROMPT_NO(searchResults[1].title, searchResults[1].year);
+    promptData.noResponse = responses.no;
   }
   else {
     promptData.noAction = 'endSession';
-    promptData.noResponse = REPROMPT_END;
+    promptData.noResponse = responses.end;
   }
 
   return promptData;
