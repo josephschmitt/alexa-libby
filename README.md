@@ -35,13 +35,13 @@ from source..
 
 ## Configuring The Skill
 
-Open the [`config/default.json`](../master/config/default.json) file and fill in the right values for your server configuration.
-There are 3 sections to the `alexa-libby` config:
+Open the [`config/default.json`](../master/config/default.json) file and fill in the right values
+for your server configuration. There are 3 sections to the `alexa-libby` config:
 
 1. `"server"`: This contains basic information about your server. Inside this config are keys for
 `"hostname"` and `"port"`. If you set these values here, they will be inherited by configurations
-for movies and shows. If your providers need different values, you can set them individually in their
-`"server"` sections and they'll override these values.
+for movies and shows. If your providers need different values, you can set them individually in
+their `"server"` sections and they'll override these values.
 2. `"movies"`: This contains information about what service you use to track movies. The `"provider"`
 field tells  Libby  what service you use to track movies. Valid values are `"couchpotato"` and
 `"radarr"`. Most  importantly, you should fill in the `"apiKey"` field from your service, and a
@@ -156,7 +156,8 @@ to the left of the Lambda logo. Click on it and from the dropdown, choose _Alexa
   - Runtime: _Node.js 6.10_. You can choose the older version if you want, but if you do make
     sure to update the `.babelrc` file to tell babel to target the older verison of Node. If you
     don't know what that means, just go with 6.10.
-  - Code entry type: _Upload a .ZIP file_. ([You can grab the pre-built zip](https://github.com/josephschmitt/alexa-libby/releases/latest) and customize the config, or read on below for instructions on generating a ZIP from source)
+  - Code entry type: _Upload a .ZIP file_. ([You can grab the pre-built zip](https://github.com/josephschmitt/alexa-libby/releases/latest) and customize the config, or read
+    on below for instructions on generating a ZIP from source)
   - Lambda function handler and role: Under **Existing role** choose `lambda_basic_execution`.
 
 Click Create lambda function and you're done. After you've created your Lambda function, look at the
@@ -215,13 +216,13 @@ these steps:
 1. **Skill Information**: Fill in the basic skill information however you choose. If you're feeling
 uncreative, you can put `alexa-libby` for the name, and `libby` for the _Invocation
 Name_.
-2. **Interaction Model**: There are two ways to do this. The first is the old/traditional way. In
-the Intent Schema field, copy the contents of the `interaction_model/intent_schema.json` file and
-paste them in. Then in the Sample Utterances field, copy the contents of
-`interaction_model/sample_utterances.txt` and paste those in. Make sure to Save your changes. The
-second way is to use the new Skill Builder. Once you have it loaded, click on Code Editor, click on
-the area titled "Drag and drop your .json file", and choose the
-`interaction_model/skill_builder.json` file. Click Save Model, then Build Model.
+2. **Interaction Model**: There are two ways to do this. The first way is to use the new Skill
+Builder. Once you have it loaded, click on Code Editor, click on the area titled "Drag and drop your
+.json file", and choose the `interaction_model/skill_builder.json` file. Click Save Model, then
+Build Model. If for some reason the Skill Builder beta doesn't work, then you can try it the old
+way. In the Intent Schema field, copy the contents of the `interaction_model/intent_schema.json`
+file and paste them in. Then in the Sample Utterances field, copy the contents of
+`interaction_model/sample_utterances.txt` and paste those in. Make sure to Save your changes.
 3. **Configuration**: Set the Service Endpoint Type to AWS Lambda ARN, and choose your region. Now
 comes the time to grab the ARN from the previous step that you hopefully either wrote down or kept
 open in a different tab or browser window.

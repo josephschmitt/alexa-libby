@@ -8,6 +8,6 @@ module.exports = {
     }
   ],
   samples: [
-    '{is|if} {the show |the series }{-|showName} {on the list|is on the list|already|is already|is wanted|is in wanted}',
+    '{is|if} {the show |the series |}{-|showName} {on the list|is on the list|already|is already|is wanted|is in wanted}',
   ]
 };

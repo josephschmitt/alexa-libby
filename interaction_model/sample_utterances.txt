@@ -2,59 +2,86 @@ AddMovie add the movie {movieName} to the list
 AddMovie add movie {movieName} to the list
 AddMovie add the film {movieName} to the list
 AddMovie add film {movieName} to the list
+AddMovie add the {movieName} to the list
+AddMovie add {movieName} to the list
 AddMovie add the movie {movieName} to the wanted list
 AddMovie add movie {movieName} to the wanted list
 AddMovie add the film {movieName} to the wanted list
 AddMovie add film {movieName} to the wanted list
+AddMovie add the {movieName} to the wanted list
+AddMovie add {movieName} to the wanted list
 AddMovie add the movie {movieName}
 AddMovie add movie {movieName}
 AddMovie add the film {movieName}
 AddMovie add film {movieName}
+AddMovie add the {movieName}
+AddMovie add {movieName}
 
 AddMovie add the movie {movieName} from {releaseDate} to the list
 AddMovie add movie {movieName} from {releaseDate} to the list
 AddMovie add the film {movieName} from {releaseDate} to the list
 AddMovie add film {movieName} from {releaseDate} to the list
+AddMovie add the {movieName} from {releaseDate} to the list
+AddMovie add {movieName} from {releaseDate} to the list
 AddMovie add the movie {movieName} released in {releaseDate} to the list
 AddMovie add movie {movieName} released in {releaseDate} to the list
 AddMovie add the film {movieName} released in {releaseDate} to the list
 AddMovie add film {movieName} released in {releaseDate} to the list
+AddMovie add the {movieName} released in {releaseDate} to the list
+AddMovie add {movieName} released in {releaseDate} to the list
 AddMovie add the movie {movieName} yearcame out in {releaseDate} to the list
 AddMovie add movie {movieName} yearcame out in {releaseDate} to the list
 AddMovie add the film {movieName} yearcame out in {releaseDate} to the list
 AddMovie add film {movieName} yearcame out in {releaseDate} to the list
+AddMovie add the {movieName} yearcame out in {releaseDate} to the list
+AddMovie add {movieName} yearcame out in {releaseDate} to the list
 AddMovie add the movie {movieName} from {releaseDate} to the wanted list
 AddMovie add movie {movieName} from {releaseDate} to the wanted list
 AddMovie add the film {movieName} from {releaseDate} to the wanted list
 AddMovie add film {movieName} from {releaseDate} to the wanted list
+AddMovie add the {movieName} from {releaseDate} to the wanted list
+AddMovie add {movieName} from {releaseDate} to the wanted list
 AddMovie add the movie {movieName} released in {releaseDate} to the wanted list
 AddMovie add movie {movieName} released in {releaseDate} to the wanted list
 AddMovie add the film {movieName} released in {releaseDate} to the wanted list
 AddMovie add film {movieName} released in {releaseDate} to the wanted list
+AddMovie add the {movieName} released in {releaseDate} to the wanted list
+AddMovie add {movieName} released in {releaseDate} to the wanted list
 AddMovie add the movie {movieName} yearcame out in {releaseDate} to the wanted list
 AddMovie add movie {movieName} yearcame out in {releaseDate} to the wanted list
 AddMovie add the film {movieName} yearcame out in {releaseDate} to the wanted list
 AddMovie add film {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add the {movieName} yearcame out in {releaseDate} to the wanted list
+AddMovie add {movieName} yearcame out in {releaseDate} to the wanted list
 AddMovie add the movie {movieName} from {releaseDate}
 AddMovie add movie {movieName} from {releaseDate}
 AddMovie add the film {movieName} from {releaseDate}
 AddMovie add film {movieName} from {releaseDate}
+AddMovie add the {movieName} from {releaseDate}
+AddMovie add {movieName} from {releaseDate}
 AddMovie add the movie {movieName} released in {releaseDate}
 AddMovie add movie {movieName} released in {releaseDate}
 AddMovie add the film {movieName} released in {releaseDate}
 AddMovie add film {movieName} released in {releaseDate}
+AddMovie add the {movieName} released in {releaseDate}
+AddMovie add {movieName} released in {releaseDate}
 AddMovie add the movie {movieName} yearcame out in {releaseDate}
 AddMovie add movie {movieName} yearcame out in {releaseDate}
 AddMovie add the film {movieName} yearcame out in {releaseDate}
 AddMovie add film {movieName} yearcame out in {releaseDate}
+AddMovie add the {movieName} yearcame out in {releaseDate}
+AddMovie add {movieName} yearcame out in {releaseDate}
 
 
 AddShow add the show {showName} to the list
 AddShow add the series {showName} to the list
+AddShow add {showName} to the list
 AddShow add the show {showName} to the wanted list
 AddShow add the series {showName} to the wanted list
+AddShow add {showName} to the wanted list
 AddShow add the show {showName}
 AddShow add the series {showName}
+AddShow add {showName}
 
 
 FindMovie is the movie {movieName} on the list
@@ -65,6 +92,10 @@ FindMovie is the film {movieName} on the list
 FindMovie if the film {movieName} on the list
 FindMovie is film {movieName} on the list
 FindMovie if film {movieName} on the list
+FindMovie is the {movieName} on the list
+FindMovie if the {movieName} on the list
+FindMovie is {movieName} on the list
+FindMovie if {movieName} on the list
 FindMovie is the movie {movieName} is on the list
 FindMovie if the movie {movieName} is on the list
 FindMovie is movie {movieName} is on the list
@@ -73,6 +104,10 @@ FindMovie is the film {movieName} is on the list
 FindMovie if the film {movieName} is on the list
 FindMovie is film {movieName} is on the list
 FindMovie if film {movieName} is on the list
+FindMovie is the {movieName} is on the list
+FindMovie if the {movieName} is on the list
+FindMovie is {movieName} is on the list
+FindMovie if {movieName} is on the list
 FindMovie is the movie {movieName} already
 FindMovie if the movie {movieName} already
 FindMovie is movie {movieName} already
@@ -81,6 +116,10 @@ FindMovie is the film {movieName} already
 FindMovie if the film {movieName} already
 FindMovie is film {movieName} already
 FindMovie if film {movieName} already
+FindMovie is the {movieName} already
+FindMovie if the {movieName} already
+FindMovie is {movieName} already
+FindMovie if {movieName} already
 FindMovie is the movie {movieName} is already
 FindMovie if the movie {movieName} is already
 FindMovie is movie {movieName} is already
@@ -89,6 +128,10 @@ FindMovie is the film {movieName} is already
 FindMovie if the film {movieName} is already
 FindMovie is film {movieName} is already
 FindMovie if film {movieName} is already
+FindMovie is the {movieName} is already
+FindMovie if the {movieName} is already
+FindMovie is {movieName} is already
+FindMovie if {movieName} is already
 FindMovie is the movie {movieName} is wanted
 FindMovie if the movie {movieName} is wanted
 FindMovie is movie {movieName} is wanted
@@ -97,6 +140,10 @@ FindMovie is the film {movieName} is wanted
 FindMovie if the film {movieName} is wanted
 FindMovie is film {movieName} is wanted
 FindMovie if film {movieName} is wanted
+FindMovie is the {movieName} is wanted
+FindMovie if the {movieName} is wanted
+FindMovie is {movieName} is wanted
+FindMovie if {movieName} is wanted
 FindMovie is the movie {movieName} is in wanted
 FindMovie if the movie {movieName} is in wanted
 FindMovie is movie {movieName} is in wanted
@@ -105,6 +152,10 @@ FindMovie is the film {movieName} is in wanted
 FindMovie if the film {movieName} is in wanted
 FindMovie is film {movieName} is in wanted
 FindMovie if film {movieName} is in wanted
+FindMovie is the {movieName} is in wanted
+FindMovie if the {movieName} is in wanted
+FindMovie is {movieName} is in wanted
+FindMovie if {movieName} is in wanted
 
 FindMovie is the movie {movieName} from {releaseDate} on the list
 FindMovie if the movie {movieName} from {releaseDate} on the list
@@ -114,6 +165,10 @@ FindMovie is the film {movieName} from {releaseDate} on the list
 FindMovie if the film {movieName} from {releaseDate} on the list
 FindMovie is film {movieName} from {releaseDate} on the list
 FindMovie if film {movieName} from {releaseDate} on the list
+FindMovie is the {movieName} from {releaseDate} on the list
+FindMovie if the {movieName} from {releaseDate} on the list
+FindMovie is {movieName} from {releaseDate} on the list
+FindMovie if {movieName} from {releaseDate} on the list
 FindMovie is the movie {movieName} released in {releaseDate} on the list
 FindMovie if the movie {movieName} released in {releaseDate} on the list
 FindMovie is movie {movieName} released in {releaseDate} on the list
@@ -122,6 +177,10 @@ FindMovie is the film {movieName} released in {releaseDate} on the list
 FindMovie if the film {movieName} released in {releaseDate} on the list
 FindMovie is film {movieName} released in {releaseDate} on the list
 FindMovie if film {movieName} released in {releaseDate} on the list
+FindMovie is the {movieName} released in {releaseDate} on the list
+FindMovie if the {movieName} released in {releaseDate} on the list
+FindMovie is {movieName} released in {releaseDate} on the list
+FindMovie if {movieName} released in {releaseDate} on the list
 FindMovie is the movie {movieName} year {releaseDate} on the list
 FindMovie if the movie {movieName} year {releaseDate} on the list
 FindMovie is movie {movieName} year {releaseDate} on the list
@@ -130,6 +189,10 @@ FindMovie is the film {movieName} year {releaseDate} on the list
 FindMovie if the film {movieName} year {releaseDate} on the list
 FindMovie is film {movieName} year {releaseDate} on the list
 FindMovie if film {movieName} year {releaseDate} on the list
+FindMovie is the {movieName} year {releaseDate} on the list
+FindMovie if the {movieName} year {releaseDate} on the list
+FindMovie is {movieName} year {releaseDate} on the list
+FindMovie if {movieName} year {releaseDate} on the list
 FindMovie is the movie {movieName} came out in {releaseDate} on the list
 FindMovie if the movie {movieName} came out in {releaseDate} on the list
 FindMovie is movie {movieName} came out in {releaseDate} on the list
@@ -138,6 +201,10 @@ FindMovie is the film {movieName} came out in {releaseDate} on the list
 FindMovie if the film {movieName} came out in {releaseDate} on the list
 FindMovie is film {movieName} came out in {releaseDate} on the list
 FindMovie if film {movieName} came out in {releaseDate} on the list
+FindMovie is the {movieName} came out in {releaseDate} on the list
+FindMovie if the {movieName} came out in {releaseDate} on the list
+FindMovie is {movieName} came out in {releaseDate} on the list
+FindMovie if {movieName} came out in {releaseDate} on the list
 FindMovie is the movie {movieName} from {releaseDate} is on the list
 FindMovie if the movie {movieName} from {releaseDate} is on the list
 FindMovie is movie {movieName} from {releaseDate} is on the list
@@ -146,6 +213,10 @@ FindMovie is the film {movieName} from {releaseDate} is on the list
 FindMovie if the film {movieName} from {releaseDate} is on the list
 FindMovie is film {movieName} from {releaseDate} is on the list
 FindMovie if film {movieName} from {releaseDate} is on the list
+FindMovie is the {movieName} from {releaseDate} is on the list
+FindMovie if the {movieName} from {releaseDate} is on the list
+FindMovie is {movieName} from {releaseDate} is on the list
+FindMovie if {movieName} from {releaseDate} is on the list
 FindMovie is the movie {movieName} released in {releaseDate} is on the list
 FindMovie if the movie {movieName} released in {releaseDate} is on the list
 FindMovie is movie {movieName} released in {releaseDate} is on the list
@@ -154,6 +225,10 @@ FindMovie is the film {movieName} released in {releaseDate} is on the list
 FindMovie if the film {movieName} released in {releaseDate} is on the list
 FindMovie is film {movieName} released in {releaseDate} is on the list
 FindMovie if film {movieName} released in {releaseDate} is on the list
+FindMovie is the {movieName} released in {releaseDate} is on the list
+FindMovie if the {movieName} released in {releaseDate} is on the list
+FindMovie is {movieName} released in {releaseDate} is on the list
+FindMovie if {movieName} released in {releaseDate} is on the list
 FindMovie is the movie {movieName} year {releaseDate} is on the list
 FindMovie if the movie {movieName} year {releaseDate} is on the list
 FindMovie is movie {movieName} year {releaseDate} is on the list
@@ -162,6 +237,10 @@ FindMovie is the film {movieName} year {releaseDate} is on the list
 FindMovie if the film {movieName} year {releaseDate} is on the list
 FindMovie is film {movieName} year {releaseDate} is on the list
 FindMovie if film {movieName} year {releaseDate} is on the list
+FindMovie is the {movieName} year {releaseDate} is on the list
+FindMovie if the {movieName} year {releaseDate} is on the list
+FindMovie is {movieName} year {releaseDate} is on the list
+FindMovie if {movieName} year {releaseDate} is on the list
 FindMovie is the movie {movieName} came out in {releaseDate} is on the list
 FindMovie if the movie {movieName} came out in {releaseDate} is on the list
 FindMovie is movie {movieName} came out in {releaseDate} is on the list
@@ -170,6 +249,10 @@ FindMovie is the film {movieName} came out in {releaseDate} is on the list
 FindMovie if the film {movieName} came out in {releaseDate} is on the list
 FindMovie is film {movieName} came out in {releaseDate} is on the list
 FindMovie if film {movieName} came out in {releaseDate} is on the list
+FindMovie is the {movieName} came out in {releaseDate} is on the list
+FindMovie if the {movieName} came out in {releaseDate} is on the list
+FindMovie is {movieName} came out in {releaseDate} is on the list
+FindMovie if {movieName} came out in {releaseDate} is on the list
 FindMovie is the movie {movieName} from {releaseDate} already
 FindMovie if the movie {movieName} from {releaseDate} already
 FindMovie is movie {movieName} from {releaseDate} already
@@ -178,6 +261,10 @@ FindMovie is the film {movieName} from {releaseDate} already
 FindMovie if the film {movieName} from {releaseDate} already
 FindMovie is film {movieName} from {releaseDate} already
 FindMovie if film {movieName} from {releaseDate} already
+FindMovie is the {movieName} from {releaseDate} already
+FindMovie if the {movieName} from {releaseDate} already
+FindMovie is {movieName} from {releaseDate} already
+FindMovie if {movieName} from {releaseDate} already
 FindMovie is the movie {movieName} released in {releaseDate} already
 FindMovie if the movie {movieName} released in {releaseDate} already
 FindMovie is movie {movieName} released in {releaseDate} already
@@ -186,6 +273,10 @@ FindMovie is the film {movieName} released in {releaseDate} already
 FindMovie if the film {movieName} released in {releaseDate} already
 FindMovie is film {movieName} released in {releaseDate} already
 FindMovie if film {movieName} released in {releaseDate} already
+FindMovie is the {movieName} released in {releaseDate} already
+FindMovie if the {movieName} released in {releaseDate} already
+FindMovie is {movieName} released in {releaseDate} already
+FindMovie if {movieName} released in {releaseDate} already
 FindMovie is the movie {movieName} year {releaseDate} already
 FindMovie if the movie {movieName} year {releaseDate} already
 FindMovie is movie {movieName} year {releaseDate} already
@@ -194,6 +285,10 @@ FindMovie is the film {movieName} year {releaseDate} already
 FindMovie if the film {movieName} year {releaseDate} already
 FindMovie is film {movieName} year {releaseDate} already
 FindMovie if film {movieName} year {releaseDate} already
+FindMovie is the {movieName} year {releaseDate} already
+FindMovie if the {movieName} year {releaseDate} already
+FindMovie is {movieName} year {releaseDate} already
+FindMovie if {movieName} year {releaseDate} already
 FindMovie is the movie {movieName} came out in {releaseDate} already
 FindMovie if the movie {movieName} came out in {releaseDate} already
 FindMovie is movie {movieName} came out in {releaseDate} already
@@ -202,6 +297,10 @@ FindMovie is the film {movieName} came out in {releaseDate} already
 FindMovie if the film {movieName} came out in {releaseDate} already
 FindMovie is film {movieName} came out in {releaseDate} already
 FindMovie if film {movieName} came out in {releaseDate} already
+FindMovie is the {movieName} came out in {releaseDate} already
+FindMovie if the {movieName} came out in {releaseDate} already
+FindMovie is {movieName} came out in {releaseDate} already
+FindMovie if {movieName} came out in {releaseDate} already
 FindMovie is the movie {movieName} from {releaseDate} is already
 FindMovie if the movie {movieName} from {releaseDate} is already
 FindMovie is movie {movieName} from {releaseDate} is already
@@ -210,6 +309,10 @@ FindMovie is the film {movieName} from {releaseDate} is already
 FindMovie if the film {movieName} from {releaseDate} is already
 FindMovie is film {movieName} from {releaseDate} is already
 FindMovie if film {movieName} from {releaseDate} is already
+FindMovie is the {movieName} from {releaseDate} is already
+FindMovie if the {movieName} from {releaseDate} is already
+FindMovie is {movieName} from {releaseDate} is already
+FindMovie if {movieName} from {releaseDate} is already
 FindMovie is the movie {movieName} released in {releaseDate} is already
 FindMovie if the movie {movieName} released in {releaseDate} is already
 FindMovie is movie {movieName} released in {releaseDate} is already
@@ -218,6 +321,10 @@ FindMovie is the film {movieName} released in {releaseDate} is already
 FindMovie if the film {movieName} released in {releaseDate} is already
 FindMovie is film {movieName} released in {releaseDate} is already
 FindMovie if film {movieName} released in {releaseDate} is already
+FindMovie is the {movieName} released in {releaseDate} is already
+FindMovie if the {movieName} released in {releaseDate} is already
+FindMovie is {movieName} released in {releaseDate} is already
+FindMovie if {movieName} released in {releaseDate} is already
 FindMovie is the movie {movieName} year {releaseDate} is already
 FindMovie if the movie {movieName} year {releaseDate} is already
 FindMovie is movie {movieName} year {releaseDate} is already
@@ -226,6 +333,10 @@ FindMovie is the film {movieName} year {releaseDate} is already
 FindMovie if the film {movieName} year {releaseDate} is already
 FindMovie is film {movieName} year {releaseDate} is already
 FindMovie if film {movieName} year {releaseDate} is already
+FindMovie is the {movieName} year {releaseDate} is already
+FindMovie if the {movieName} year {releaseDate} is already
+FindMovie is {movieName} year {releaseDate} is already
+FindMovie if {movieName} year {releaseDate} is already
 FindMovie is the movie {movieName} came out in {releaseDate} is already
 FindMovie if the movie {movieName} came out in {releaseDate} is already
 FindMovie is movie {movieName} came out in {releaseDate} is already
@@ -234,6 +345,10 @@ FindMovie is the film {movieName} came out in {releaseDate} is already
 FindMovie if the film {movieName} came out in {releaseDate} is already
 FindMovie is film {movieName} came out in {releaseDate} is already
 FindMovie if film {movieName} came out in {releaseDate} is already
+FindMovie is the {movieName} came out in {releaseDate} is already
+FindMovie if the {movieName} came out in {releaseDate} is already
+FindMovie is {movieName} came out in {releaseDate} is already
+FindMovie if {movieName} came out in {releaseDate} is already
 FindMovie is the movie {movieName} from {releaseDate} is wanted
 FindMovie if the movie {movieName} from {releaseDate} is wanted
 FindMovie is movie {movieName} from {releaseDate} is wanted
@@ -242,6 +357,10 @@ FindMovie is the film {movieName} from {releaseDate} is wanted
 FindMovie if the film {movieName} from {releaseDate} is wanted
 FindMovie is film {movieName} from {releaseDate} is wanted
 FindMovie if film {movieName} from {releaseDate} is wanted
+FindMovie is the {movieName} from {releaseDate} is wanted
+FindMovie if the {movieName} from {releaseDate} is wanted
+FindMovie is {movieName} from {releaseDate} is wanted
+FindMovie if {movieName} from {releaseDate} is wanted
 FindMovie is the movie {movieName} released in {releaseDate} is wanted
 FindMovie if the movie {movieName} released in {releaseDate} is wanted
 FindMovie is movie {movieName} released in {releaseDate} is wanted
@@ -250,6 +369,10 @@ FindMovie is the film {movieName} released in {releaseDate} is wanted
 FindMovie if the film {movieName} released in {releaseDate} is wanted
 FindMovie is film {movieName} released in {releaseDate} is wanted
 FindMovie if film {movieName} released in {releaseDate} is wanted
+FindMovie is the {movieName} released in {releaseDate} is wanted
+FindMovie if the {movieName} released in {releaseDate} is wanted
+FindMovie is {movieName} released in {releaseDate} is wanted
+FindMovie if {movieName} released in {releaseDate} is wanted
 FindMovie is the movie {movieName} year {releaseDate} is wanted
 FindMovie if the movie {movieName} year {releaseDate} is wanted
 FindMovie is movie {movieName} year {releaseDate} is wanted
@@ -258,6 +381,10 @@ FindMovie is the film {movieName} year {releaseDate} is wanted
 FindMovie if the film {movieName} year {releaseDate} is wanted
 FindMovie is film {movieName} year {releaseDate} is wanted
 FindMovie if film {movieName} year {releaseDate} is wanted
+FindMovie is the {movieName} year {releaseDate} is wanted
+FindMovie if the {movieName} year {releaseDate} is wanted
+FindMovie is {movieName} year {releaseDate} is wanted
+FindMovie if {movieName} year {releaseDate} is wanted
 FindMovie is the movie {movieName} came out in {releaseDate} is wanted
 FindMovie if the movie {movieName} came out in {releaseDate} is wanted
 FindMovie is movie {movieName} came out in {releaseDate} is wanted
@@ -266,6 +393,10 @@ FindMovie is the film {movieName} came out in {releaseDate} is wanted
 FindMovie if the film {movieName} came out in {releaseDate} is wanted
 FindMovie is film {movieName} came out in {releaseDate} is wanted
 FindMovie if film {movieName} came out in {releaseDate} is wanted
+FindMovie is the {movieName} came out in {releaseDate} is wanted
+FindMovie if the {movieName} came out in {releaseDate} is wanted
+FindMovie is {movieName} came out in {releaseDate} is wanted
+FindMovie if {movieName} came out in {releaseDate} is wanted
 FindMovie is the movie {movieName} from {releaseDate} is in wanted
 FindMovie if the movie {movieName} from {releaseDate} is in wanted
 FindMovie is movie {movieName} from {releaseDate} is in wanted
@@ -274,6 +405,10 @@ FindMovie is the film {movieName} from {releaseDate} is in wanted
 FindMovie if the film {movieName} from {releaseDate} is in wanted
 FindMovie is film {movieName} from {releaseDate} is in wanted
 FindMovie if film {movieName} from {releaseDate} is in wanted
+FindMovie is the {movieName} from {releaseDate} is in wanted
+FindMovie if the {movieName} from {releaseDate} is in wanted
+FindMovie is {movieName} from {releaseDate} is in wanted
+FindMovie if {movieName} from {releaseDate} is in wanted
 FindMovie is the movie {movieName} released in {releaseDate} is in wanted
 FindMovie if the movie {movieName} released in {releaseDate} is in wanted
 FindMovie is movie {movieName} released in {releaseDate} is in wanted
@@ -282,6 +417,10 @@ FindMovie is the film {movieName} released in {releaseDate} is in wanted
 FindMovie if the film {movieName} released in {releaseDate} is in wanted
 FindMovie is film {movieName} released in {releaseDate} is in wanted
 FindMovie if film {movieName} released in {releaseDate} is in wanted
+FindMovie is the {movieName} released in {releaseDate} is in wanted
+FindMovie if the {movieName} released in {releaseDate} is in wanted
+FindMovie is {movieName} released in {releaseDate} is in wanted
+FindMovie if {movieName} released in {releaseDate} is in wanted
 FindMovie is the movie {movieName} year {releaseDate} is in wanted
 FindMovie if the movie {movieName} year {releaseDate} is in wanted
 FindMovie is movie {movieName} year {releaseDate} is in wanted
@@ -290,6 +429,10 @@ FindMovie is the film {movieName} year {releaseDate} is in wanted
 FindMovie if the film {movieName} year {releaseDate} is in wanted
 FindMovie is film {movieName} year {releaseDate} is in wanted
 FindMovie if film {movieName} year {releaseDate} is in wanted
+FindMovie is the {movieName} year {releaseDate} is in wanted
+FindMovie if the {movieName} year {releaseDate} is in wanted
+FindMovie is {movieName} year {releaseDate} is in wanted
+FindMovie if {movieName} year {releaseDate} is in wanted
 FindMovie is the movie {movieName} came out in {releaseDate} is in wanted
 FindMovie if the movie {movieName} came out in {releaseDate} is in wanted
 FindMovie is movie {movieName} came out in {releaseDate} is in wanted
@@ -298,29 +441,45 @@ FindMovie is the film {movieName} came out in {releaseDate} is in wanted
 FindMovie if the film {movieName} came out in {releaseDate} is in wanted
 FindMovie is film {movieName} came out in {releaseDate} is in wanted
 FindMovie if film {movieName} came out in {releaseDate} is in wanted
+FindMovie is the {movieName} came out in {releaseDate} is in wanted
+FindMovie if the {movieName} came out in {releaseDate} is in wanted
+FindMovie is {movieName} came out in {releaseDate} is in wanted
+FindMovie if {movieName} came out in {releaseDate} is in wanted
 
 
 FindShow is the show {showName} on the list
 FindShow if the show {showName} on the list
 FindShow is the series {showName} on the list
 FindShow if the series {showName} on the list
+FindShow is {showName} on the list
+FindShow if {showName} on the list
 FindShow is the show {showName} is on the list
 FindShow if the show {showName} is on the list
 FindShow is the series {showName} is on the list
 FindShow if the series {showName} is on the list
+FindShow is {showName} is on the list
+FindShow if {showName} is on the list
 FindShow is the show {showName} already
 FindShow if the show {showName} already
 FindShow is the series {showName} already
 FindShow if the series {showName} already
+FindShow is {showName} already
+FindShow if {showName} already
 FindShow is the show {showName} is already
 FindShow if the show {showName} is already
 FindShow is the series {showName} is already
 FindShow if the series {showName} is already
+FindShow is {showName} is already
+FindShow if {showName} is already
 FindShow is the show {showName} is wanted
 FindShow if the show {showName} is wanted
 FindShow is the series {showName} is wanted
 FindShow if the series {showName} is wanted
+FindShow is {showName} is wanted
+FindShow if {showName} is wanted
 FindShow is the show {showName} is in wanted
 FindShow if the show {showName} is in wanted
 FindShow is the series {showName} is in wanted
 FindShow if the series {showName} is in wanted
+FindShow is {showName} is in wanted
+FindShow if {showName} is in wanted
