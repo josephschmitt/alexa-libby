@@ -1,7 +1,7 @@
 {
   "alexa-libby": {
     "server": {
-      "hostname": "http://localhost",
+      "hostname": "http://my-pvr-server.com",
       "port": 8080
     },
     "movies": {
