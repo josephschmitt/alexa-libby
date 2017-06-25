@@ -1,9 +1,12 @@
+.nyc_output
 .DS_Store
 .env
 .lambda
 .vscode
-deploy.env
+coverage
+coverage.lcov
 alexa-libby.zip
 config/local.json
+deploy.env
 dist/
 node_modules/

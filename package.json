@@ -1,6 +1,6 @@
 {
   "name": "alexa-libby",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A skill to ask Alexa about your Movie and TV Show library queues.",
   "main": "dist/index.js",
   "scripts": {
@@ -12,8 +12,9 @@
     "prepare": "npm run build; npm run gen-interaction",
     "prepublish": "./scripts/post-install.js",
     "prepublishOnly": "npm run package",
+    "report-coverage": "nyc report --reporter=lcov > coverage.lcov",
     "start": "npm run prepare; node-lambda run",
-    "test": "mocha --recursive --compilers js:babel-core/register && npm run lint"
+    "test": "nyc mocha --recursive --compilers js:babel-core/register && npm run lint && npm run report-coverage"
   },
   "author": "Joe Schmitt",
   "license": "MIT",
@@ -40,6 +41,7 @@
     "fs-extra": "^3.0.1",
     "mocha": "^3.4.2",
     "node-lambda": "^0.11.0",
+    "nyc": "^11.0.2",
     "rimraf": "^2.6.1",
     "sinon": "^2.3.2"
   }
