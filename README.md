@@ -1,7 +1,7 @@
 # Libby Alexa Skill
 
 This is a skill built for Amazon's Alexa service that tells you about your Couch Potato,
-Sickbeard, Sonnar, or Radarr queue. It allows you to ask Alexa the following:
+Sickbeard, Sonarr, or Radarr queue. It allows you to ask Alexa the following:
 
 > Alexa, ask Libby to add the movie The Godfather
 >
@@ -105,12 +105,12 @@ necessary for deployment:
 You canm get an access key id and secret by creating a new user in the
 [IAM console](https://console.aws.amazon.com/iam/home). Make sure you enable the "Programmatic
 access" access type. For the role, just click on the Roles tab, choose a role, and copy its ARN.
-Make sure your Role has access to create lambda functions. Unless you're an AWS IAM wizard, choosing
+Make sure your user has access to create lambda functions. Unless you're an AWS IAM wizard, choosing
 the `AWSLambdaFullAccess` should work.
 
 Finally, run `npm run deploy` and if you set everything up correctly, it should finish successfully
 and you'll now have a function on lambda called `alexa-libby`. If this is the first time you've
-created] this function, you'll also have to make sure to go to the lambda console, edit your
+created this function, you'll also have to make sure to go to the lambda console, edit your
 function, click on "Triggers", and set "Alexa Skills Kit" as your trigger. If you're just updating
 an existing function, then you're fine. Please visit the
 [node-lambda](https://github.com/motdotla/node-lambda) project page for more information on
