@@ -17,6 +17,6 @@ module.exports = {
     'add {the |}{movie |film |}{-|movieName}{ to the list| to the wanted list|}',
 
     // Movie and release date
-    'add {the |}{movie |film |}{-|movieName} {from|released in|yearcame out in} {-|releaseDate}{ to the list| to the wanted list|}',
+    'add {the |}{movie |film |}{-|movieName} {from|released in|year|came out in} {-|releaseDate}{ to the list| to the wanted list|}',
   ]
 };
