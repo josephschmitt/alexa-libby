@@ -1,4 +1,4 @@
-# Libby Alexa Skill
+# Libby Alexa Skill [![CircleCI](https://circleci.com/gh/josephschmitt/alexa-libby.svg?style=shield)](https://circleci.com/gh/josephschmitt/alexa-libby) [![codecov](https://codecov.io/gh/josephschmitt/alexa-libby/branch/master/graph/badge.svg)](https://codecov.io/gh/josephschmitt/alexa-libby)
 
 This is a skill built for Amazon's Alexa service that tells you about your Couch Potato,
 Sickbeard, Sonarr, or Radarr queue. It allows you to ask Alexa the following:
