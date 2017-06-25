@@ -40,13 +40,12 @@ There are 3 sections to the `alexa-libby` config:
 
 1. `"server"`: This contains basic information about your server. Inside this config are keys for
 `"hostname"` and `"port"`. If you set these values here, they will be inherited by configurations
-for movies and shows.
-2. `"movies"`: This contains information about what service you use to track movies. It inherits
-from `"server"`, so if your `"hostname"` and `"port"` for your movies service is the same, you can
-delete those values. Otherwise, fill them in. The `"provider"` field tells Libby what service you
-use to track movies. Valid values are `"couchpotato"` and `"radarr"`. Most importantly, you should
-fill in the `"apiKey"` field from your service, and a `"urlBase"` if you use one (you'd know it if
-you did).
+for movies and shows. If your providers need different values, you can set them individually in their
+`"server"` sections and they'll override these values.
+2. `"movies"`: This contains information about what service you use to track movies. The `"provider"`
+field tells  Libby  what service you use to track movies. Valid values are `"couchpotato"` and
+`"radarr"`. Most  importantly, you should fill in the `"apiKey"` field from your service, and a
+`"urlBase"` if you use one (you'd know if you did).
 3. `"shows"`: Same as movies, but for shows. Valid `"provider"` field values are `"sickbeard"` and
 `"sonarr"`. Make sure you fill in the `"apiKey"` and `"urlBase"` if you have one set.
 
@@ -74,7 +73,7 @@ to the left of the Lambda logo. Click on it and from the dropdown, choose _Alexa
   - Runtime: _Node.js 6.10_. You can choose the older version if you want, but if you do make
     sure to update the `.babelrc` file to tell babel to target the older verison of Node. If you
     don't know what that means, just go with 6.10.
-  - Code entry type: _Upload a .ZIP file_. (Instructions on generating this ZIP file are below)
+  - Code entry type: _Upload a .ZIP file_. ([You can grab the pre-built zip](https://github.com/josephschmitt/alexa-libby/releases/latest) and customize the config, or read on below for instructions on generating a ZIP from source)
   - Lambda function handler and role: Under **Existing role** choose `lambda_basic_execution`.
 
 Click Create lambda function and you're done. After you've created your Lambda function, look at the
