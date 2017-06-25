@@ -1,4 +1,10 @@
-# Libby Alexa Skill [![CircleCI](https://circleci.com/gh/josephschmitt/alexa-libby.svg?style=shield)](https://circleci.com/gh/josephschmitt/alexa-libby) [![codecov](https://codecov.io/gh/josephschmitt/alexa-libby/branch/master/graph/badge.svg)](https://codecov.io/gh/josephschmitt/alexa-libby)
+# Libby Alexa Skill
+
+Ask [Alexa](http://alexa.design) about your Movie and TV Show library queues.
+
+[![GitHub version](https://badge.fury.io/gh/josephschmitt%2Falexa-libby.svg)](https://badge.fury.io/gh/josephschmitt%2Falexa-libby)
+[![CircleCI](https://circleci.com/gh/josephschmitt/alexa-libby.svg?style=shield)](https://circleci.com/gh/josephschmitt/alexa-libby)
+[![codecov](https://codecov.io/gh/josephschmitt/alexa-libby/branch/master/graph/badge.svg)](https://codecov.io/gh/josephschmitt/alexa-libby)
 
 This is a skill built for Amazon's Alexa service that tells you about your Couch Potato,
 Sickbeard, Sonarr, or Radarr queue. It allows you to ask Alexa the following:
