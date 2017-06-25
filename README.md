@@ -6,8 +6,10 @@ Ask [Alexa](http://alexa.design) about your Movie and TV Show library queues.
 [![CircleCI](https://circleci.com/gh/josephschmitt/alexa-libby.svg?style=shield)](https://circleci.com/gh/josephschmitt/alexa-libby)
 [![codecov](https://codecov.io/gh/josephschmitt/alexa-libby/branch/master/graph/badge.svg)](https://codecov.io/gh/josephschmitt/alexa-libby)
 
-This is a skill built for Amazon's Alexa service that tells you about your Couch Potato,
-Sickbeard, Sonarr, or Radarr queue. It allows you to ask Alexa the following:
+This is a skill built for Amazon's Alexa service that tells you about your
+[Couch Potato](https://couchpota.to), [Sickbeard](http://sickbeard.com),
+[Sonarr](https://sonarr.tv), or [Radarr](http://radarr.video) queue. It allows you to ask Alexa the
+following:
 
 > Alexa, ask Libby to add the movie The Godfather
 >
