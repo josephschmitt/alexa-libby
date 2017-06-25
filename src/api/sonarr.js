@@ -4,8 +4,10 @@ import serverConfig from '~/api/config.js';
 /**
  * @typedef {Object} MediaResult
  * @property {String} title
- * @property {Number} [year]
- * @property {String} tvdbid
+ * @property {String} slug
+ * @property {Number} year
+ * @property {String} tvdbId
+ * @property {Array} images
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -61,7 +63,17 @@ export async function search(query) {
  * @returns {Object} -- sonarr response object
  */
 export async function add(show) {
-  return await sonarr().post('series', {tvdbid: show.tvdbId, title: show.title});
+  const [quality] = _qualityProfiles;
+  const [rootFolderResp] = await sonarr().get('rootfolder');
+
+  return await sonarr().post('series', {
+    tvdbId: show.tvdbId,
+    title: show.title,
+    titleSlug: show.slug,
+    images: show.images,
+    qualityProfileId: quality.id || 1,
+    rootFolderPath: rootFolderResp.path
+  });
 }
 
 async function loadQualityProfiles() {
@@ -75,8 +87,10 @@ function mapToMediaResult(show) {
 
   return {
     title: show.title,
+    slug: show.titleSlug,
     year: show.year,
-    tvdbid: show.tvdbId,
+    tvdbId: show.tvdbId,
+    images: show.images,
     status: show.status,
     quality: quality ? quality.name : ''
   };
