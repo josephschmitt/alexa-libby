@@ -7,12 +7,13 @@
     "build": "rimraf dist/ && babel src -d dist",
     "deploy": "npm run prepare; node-lambda deploy",
     "gen-interaction": "node scripts/gen-interaction.js",
+    "lint": "eslint src/** test/**",
     "package": "npm run prepare; node-lambda package --packageDirectory=./",
     "prepare": "npm run build; npm run gen-interaction",
     "prepublish": "./scripts/post-install.js",
     "prepublishOnly": "npm run package",
     "start": "npm run prepare; node-lambda run",
-    "test": "mocha --recursive --compilers js:babel-core/register"
+    "test": "mocha --recursive --compilers js:babel-core/register && npm run lint"
   },
   "author": "Joe Schmitt",
   "license": "MIT",

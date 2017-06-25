@@ -10,10 +10,11 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-let _sonarr;
+let _sonarr, _qualityProfiles;
+
 export default function sonarr() {
   if (!_sonarr) {
-    _sonarr = new SonarrAPI(serverConfig('shows'))
+    _sonarr = new SonarrAPI(serverConfig('shows'));
   }
 
   return _sonarr;
@@ -63,15 +64,14 @@ export async function add(show) {
   return await sonarr().post('series', {tvdbid: show.tvdbId, title: show.title});
 }
 
-let qualityProfiles;
 async function loadQualityProfiles() {
-  if (!qualityProfiles) {
-    qualityProfiles = await sonarr().get('profile');
+  if (!_qualityProfiles) {
+    _qualityProfiles = await sonarr().get('profile');
   }
 }
 
 function mapToMediaResult(show) {
-  const quality = qualityProfiles.find((profile) => profile.id === show.qualityProfileId);
+  const quality = _qualityProfiles.find((profile) => profile.id === show.qualityProfileId);
 
   return {
     title: show.title,

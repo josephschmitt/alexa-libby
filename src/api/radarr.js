@@ -10,10 +10,11 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-let _radarr;
+let _radarr, _qualityProfiles;
+
 export default function radarr() {
   if (!_radarr) {
-    _radarr = new RadarrAPI(serverConfig('movies'))
+    _radarr = new RadarrAPI(serverConfig('movies'));
   }
 
   return _radarr;
@@ -63,15 +64,14 @@ export async function add(movie) {
   return await radarr().post('movie', {tvdbid: movie.tvdbId, title: movie.title});
 }
 
-let qualityProfiles;
 async function loadQualityProfiles() {
-  if (!qualityProfiles) {
-    qualityProfiles = await radarr().get('profile');
+  if (!_qualityProfiles) {
+    _qualityProfiles = await radarr().get('profile');
   }
 }
 
 function mapToMediaResult(movie) {
-  const quality = qualityProfiles.find((profile) => profile.id === movie.qualityProfileId);
+  const quality = _qualityProfiles.find((profile) => profile.id === movie.qualityProfileId);
 
   return {
     title: movie.title,

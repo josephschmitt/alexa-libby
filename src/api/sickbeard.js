@@ -17,7 +17,7 @@ export default function sickbeard() {
   }
 
   return _sickbeard;
-};
+}
 
 /**
  * Returns the list of shows currently being tracked by Sickbeard.
