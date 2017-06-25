@@ -70,8 +70,8 @@ Here are some sample configs for some common setups:
       "provider": "radarr",
       "server": {
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
-        "port": 7878,
-
+        "port": 7878
+      }
     },
     "shows": {
       "provider": "sonarr",
@@ -95,8 +95,8 @@ Here are some sample configs for some common setups:
       "server": {
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
         "hostname": "http://my-pvr-server.com",
-        "port": 7878,
-
+        "port": 7878
+      }
     },
     "shows": {
       "provider": "sonarr",
@@ -125,14 +125,14 @@ The `urlBase` is used when your provider isn't at the server root, but at a subd
       "provider": "radarr",
       "server": {
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
-        "urlBase": "radarr",
-
+        "urlBase": "radarr"
+      }
     },
     "shows": {
       "provider": "sonarr",
       "server": {
         "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
-        "urlBase": "sonarr",
+        "urlBase": "sonarr"
       }
     }
   }
