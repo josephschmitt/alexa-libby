@@ -10,9 +10,14 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-const sonarr = new SonarrAPI(serverConfig('shows'));
+let _sonarr;
+export default function sonarr() {
+  if (!_sonarr) {
+    _sonarr = new SonarrAPI(serverConfig('shows'))
+  }
 
-export default sonarr;
+  return _sonarr;
+}
 
 /**
  * Returns the list of shows currently being tracked by sonarr.
@@ -23,7 +28,7 @@ export default sonarr;
 export async function list(title) {
   await loadQualityProfiles();
 
-  const resp = await sonarr.get('series');
+  const resp = await sonarr().get('series');
   const shows = resp.map(mapToMediaResult);
 
   if (title) {
@@ -43,7 +48,7 @@ export async function list(title) {
  */
 export async function search(query) {
   await loadQualityProfiles();
-  const resp = await sonarr.get('series/lookup', {term: query});
+  const resp = await sonarr().get('series/lookup', {term: query});
 
   return resp.map(mapToMediaResult);
 }
@@ -55,13 +60,13 @@ export async function search(query) {
  * @returns {Object} -- sonarr response object
  */
 export async function add(show) {
-  return await sonarr.post('series', {tvdbid: show.tvdbId, title: show.title});
+  return await sonarr().post('series', {tvdbid: show.tvdbId, title: show.title});
 }
 
 let qualityProfiles;
 async function loadQualityProfiles() {
   if (!qualityProfiles) {
-    qualityProfiles = await sonarr.get('profile');
+    qualityProfiles = await sonarr().get('profile');
   }
 }
 

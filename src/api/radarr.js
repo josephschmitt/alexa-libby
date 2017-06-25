@@ -10,9 +10,14 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-const radarr = new RadarrAPI(serverConfig('movies'));
+let _radarr;
+export default function radarr() {
+  if (!_radarr) {
+    _radarr = new RadarrAPI(serverConfig('movies'))
+  }
 
-export default radarr;
+  return _radarr;
+}
 
 /**
  * Returns the list of movies currently being tracked by radarr.
@@ -23,7 +28,7 @@ export default radarr;
 export async function list(title) {
   await loadQualityProfiles();
 
-  const resp = await radarr.get('movie');
+  const resp = await radarr().get('movie');
   const movies = resp.map(mapToMediaResult);
 
   if (title) {
@@ -43,7 +48,7 @@ export async function list(title) {
  */
 export async function search(query) {
   await loadQualityProfiles();
-  const resp = await radarr.get('movies/lookup', {term: query});
+  const resp = await radarr().get('movies/lookup', {term: query});
 
   return resp.map(mapToMediaResult);
 }
@@ -55,13 +60,13 @@ export async function search(query) {
  * @returns {Object} -- radarr response object
  */
 export async function add(movie) {
-  return await radarr.post('movie', {tvdbid: movie.tvdbId, title: movie.title});
+  return await radarr().post('movie', {tvdbid: movie.tvdbId, title: movie.title});
 }
 
 let qualityProfiles;
 async function loadQualityProfiles() {
   if (!qualityProfiles) {
-    qualityProfiles = await radarr.get('profile');
+    qualityProfiles = await radarr().get('profile');
   }
 }
 

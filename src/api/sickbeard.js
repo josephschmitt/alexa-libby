@@ -10,8 +10,14 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-const sickbeard = new SickBeardAPI(serverConfig('shows'));
-export default sickbeard;
+let _sickbeard;
+export default function sickbeard() {
+  if (!_sickbeard) {
+    _sickbeard = new SickBeardAPI(serverConfig('shows'));
+  }
+
+  return _sickbeard;
+};
 
 /**
  * Returns the list of shows currently being tracked by Sickbeard.
@@ -20,7 +26,7 @@ export default sickbeard;
  * @returns {Array<MediaResult>}
  */
 export async function list(title) {
-  const resp = await sickbeard.cmd('shows', {sort: 'name'});
+  const resp = await sickbeard().cmd('shows', {sort: 'name'});
 
   const results = Object.keys(resp.data).map((key) => {
     const show = resp.data[key];
@@ -50,7 +56,7 @@ export async function list(title) {
  * @returns {Array<MediaResult>}
  */
 export async function search(query) {
-  const resp = await sickbeard.cmd('sb.searchtvdb', {name: query});
+  const resp = await sickbeard().cmd('sb.searchtvdb', {name: query});
   const results = Array.isArray(resp.data.results) ? resp.data.results : [];
 
   return Array.isArray(results) ? results.map((show) => {
@@ -69,5 +75,5 @@ export async function search(query) {
  * @returns {Object} -- Sickbeard response object
  */
 export async function add(show) {
-  return await sickbeard.cmd('show.addnew', {tvdbid: show.tvdbid, status: 'wanted'});
+  return await sickbeard().cmd('show.addnew', {tvdbid: show.tvdbid, status: 'wanted'});
 }

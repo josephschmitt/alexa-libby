@@ -10,8 +10,14 @@ import serverConfig from '~/api/config.js';
  * @property {String} [quality]
  */
 
-const couchpotato = new CouchPotatoAPI(serverConfig('movies'));
-export default couchpotato;
+let _couchpotato;
+export default function couchpotato() {
+  if (!_couchpotato) {
+    _couchpotato = new CouchPotatoAPI(serverConfig('movies'));
+  }
+
+  return _couchpotato;
+}
 
 /**
  * Returns the list of movies currently being tracked by CouchPotato.
@@ -20,7 +26,7 @@ export default couchpotato;
  * @returns {Array<MediaResult>}
  */
 export async function list(title) {
-  const {movies} = await couchpotato.get('movie.list', {search: title});
+  const {movies} = await couchpotato().get('movie.list', {search: title});
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
@@ -31,7 +37,7 @@ export async function list(title) {
  * @returns {Array<MediaResult>}
  */
 export async function search(query) {
-  const {movies} = await couchpotato.get('movie.search', {q: query});
+  const {movies} = await couchpotato().get('movie.search', {q: query});
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
@@ -42,7 +48,7 @@ export async function search(query) {
  * @returns {Object} -- Couch Potato response object
  */
 export async function add(movie) {
-  return await couchpotato.get('movie.add', {title: movie.title, identifier: movie.imdb});
+  return await couchpotato().get('movie.add', {title: movie.title, identifier: movie.imdb});
 }
 
 function formatMovieResult(movie) {

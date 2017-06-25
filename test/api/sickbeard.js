@@ -1,6 +1,7 @@
 import assert from 'assert';
 import sinon from 'sinon';
 
+import * as serverConfig from '~/api/config.js';
 import * as sickbeard from '~/api/sickbeard.js';
 
 const sampleShowsResponse = {
@@ -111,7 +112,12 @@ describe('api.sickbeard', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sbApiStub = sandbox.stub(sickbeard.default, 'cmd');
+    sbApiStub = sandbox.stub(sickbeard.default(), 'cmd');
+
+    sandbox.stub(serverConfig, 'default').returns({
+      url: 'http://localhost',
+      apikey: 'abcdefghijklmnopqrstuvwxyz123456'
+    });
   });
 
   afterEach(() => {

@@ -41,12 +41,12 @@ describe('api.getProvider', () => {
   it('should get a Couch Potato API instance', () => {
     getConfig.withArgs('alexa-libby.movies.provider').returns('couchpotato');
 
-    assert(getProvider(PROVIDER_TYPE.MOVIES).default instanceof CouchPotato);
+    assert(getProvider(PROVIDER_TYPE.MOVIES).default() instanceof CouchPotato);
   });
 
   it('should get a Sickbeard API instance', () => {
     getConfig.withArgs('alexa-libby.shows.provider').returns('sickbeard');
 
-    assert(getProvider(PROVIDER_TYPE.SHOWS).default instanceof SickBeard);
+    assert(getProvider(PROVIDER_TYPE.SHOWS).default() instanceof SickBeard);
   });
 });

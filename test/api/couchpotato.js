@@ -1,6 +1,7 @@
 import assert from 'assert';
 import sinon from 'sinon';
 
+import * as serverConfig from '~/api/config.js';
 import * as couchpotato from '~/api/couchpotato.js';
 
 /* eslint-disable max-len */
@@ -444,10 +445,14 @@ const sampleAddMovieResponse = {
 
 describe('api.couchpotato', () => {
   let cpApiStub, sandbox;
-
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    cpApiStub = sandbox.stub(couchpotato.default, 'get');
+    cpApiStub = sandbox.stub(couchpotato.default(), 'get');
+
+    sandbox.stub(serverConfig, 'default').returns({
+      hostname: 'http://localhost',
+      apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
+    });
   });
 
   afterEach(() => {
