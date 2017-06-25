@@ -55,10 +55,14 @@ export function handleNoIntent(req, resp) {
   else if (promptData.noAction === 'suggestNext') {
     const results = promptData.searchResults;
 
+    if (results.length <= 1) {
+      return Promise.resolve(resp.say(promptData.noResponse).shouldEndSession(true));
+    }
+
     return Promise.resolve(
       resp
         .say(promptData.noResponse)
-        .session('promptData', buildReprompt(results))
+        .session('promptData', buildReprompt(results.slice(1), promptData.providerType))
         .shouldEndSession(results.length <= 1)
     );
   }

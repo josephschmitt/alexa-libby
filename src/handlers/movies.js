@@ -52,15 +52,15 @@ export async function handleAddMovieIntent(req, resp) {
   const query = buildQuery(req);
   const movies = await api.search(query);
 
-  if (!movies || !movies.length) {
-    resp.say(ADD_NOT_FOUND(movieName));
-  }
-  else {
+  if (movies && movies.length) {
     const [topResult] = movies;
     resp
       .say(ADD_PROMPT(topResult.title, topResult.year))
       .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
       .shouldEndSession(false);
+  }
+  else {
+    resp.say(ADD_NOT_FOUND(movieName));
   }
 
   return Promise.resolve(resp);

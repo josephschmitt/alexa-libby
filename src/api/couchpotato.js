@@ -2,10 +2,10 @@ import CouchPotatoAPI from 'couchpotato-api';
 import serverConfig from '~/api/config.js';
 
 /**
- * @typedef {Object} MediaResult
+ * @typedef {Object} MovieResult
  * @property {String} title
- * @property {Number} [year]
- * @property {String} tvdbid
+ * @property {Number} year
+ * @property {String} tmdbId
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -23,7 +23,7 @@ export default function couchpotato() {
  * Returns the list of movies currently being tracked by CouchPotato.
  *
  * @param {String} [title] -- Optional title to filter the list of movies by.
- * @returns {Array<MediaResult>}
+ * @returns {Array<MovieResult>}
  */
 export async function list(title) {
   const {movies} = await couchpotato().get('movie.list', {search: title});
@@ -34,7 +34,7 @@ export async function list(title) {
  * Searches for a new movie not in the library.
  *
  * @param {String} query -- Search query to use when looking for the movie.
- * @returns {Array<MediaResult>}
+ * @returns {Array<MovieResult>}
  */
 export async function search(query) {
   const {movies} = await couchpotato().get('movie.search', {q: query});
@@ -44,7 +44,7 @@ export async function search(query) {
 /**
  * Adds a movie to the library.
  *
- * @param {MediaResult} movie -- Movie to add to the library.
+ * @param {MovieResult} movie -- Movie to add to the library.
  * @returns {Object} -- Couch Potato response object
  */
 export async function add(movie) {
@@ -57,7 +57,7 @@ function formatMovieResult(movie) {
   return {
     title: movie.title || movie.original_title || movie.titles[0],
     year: movie.info.year,
-    tmdbid: movie.info.tmdb_id,
+    tmdbId: movie.info.tmdb_id,
     imdb: movie.info.imdb,
     status: movie.status,
     quality: release ? release.quality : null

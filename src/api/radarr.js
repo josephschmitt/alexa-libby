@@ -4,8 +4,10 @@ import serverConfig from '~/api/config.js';
 /**
  * @typedef {Object} MediaResult
  * @property {String} title
- * @property {Number} [year]
- * @property {String} tvdbid
+ * @property {String} slug
+ * @property {Number} year
+ * @property {String} tvdbId
+ * @property {Array} images
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -61,7 +63,17 @@ export async function search(query) {
  * @returns {Object} -- radarr response object
  */
 export async function add(movie) {
-  return await radarr().post('movie', {tvdbid: movie.tvdbId, title: movie.title});
+  const [quality] = _qualityProfiles;
+  const [rootFolderResp] = await radarr().get('rootfolder');
+
+  return await radarr().post('movie', {
+    tmdbId: movie.tvdbId,
+    title: movie.title,
+    titleSlug: movie.slug,
+    images: movie.images,
+    qualityProfileId: quality.id || 1,
+    rootFolderPath: rootFolderResp.path
+  });
 }
 
 async function loadQualityProfiles() {
@@ -75,8 +87,10 @@ function mapToMediaResult(movie) {
 
   return {
     title: movie.title,
+    slug: movie.titleSlug,
     year: movie.year,
-    tvdbid: movie.tvdbId,
+    tvdbId: movie.tmdbId,
+    images: movie.images,
     status: movie.status,
     quality: quality ? quality.name : ''
   };

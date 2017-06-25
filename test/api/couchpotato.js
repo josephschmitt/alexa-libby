@@ -486,7 +486,7 @@ describe('api.couchpotato', () => {
     it('should format the movie response to use standardized keys', async () => {
       const movies = await couchpotato.list();
       assert.deepEqual(Object.keys(movies[0]),
-          ['title', 'year', 'tmdbid', 'imdb', 'status', 'quality']);
+          ['title', 'year', 'tmdbId', 'imdb', 'status', 'quality']);
     });
 
     it('should fill in the correct data in the correct fields', async () => {
@@ -495,7 +495,7 @@ describe('api.couchpotato', () => {
       assert.deepEqual(movie, {
         title: '10 Cloverfield Lane',
         year: 2016,
-        tmdbid: 333371,
+        tmdbId: 333371,
         imdb: 'tt1179933',
         status: 'done',
         quality: '1080p'
@@ -518,7 +518,7 @@ describe('api.couchpotato', () => {
       assert.deepEqual(movies[1], {
         title: '10 Things I Hate About You',
         year: 1999,
-        tmdbid: 4951,
+        tmdbId: 4951,
         imdb: 'tt0147800',
         status: 'done',
         quality: 'brrip'
@@ -533,7 +533,7 @@ describe('api.couchpotato', () => {
       movie = {
         title: '12 Angry Men',
         year: 1957,
-        tmdbid: 389,
+        tmdbId: 389,
         imdb: 'tt0050083',
         status: 'done',
         quality: 'dvdr'

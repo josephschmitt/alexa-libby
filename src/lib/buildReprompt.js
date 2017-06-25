@@ -3,8 +3,8 @@ import {PROVIDER_TYPE} from '~/api/getProvider.js';
 import * as movieResponses from '~/responses/movies.js';
 import * as showResponses from '~/responses/shows.js';
 
-export default function buildReprompt(searchResults, providerType) {
-  const [topResult, nextResult] = searchResults;
+export default function buildReprompt(searchResults = [], providerType) {
+  const [topResult, nextResult] = searchResults.slice();
   const responses = {};
 
   if (providerType === PROVIDER_TYPE.MOVIES) {
@@ -23,7 +23,7 @@ export default function buildReprompt(searchResults, providerType) {
   }
 
   const promptData = {
-    searchResults: searchResults.slice(1),
+    searchResults: searchResults.slice(),
     providerType,
     yesAction: 'addMedia',
     yesResponse: responses.yes

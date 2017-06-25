@@ -242,13 +242,14 @@ describe('handlers.general', () => {
     });
 
     it('should suggest the next result if there are more', (done) => {
+      const results = [{title: 'result 1'}, {title: 'result 2'}];
       const noSession = merge(sampleSession, {
         session: {
           attributes: {
             promptData: {
               noAction: 'suggestNext',
               noResponse: 'Ok, did you mean result 2?',
-              searchResults: [{title: 'result 1'}, {title: 'result 2'}],
+              searchResults: results,
             }
           }
         }
@@ -259,19 +260,19 @@ describe('handlers.general', () => {
 
       handleNoIntent(request, response).then((noResponse) => {
         assert.equal(response.response.response.shouldEndSession, false);
-        assert.equal(getResponseSSML(noResponse),
-            noSession.session.attributes.promptData.noResponse);
+        assert.equal(getResponseSSML(noResponse), `Ok, did you mean ${results[1].title}?`);
       }).then(done, done);
     });
 
     it('should end the session when there are no more results to suggest', (done) => {
+      const results = [{title: 'result 1'}];
       const noSession = merge(sampleSession, {
         session: {
           attributes: {
             promptData: {
               noAction: 'suggestNext',
               noResponse: 'Ok. I\'m out of suggestions. Sorry about that.',
-              searchResults: [{title: 'result 1'}],
+              searchResults: results,
             }
           }
         }
