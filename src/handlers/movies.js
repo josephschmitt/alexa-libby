@@ -15,7 +15,7 @@ export const NUM_RESULTS = 5;
 
 export async function handleFindMovieIntent(req, resp) {
   if (!req.slot('movieName')) {
-    return resp.say(NO_MOVIE_SLOT()).send();
+    return Promise.resolve(resp.say(NO_MOVIE_SLOT()));
   }
 
   const api = getProvider(PROVIDER_TYPE.MOVIES);
@@ -26,7 +26,7 @@ export async function handleFindMovieIntent(req, resp) {
     resp.say(NO_MOVIE_FOUND(query));
 
     movies = await api.search(query);
-    if (movies) {
+    if (movies && movies.length) {
       const [topResult] = movies;
       resp
         .say(ADD_PROMPT(topResult.title, topResult.year))
@@ -34,14 +34,11 @@ export async function handleFindMovieIntent(req, resp) {
         .shouldEndSession(false);
     }
 
-    resp.send();
+    return Promise.resolve(resp);
   }
-  else {
-    const [result] = movies;
-    resp
-      .say(ALREADY_WANTED(result.title, result.year))
-      .send();
-  }
+
+  const [result] = movies;
+  return Promise.resolve(resp.say(ALREADY_WANTED(result.title, result.year)));
 }
 
 export function handleAddMovieIntent(req, resp) {

@@ -1,10 +1,10 @@
 import Alexa from 'alexa-app';
-import SSML from 'alexa-app/lib/to-ssml.js';
 import assert from 'assert';
 import merge from 'deepmerge';
 import sinon from 'sinon';
 
 import * as provider from '~/api/getProvider.js';
+import getResponseSSML from '~/lib/getResponseSSML.js';
 
 import {
   handleLaunchIntent,
@@ -288,7 +288,3 @@ describe('handlers.general', () => {
     });
   });
 });
-
-function getResponseSSML(response) {
-  return SSML.cleanse(response.response.response.outputSpeech.ssml);
-}

@@ -22,7 +22,7 @@ export const ALREADY_WANTED = tmpl`It looks like ${0} (${1}) is already on your 
 export const NO_MOVIE_FOUND = tmpl`Couldn't find ${0} in your wanted list.`;
 
 export const NO_MOVIE_SLOT = tmpl`Sorry, I couldn't understand the movie title I heard. Please try
-    again with different phrasing.`;
+again with different phrasing.`;
 
 export const REPROMPT_END = tmpl`Ok, I'm out of suggestions.`;
 
