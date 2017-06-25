@@ -11,15 +11,15 @@ import {
   NO_MOVIE_SLOT
 } from '~/responses/movies.js';
 
-export const NUM_RESULTS = 5;
-
 export async function handleFindMovieIntent(req, resp) {
-  if (!req.slot('movieName')) {
+  const movieName = req.slot('movieName');
+
+  if (!movieName) {
     return Promise.resolve(resp.say(NO_MOVIE_SLOT()));
   }
 
   const api = getProvider(PROVIDER_TYPE.MOVIES);
-  let movies = await api.list(req.slot('movieName'));
+  let movies = await api.list(movieName);
 
   if (!movies || !movies.length) {
     const query = buildQuery(req);
@@ -41,30 +41,29 @@ export async function handleFindMovieIntent(req, resp) {
   return Promise.resolve(resp.say(ALREADY_WANTED(result.title, result.year)));
 }
 
-export function handleAddMovieIntent(req, resp) {
-  if (!req.slot('movieName')) {
-    return resp.say(NO_MOVIE_SLOT()).send();
+export async function handleAddMovieIntent(req, resp) {
+  const movieName = req.slot('movieName');
+
+  if (!movieName) {
+    return Promise.resolve(resp.say(NO_MOVIE_SLOT()));
   }
 
   const api = getProvider(PROVIDER_TYPE.MOVIES);
   const query = buildQuery(req);
+  const movies = await api.search(query);
 
-  return api.search(query).then((movies) => {
-    const movieName = req.slot('movieName');
+  if (!movies || !movies.length) {
+    resp.say(ADD_NOT_FOUND(movieName));
+  }
+  else {
+    const [topResult] = movies;
+    resp
+      .say(ADD_PROMPT(topResult.title, topResult.year))
+      .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
+      .shouldEndSession(false);
+  }
 
-    if (!movies || !movies.length) {
-      resp.say(ADD_NOT_FOUND(movieName));
-    }
-    else {
-      const [topResult] = movies;
-      resp
-        .say(ADD_PROMPT(topResult.title, topResult.year))
-        .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
-        .shouldEndSession(false);
-    }
-
-    resp.send();
-  });
+  return Promise.resolve(resp);
 }
 
 function buildQuery(req) {

@@ -7,11 +7,13 @@ import * as getProvider from '~/api/getProvider.js';
 import getResponseSSML from '~/lib/getResponseSSML.js';
 
 import {
+  handleAddMovieIntent,
   handleFindMovieIntent
 } from '~/handlers/movies.js';
 
 import {
   ADD_PROMPT,
+  ADD_NOT_FOUND,
   ALREADY_WANTED,
   NO_MOVIE_FOUND,
   NO_MOVIE_SLOT
@@ -148,6 +150,69 @@ describe('handlers.movies', () => {
       handleFindMovieIntent(request, response).then((movieResp) => {
         assert.equal(getResponseSSML(movieResp),
             ALREADY_WANTED(sampleMovie.title, sampleMovie.year));
+      }).then(done, done);
+    });
+  });
+
+  describe('.handleAddMovieIntent()', () => {
+    let findMovieRequest;
+
+    beforeEach(() => {
+      findMovieRequest = {
+        request: {
+          intent: {
+            name: 'FindMovie',
+            slots: {}
+          }
+        }
+      };
+    });
+
+    it('should respond when there is no movie slot', (done) => {
+      request = new Alexa.request(findMovieRequest);
+      response = new Alexa.response(request.getSession());
+
+      handleFindMovieIntent(request, response).then((movieResp) => {
+        assert.equal(getResponseSSML(movieResp), NO_MOVIE_SLOT());
+      }).then(done, done);
+    });
+
+    it('should respond when the search result is not found', (done) => {
+      apiStub().search.resolves([]);
+
+      findMovieRequest.request.intent.slots = {
+        movieName: {
+          name: 'movieName',
+          value: 'test movie'
+        }
+      };
+
+      request = new Alexa.request(findMovieRequest);
+      response = new Alexa.response(request.getSession());
+
+      handleAddMovieIntent(request, response).then((movieResp) => {
+        assert.equal(getResponseSSML(movieResp),
+            ADD_NOT_FOUND(findMovieRequest.request.intent.slots.movieName.value));
+      }).then(done, done);
+    });
+
+    it('should suggest to add a movie search result', (done) => {
+      apiStub().search.resolves([sampleMovieResult]);
+
+      findMovieRequest.request.intent.slots = {
+        movieName: {
+          name: 'movieName',
+          value: 'test movie'
+        }
+      };
+
+      request = new Alexa.request(merge(sampleSession, findMovieRequest));
+      response = new Alexa.response(request.getSession());
+
+      handleAddMovieIntent(request, response).then((movieResp) => {
+        assert.equal(getResponseSSML(movieResp),
+            ADD_PROMPT(sampleMovieResult.title, sampleMovieResult.year));
+        assert.equal(typeof movieResp.sessionObject.attributes.promptData, 'object');
       }).then(done, done);
     });
   });
