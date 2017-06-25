@@ -35,7 +35,7 @@ from source..
 
 ## Configuring The Skill
 
-Open the `config/default.json` file and fill in the right values for your server configuration.
+Open the [`config/default.json`](../master/config/default.json) file and fill in the right values for your server configuration.
 There are 3 sections to the `alexa-libby` config:
 
 1. `"server"`: This contains basic information about your server. Inside this config are keys for
