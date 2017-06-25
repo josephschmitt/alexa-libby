@@ -56,6 +56,89 @@ If you don't want to accidentally commit your configuration, then make a duplica
 `default.json` file and call it `local.json`. It will override any configuration from default and
 is ignored by git.
 
+Here are some sample configs for some common setups:
+
+### Radarr and Sonarr on the same hostname, but different ports
+
+```
+{
+  "alexa-libby": {
+    "server": {
+      "hostname": "http://my-pvr-server.com"
+    },
+    "movies": {
+      "provider": "radarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "port": 7878,
+
+    },
+    "shows": {
+      "provider": "sonarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "port": 8989
+      }
+    }
+  }
+}
+```
+
+### Radarr and Sonarr on different hostnames altogether
+
+```
+{
+  "alexa-libby": {
+    "server": {},
+    "movies": {
+      "provider": "radarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "hostname": "http://my-pvr-server.com",
+        "port": 7878,
+
+    },
+    "shows": {
+      "provider": "sonarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "hostname": "http://my-pvr-server.com",
+        "port": 8989
+      }
+    }
+  }
+}
+```
+
+### Radarr and Sonarr with a `urlBase` set on a common hostname
+
+The `urlBase` is used when your provider isn't at the server root, but at a subdirectory, like:
+`http://my-pvr-server.com/sonarr`.
+
+```
+{
+  "alexa-libby": {
+    "server": {
+      "hostname": "http://my-pvr-server.com"
+    },
+    "movies": {
+      "provider": "radarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "urlBase": "radarr",
+
+    },
+    "shows": {
+      "provider": "sonarr",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "urlBase": "sonarr",
+      }
+    }
+  }
+}
+```
+
 ## Creating a Lambda function
 
 The skill is built to be easily hosted on Amazon's [AWS Lambda
