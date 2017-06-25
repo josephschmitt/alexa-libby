@@ -78,6 +78,6 @@ function mapToMediaResult(show) {
     year: show.year,
     tvdbid: show.tvdbId,
     status: show.status,
-    quality: quality.name
+    quality: quality ? quality.name : ''
   };
 }
