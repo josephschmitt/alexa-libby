@@ -38,8 +38,23 @@ describe('api.getProvider', () => {
     sandbox.restore();
   });
 
+  it('should throw an error for a provider that does not exist', () => {
+    getConfig.withArgs('alexa-libby.movies.provider').returns('bupkiss');
+
+    assert.throws(() => getProvider(PROVIDER_TYPE.MOVIES), (err) => {
+      return err.message === 'Invalid provider name: "bupkiss". Valid values are "couchpotato", ' +
+          '"radarr", "sickbeard", and "sonarr", all lower case.';
+    });
+  });
+
   it('should get a Couch Potato API instance', () => {
     getConfig.withArgs('alexa-libby.movies.provider').returns('couchpotato');
+
+    assert(getProvider(PROVIDER_TYPE.MOVIES).default() instanceof CouchPotato);
+  });
+
+  it('should force provider to be lowercase', () => {
+    getConfig.withArgs('alexa-libby.movies.provider').returns('Couchpotato');
 
     assert(getProvider(PROVIDER_TYPE.MOVIES).default() instanceof CouchPotato);
   });
