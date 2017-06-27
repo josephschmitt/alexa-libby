@@ -26,7 +26,13 @@ export default function couchpotato() {
  * @returns {Array<MovieResult>}
  */
 export async function list(title) {
-  const {movies} = await couchpotato().get('movie.list', {search: title});
+  const resp = await couchpotato().get('movie.list', {search: title});
+
+  if (!resp) {
+    return [];
+  }
+
+  const {movies} = resp;
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
@@ -37,7 +43,13 @@ export async function list(title) {
  * @returns {Array<MovieResult>}
  */
 export async function search(query) {
-  const {movies} = await couchpotato().get('movie.search', {q: query});
+  const resp = await couchpotato().get('movie.search', {q: query});
+
+  if (!resp) {
+    return [];
+  }
+
+  const {movies} = resp;
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
