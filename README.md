@@ -42,7 +42,7 @@ guides:
 
 - [Creating a Lambda Function](https://github.com/josephschmitt/alexa-libby/wiki//Creating-a-Lambda-Function)
 - [Using the Pre-packaged Zip File](https://github.com/josephschmitt/alexa-libby/wiki//Using-the-Pre-packaged-Zip-File)
-- [Producing a Package From Source](https://github.com/josephschmitt/alexa-libby/wiki//Producing-a-Package-From-Source)
+or [Producing a Package From Source](https://github.com/josephschmitt/alexa-libby/wiki//Producing-a-Package-From-Source)
 - [Creating the AWS Alexa Skill](https://github.com/josephschmitt/alexa-libby/wiki//Creating-the-AWS-Alexa-Skill)
 
 If you run into trouble, there are a few troubleshooting sections to help (contributions here
