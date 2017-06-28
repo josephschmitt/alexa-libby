@@ -139,6 +139,35 @@ The `urlBase` is used when your provider isn't at the server root, but at a subd
 }
 ```
 
+### CouchPotato and Sickbeard on the same host, but different ports, and SSL enabled
+
+CouchPotato requires "ssl":"true", while sickbeard will just use the hostname defined with https
+
+```
+{
+  "alexa-libby": {
+    "server": {
+    "hostname": "https://my-pvr-server.com"
+    },
+    "movies": {
+      "provider": "couchpotato",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "port": "5050",
+        "ssl":"true"
+      }
+    },
+    "shows": {
+      "provider": "sickbeard",
+      "server": {
+        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "port": "8081"
+      }
+    }
+  }
+}
+```
+
 ## Creating a Lambda function
 
 The skill is built to be easily hosted on Amazon's [AWS Lambda
