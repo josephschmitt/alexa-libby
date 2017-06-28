@@ -8,6 +8,6 @@ module.exports = {
     }
   ],
   samples: [
-    'add {the show |the series |}{-|showName}{ to the list| to the wanted list|}',
+    'add {the show |the series }{-|showName}{ to the list| to the wanted list|}',
   ]
 };

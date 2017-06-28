@@ -1,6 +1,6 @@
 {
   "name": "alexa-libby",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "A skill to ask Alexa about your Movie and TV Show library queues.",
   "main": "dist/index.js",
   "scripts": {
