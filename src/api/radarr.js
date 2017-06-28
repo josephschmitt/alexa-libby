@@ -6,7 +6,7 @@ import serverConfig from '~/api/config.js';
  * @property {String} title
  * @property {String} slug
  * @property {Number} year
- * @property {String} tvdbId
+ * @property {String} tmdbId
  * @property {Array} images
  * @property {String} [status]
  * @property {String} [quality]
@@ -67,7 +67,7 @@ export async function add(movie) {
   const [rootFolderResp] = await radarr().get('rootfolder');
 
   return await radarr().post('movie', {
-    tmdbId: movie.tvdbId,
+    tmdbId: movie.tmdbId,
     title: movie.title,
     titleSlug: movie.slug,
     images: movie.images,
@@ -89,7 +89,7 @@ function mapToMediaResult(movie) {
     title: movie.title,
     slug: movie.titleSlug,
     year: movie.year,
-    tvdbId: movie.tmdbId,
+    tmdbId: movie.tmdbId,
     images: movie.images,
     status: movie.status,
     quality: quality ? quality.name : ''

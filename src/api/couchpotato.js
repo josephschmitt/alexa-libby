@@ -26,13 +26,7 @@ export default function couchpotato() {
  * @returns {Array<MovieResult>}
  */
 export async function list(title) {
-  const resp = await couchpotato().get('movie.list', {search: title});
-
-  if (!resp) {
-    return [];
-  }
-
-  const {movies} = resp;
+  const {movies} = await couchpotato().get('movie.list', {search: title});
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
@@ -43,13 +37,7 @@ export async function list(title) {
  * @returns {Array<MovieResult>}
  */
 export async function search(query) {
-  const resp = await couchpotato().get('movie.search', {q: query});
-
-  if (!resp) {
-    return [];
-  }
-
-  const {movies} = resp;
+  const {movies} = await couchpotato().get('movie.search', {q: query});
   return Array.isArray(movies) ? movies.map(formatMovieResult) : [];
 }
 
@@ -64,14 +52,11 @@ export async function add(movie) {
 }
 
 function formatMovieResult(movie) {
-  const [release] = movie.releases;
-
   return {
     title: movie.title || movie.original_title || movie.titles[0],
-    year: movie.info.year,
-    tmdbId: movie.info.tmdb_id,
-    imdb: movie.info.imdb,
-    status: movie.status,
-    quality: release ? release.quality : null
+    year: movie.year || movie.info.year,
+    tmdbId: movie.tmdb_id || movie.info.tmdb_id,
+    status: movie.status || '',
+    quality: movie.releases && movie.releases.length ? movie.releases[0].quality : null
   };
 }
