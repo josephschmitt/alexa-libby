@@ -193,6 +193,16 @@ Click Create lambda function and you're done. After you've created your Lambda f
 top right of the page to get your Lambda ARN number. You'll need this in the next step, so either
 write that number down, or keep this page open.
 
+It should be noted that as of right now, Alexa Skills only work with Lambda functions deployed to
+US East-1 (N. Virginia) and EU (Ireland). Additionally, the `AMAZON.Movie` and `AMAZON.TVSeries`
+built-in intent slots this project is currently using are in beta, and only working in the US at the
+moment. So for now, choosing US East-1 is the safest way to make sure it all works. If you do want
+to try and get it working in the EU region, you'll have to change the slot types to
+`AMAZON.Literal`, and provide your own samples using the models
+[dictionary](../master/models/dictionary.js) to generate new interaction models that include those
+samples. You can read more about doing this over at the
+[alexa-utterances](https://github.com/alexa-js/alexa-utterances) project.
+
 ## Deploying the Skill
 
 If you don't care about the nitty-gritty of NodeJS projects, you can just download the
