@@ -6,6 +6,7 @@ import serverConfig from '~/api/config.js';
  * @property {String} title
  * @property {Number} year
  * @property {String} tmdbId
+ * @property {String} imdb
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -56,6 +57,7 @@ function formatMovieResult(movie) {
     title: movie.title || movie.original_title || movie.titles[0],
     year: movie.year || movie.info.year,
     tmdbId: movie.tmdb_id || movie.info.tmdb_id,
+    imdb: movie.imdb || movie.info.imdb,
     status: movie.status || '',
     quality: movie.releases && movie.releases.length ? movie.releases[0].quality : null
   };
