@@ -170,7 +170,7 @@ built-in intent slots this project is currently using are in beta, and only work
 moment. So for now, choosing US East-1 is the safest way to make sure it all works. If you do want
 to try and get it working in the EU region, you'll have to change the slot types to
 `AMAZON.Literal`, and provide your own samples using the models
-[dictionary](../master/models.dictionary.js) to generate new interaction models that include those
+[dictionary](../master/models/dictionary.js) to generate new interaction models that include those
 samples. You can read more about doing this over at the
 [alexa-utterances](https://github.com/alexa-js/alexa-utterances) project.
 
