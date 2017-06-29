@@ -72,7 +72,10 @@ export async function add(movie) {
     titleSlug: movie.slug,
     images: movie.images,
     qualityProfileId: quality.id || 1,
-    rootFolderPath: rootFolderResp.path
+    rootFolderPath: rootFolderResp.path,
+    addOptions: {
+      searchForMovie: true
+    }
   });
 }
 
