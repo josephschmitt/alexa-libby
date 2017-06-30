@@ -1,5 +1,8 @@
-import getProvider from '~/api/getProvider.js';
+import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
+
+import buildCard from '~/lib/buildCard.js';
 import buildReprompt from '~/lib/buildReprompt.js';
+import getArtwork, {ARTWORK_SERVICE} from '~/lib/getArtwork.js';
 
 import {
   CANCEL_RESPONSE,
@@ -31,7 +34,23 @@ export function handleYesIntent(req, resp) {
     const [result] = promptData.searchResults;
 
     return api.add(result).then(() => {
-      return Promise.resolve(resp.say(promptData.yesResponse));
+      if (!result) {
+        return null;
+      }
+
+      const id = promptData.providerType === PROVIDER_TYPE.MOVIES ? result.tmdbId : result.tvdbId;
+      return getArtwork(ARTWORK_SERVICE.TMDB, id);
+    }).then((artwork) => {
+      if (artwork) {
+        let title = result.title;
+        if (promptData.providerType === PROVIDER_TYPE.MOVIES) {
+          title += ` (${result.year})`;
+        }
+
+        resp.card(buildCard(title, artwork, promptData.yesResponse));
+      }
+
+      return resp.say(promptData.yesResponse);
     });
   }
 
