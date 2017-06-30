@@ -1,5 +1,6 @@
-import TMDBClient from 'themoviedbclient';
 import config from 'config';
+import TVDBClient from 'node-tvdb';
+import TMDBClient from 'themoviedbclient';
 
 import {PROVIDER_TYPE} from '~/api/getProvider.js';
 
@@ -27,7 +28,7 @@ export default async function getArtwork(serviceName, mediaId) {
     return await getTmdbArtwork(mediaId);
   }
   else if (serviceName === ARTWORK_SERVICE.TVDB) {
-    return null;
+    return await getTvdbArtwork(mediaId);
   }
 
   throw new Error('Unsupported artwork service: ' + serviceName);
@@ -50,6 +51,23 @@ async function getTmdbArtwork(mediaId) {
     return {
       smallImageUrl: tmdb.getImageUrl(movie.poster_path, 'w780'),
       largeImageUrl: tmdb.getImageUrl(movie.poster_path, 'w1280')
+    };
+  }
+  catch (e) {
+    return null;
+  }
+}
+
+async function getTvdbArtwork(mediaId) {
+  try {
+    const apiKey = config.get(`alexa-libby.${PROVIDER_TYPE.SHOWS}.tvdb.apiKey`);
+    const tvdb = new TVDBClient(apiKey);
+
+    const [poster] = await tvdb.getSeriesPosters(mediaId);
+
+    return {
+      smallImageUrl: `https://thetvdb.com/banners/${poster.fileName}`,
+      largeImageUrl: `https://thetvdb.com/banners/${poster.fileName}`
     };
   }
   catch (e) {

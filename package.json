@@ -27,6 +27,7 @@
     "config": "^1.26.1",
     "couchpotato-api": "^0.1.0",
     "node-sickbeard": "0.0.1",
+    "node-tvdb": "^3.2.0",
     "sonarr-api": "^0.2.0",
     "themoviedbclient": "git+https://github.com/josephschmitt/TheMovieDBClient.git",
     "url": "^0.11.0"
