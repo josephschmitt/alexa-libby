@@ -1,5 +1,8 @@
+import config from 'config';
 import SonarrAPI from 'sonarr-api';
+
 import serverConfig from '~/api/config.js';
+import {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 /**
  * @typedef {Object} MediaResult
@@ -64,8 +67,12 @@ export async function search(query) {
  * @returns {Object} -- sonarr response object
  */
 export async function add(show) {
-  const [quality] = _qualityProfiles;
   const [rootFolderResp] = await sonarr().get('rootfolder');
+  const preferredQuality = config(`alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`);
+  const qualities = await loadQualityProfiles();
+  const quality = qualities.find((qt) => {
+    qt.name === preferredQuality;
+  });
 
   return await sonarr().post('series', {
     tvdbId: show.tvdbId,
@@ -81,10 +88,15 @@ async function loadQualityProfiles() {
   if (!_qualityProfiles) {
     _qualityProfiles = await sonarr().get('profile');
   }
+
+  return _qualityProfiles;
 }
 
 function mapToMediaResult(show) {
-  const quality = _qualityProfiles.find((profile) => profile.id === show.qualityProfileId);
+  const preferredQuality = config(`alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`);
+  const quality = _qualityProfiles.find((profile) => {
+    profile.id === show.qualityProfileId || profile.name === preferredQuality;
+  });
 
   return {
     title: show.title,

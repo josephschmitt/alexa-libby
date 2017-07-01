@@ -1,5 +1,8 @@
+import config from 'config';
 import RadarrAPI from 'sonarr-api'; // Radarr API is identical to radarr for now
+
 import serverConfig from '~/api/config.js';
+import {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 /**
  * @typedef {Object} MediaResult
@@ -17,7 +20,7 @@ let _radarr, _qualityProfiles;
 
 export default function radarr() {
   if (!_radarr) {
-    _radarr = new RadarrAPI(serverConfig('movies'));
+    _radarr = new RadarrAPI(serverConfig(PROVIDER_TYPE.MOVIES));
   }
 
   return _radarr;
@@ -64,15 +67,19 @@ export async function search(query) {
  * @returns {Object} -- radarr response object
  */
 export async function add(movie) {
-  const [quality] = _qualityProfiles;
   const [rootFolderResp] = await radarr().get('rootfolder');
+  const preferredQuality = config(`alexa-libby.${PROVIDER_TYPE.MOVIES}.quality`);
+  const qualities = await loadQualityProfiles();
+  const quality = qualities.find((qt) => {
+    qt.name === preferredQuality;
+  });
 
   return await radarr().post('movie', {
     tmdbId: movie.tmdbId,
     title: movie.title,
     titleSlug: movie.slug,
     images: movie.images,
-    qualityProfileId: quality.id || 1,
+    qualityProfileId: quality.id || 1, // Default to 'Any' if no profile set in config
     rootFolderPath: rootFolderResp.path,
     addOptions: {
       searchForMovie: true
@@ -84,10 +91,15 @@ async function loadQualityProfiles() {
   if (!_qualityProfiles) {
     _qualityProfiles = await radarr().get('profile');
   }
+
+  return _qualityProfiles;
 }
 
 function mapToMediaResult(movie) {
-  const quality = _qualityProfiles.find((profile) => profile.id === movie.qualityProfileId);
+  const preferredQuality = config(`alexa-libby.${PROVIDER_TYPE.MOVIES}.quality`);
+  const quality = _qualityProfiles.find((profile) => {
+    profile.id === movie.qualityProfileId || profile.name === preferredQuality;
+  });
 
   return {
     title: movie.title,
@@ -97,6 +109,6 @@ function mapToMediaResult(movie) {
     imdbId: movie.imdbId,
     images: movie.images,
     status: movie.status,
-    quality: quality ? quality.name : ''
+    quality: quality ? quality.name : 'Any'
   };
 }
