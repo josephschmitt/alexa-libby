@@ -1,5 +1,5 @@
 import config from 'config';
-import TMDBClient from 'themoviedbclient';
+import themoviedbclient from 'themoviedbclient';
 
 /**
  * @typedef {Object} ArtworkOptions
@@ -13,6 +13,11 @@ import TMDBClient from 'themoviedbclient';
  * @property {String} smallImageUrl
  * @property {String} largeImageUrl
  */
+
+/* Dumb workaround to make this easier to stub and test */
+export const API = {
+  Client: themoviedbclient
+};
 
 /**
  * Fetches TMDB for artwork for a MediaResult and returns a large and small image url for use in a
@@ -29,7 +34,7 @@ export default async function getArtwork({tmdbId, tvdbId, imdbId}) {
 
   try {
     const apiKey = config.get('alexa-libby.artwork.tmdbApiKey');
-    const tmdb = new TMDBClient(apiKey);
+    const tmdb = new API.Client(apiKey);
     tmdb.configure({ssl: true});
 
     let media;
@@ -37,8 +42,8 @@ export default async function getArtwork({tmdbId, tvdbId, imdbId}) {
       media = await tmdb.call(`/movie/${tmdbId}`);
     }
     else {
-      const results = await tmdb.call(`/find/${tmdbId || imdbId}`, {
-        external_source: tmdbId ? 'tvdb_id' : 'imdb_id'
+      const results = await tmdb.call(`/find/${tvdbId || imdbId}`, {
+        external_source: tvdbId ? 'tvdb_id' : 'imdb_id'
       });
       media = results.tv_results.length ? results.tv_results[0] : results.movie_results[0];
     }
