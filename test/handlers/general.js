@@ -4,6 +4,8 @@ import merge from 'deepmerge';
 import sinon from 'sinon';
 
 import * as provider from '~/api/getProvider.js';
+
+import * as getArtwork from '~/lib/getArtwork.js';
 import getResponseSSML from '~/lib/getResponseSSML.js';
 
 import {
@@ -55,6 +57,7 @@ describe('handlers.general', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
+    sandbox.stub(getArtwork, 'default').resolves({});
   });
 
   afterEach(() => {
@@ -161,7 +164,10 @@ describe('handlers.general', () => {
     it('should respond with a confirmation after adding new media', (done) => {
       sandbox.stub(provider, 'default').returns({add: sandbox.stub().resolves()});
 
-      request = new Alexa.request(yesPromptSession);
+      const session = merge({}, yesPromptSession);
+      session.session.attributes.promptData.searchResults.push({title: 'My Movie', tmdbId: 1234});
+
+      request = new Alexa.request(session);
       response = new Alexa.response(request.getSession());
 
       handleYesIntent(request, response).then(() => {
