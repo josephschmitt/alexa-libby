@@ -6,7 +6,7 @@ import serverConfig from '~/api/config.js';
  * @property {String} title
  * @property {Number} year
  * @property {String} tmdbId
- * @property {String} imdb
+ * @property {String} imdbId
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -49,7 +49,7 @@ export async function search(query) {
  * @returns {Object} -- Couch Potato response object
  */
 export async function add(movie) {
-  return await couchpotato().get('movie.add', {title: movie.title, identifier: movie.imdb});
+  return await couchpotato().get('movie.add', {title: movie.title, identifier: movie.imdbId});
 }
 
 function formatMovieResult(movie) {
@@ -57,7 +57,7 @@ function formatMovieResult(movie) {
     title: movie.title || movie.original_title || movie.titles[0],
     year: movie.year || movie.info.year,
     tmdbId: movie.tmdb_id || movie.info.tmdb_id,
-    imdb: movie.imdb || movie.info.imdb,
+    imdbId: movie.imdb || movie.info.imdb,
     status: movie.status || '',
     quality: movie.releases && movie.releases.length ? movie.releases[0].quality : null
   };

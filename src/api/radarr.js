@@ -7,6 +7,7 @@ import serverConfig from '~/api/config.js';
  * @property {String} slug
  * @property {Number} year
  * @property {String} tmdbId
+ * @property {String} imdbId
  * @property {Array} images
  * @property {String} [status]
  * @property {String} [quality]
@@ -93,6 +94,7 @@ function mapToMediaResult(movie) {
     slug: movie.titleSlug,
     year: movie.year,
     tmdbId: movie.tmdbId,
+    imdbId: movie.imdbId,
     images: movie.images,
     status: movie.status,
     quality: quality ? quality.name : ''

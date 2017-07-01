@@ -1,6 +1,8 @@
 import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
+import buildCard from '~/lib/buildCard.js';
 import buildReprompt from '~/lib/buildReprompt.js';
+import getArtwork from '~/lib/getArtwork.js';
 
 import {
   ADD_SHOW,
@@ -30,9 +32,14 @@ export async function handleFindShowIntent(req, resp) {
       .shouldEndSession(false);
   }
   else {
-    resp
-      .say(ALREADY_WANTED(result.title.replace('\'s', 's')))
-      .send();
+    const responseText = ALREADY_WANTED(result.title.replace('\'s', 's'));
+
+    const artwork = await getArtwork(result);
+    if (artwork) {
+      resp.card(buildCard(result.title, artwork, responseText));
+    }
+
+    return resp.say(responseText);
   }
 }
 

@@ -1,13 +1,15 @@
 import config from 'config';
 import url from 'url';
 
+import {PROVIDER_TYPE} from '~/api/getProvider.js';
+
 /**
  * Returns a config object for a given API provider.
  *
  * @param {String} providerType -- "movie" or "show"
  * @returns {Object}
  */
-export default function (providerType = 'movies') {
+export default function (providerType = PROVIDER_TYPE.MOVIES) {
   const baseConfig = config.get('alexa-libby');
   const serverConfig = baseConfig.server || {};
   const mediaConfig = baseConfig[providerType] || {};

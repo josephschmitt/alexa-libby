@@ -1,6 +1,8 @@
 import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
+import buildCard from '~/lib/buildCard.js';
 import buildReprompt from '~/lib/buildReprompt.js';
+import getArtwork from '~/lib/getArtwork.js';
 import parseDate from '~/lib/parseDate.js';
 
 import {
@@ -28,6 +30,7 @@ export async function handleFindMovieIntent(req, resp) {
     movies = await api.search(query);
     if (movies && movies.length) {
       const [topResult] = movies;
+
       resp
         .say(ADD_PROMPT(topResult.title, topResult.year))
         .session('promptData', buildReprompt(movies, PROVIDER_TYPE.MOVIES))
@@ -38,7 +41,14 @@ export async function handleFindMovieIntent(req, resp) {
   }
 
   const [result] = movies;
-  return Promise.resolve(resp.say(ALREADY_WANTED(result.title, result.year)));
+  const responseText = ALREADY_WANTED(result.title, result.year);
+
+  const artwork = await getArtwork(result);
+  if (artwork) {
+    resp.card(buildCard(`${result.title} (${result.year})`, artwork, responseText));
+  }
+
+  return Promise.resolve(resp.say(responseText));
 }
 
 export async function handleAddMovieIntent(req, resp) {
