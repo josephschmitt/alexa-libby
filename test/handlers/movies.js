@@ -174,7 +174,7 @@ describe('handlers.movies', () => {
       request = new Alexa.request(findMovieRequest);
       response = new Alexa.response(request.getSession());
 
-      handleFindMovieIntent(request, response).then((movieResp) => {
+      handleAddMovieIntent(request, response).then((movieResp) => {
         assert.equal(getResponseSSML(movieResp), NO_MOVIE_SLOT());
       }).then(done, done);
     });
