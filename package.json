@@ -28,7 +28,7 @@
     "couchpotato-api": "^0.1.0",
     "node-sickbeard": "0.0.1",
     "sonarr-api": "^0.2.0",
-    "themoviedbclient": "git+https://github.com/josephschmitt/TheMovieDBClient.git",
+    "themoviedbclient": "^0.2.0",
     "url": "^0.11.0"
   },
   "devDependencies": {
