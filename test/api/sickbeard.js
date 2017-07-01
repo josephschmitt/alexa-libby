@@ -138,6 +138,11 @@ describe('api.sickbeard', () => {
       assert.equal(shows.length, 4);
     });
 
+    it('should list a specific show', async () => {
+      const shows = await sickbeard.list('Undercover Boss');
+      assert.equal(shows.length, 1);
+    });
+
     it('should format the show response to use standardized keys', async () => {
       const shows = await sickbeard.list();
       assert.deepEqual(Object.keys(shows[0]), ['title', 'year', 'tvdbId', 'status', 'quality']);
