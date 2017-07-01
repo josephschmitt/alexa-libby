@@ -2,7 +2,7 @@ import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 import buildCard from '~/lib/buildCard.js';
 import buildReprompt from '~/lib/buildReprompt.js';
-import getArtwork, {ARTWORK_SERVICE} from '~/lib/getArtwork.js';
+import getArtwork from '~/lib/getArtwork.js';
 import parseDate from '~/lib/parseDate.js';
 
 import {
@@ -43,7 +43,7 @@ export async function handleFindMovieIntent(req, resp) {
   const [result] = movies;
   const responseText = ALREADY_WANTED(result.title, result.year);
 
-  const artwork = await getArtwork(ARTWORK_SERVICE.TMDB, result.tmdbId);
+  const artwork = await getArtwork(result);
   if (artwork) {
     resp.card(buildCard(`${result.title} (${result.year})`, artwork, responseText));
   }

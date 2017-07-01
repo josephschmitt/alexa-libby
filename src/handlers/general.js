@@ -2,7 +2,7 @@ import getProvider, {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 import buildCard from '~/lib/buildCard.js';
 import buildReprompt from '~/lib/buildReprompt.js';
-import getArtwork, {ARTWORK_SERVICE} from '~/lib/getArtwork.js';
+import getArtwork from '~/lib/getArtwork.js';
 
 import {
   CANCEL_RESPONSE,
@@ -38,8 +38,7 @@ export function handleYesIntent(req, resp) {
         return null;
       }
 
-      const id = promptData.providerType === PROVIDER_TYPE.MOVIES ? result.tmdbId : result.tvdbId;
-      return getArtwork(ARTWORK_SERVICE.TMDB, id);
+      return getArtwork(result);
     }).then((artwork) => {
       if (artwork) {
         let title = result.title;

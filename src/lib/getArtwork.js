@@ -1,73 +1,55 @@
 import config from 'config';
-import TVDBClient from 'node-tvdb';
 import TMDBClient from 'themoviedbclient';
 
-import {PROVIDER_TYPE} from '~/api/getProvider.js';
-
-export const ARTWORK_SERVICE = {
-  TMDB: 'tmdb',
-  TVDB: 'tvdb'
-};
+/**
+ * @typedef {Object} ArtworkOptions
+ * @property {String} [tmdbId]
+ * @property {String} [tvdbId]
+ * @property {String} [imdbId]
+ */
 
 /**
- * @typedef ArtworkImages
+ * @typedef {Object} ArtworkImages
  * @property {String} smallImageUrl
  * @property {String} largeImageUrl
  */
 
 /**
- * Queries various artwork API services and returns a large and small image url for use in a skill
- * card.
+ * Fetches TMDB for artwork for a MediaResult and returns a large and small image url for use in a
+ * skill card.
  *
- * @param {String} serviceName -- ARTWORK_SERVICE.TMDB or ARTWORK_SERVICE.TVDB
- * @param {String|Number} mediaId -- Unique id for the service. E.g. tvdbId or tmdbId
+ * @param {ArtworkOptions} options -- An object with a tmdb, tvdb, or imdb id on it. Usually a
+ *     MediaResult from one of the API clients.
  * @returns {PromiseLike<ArtworkImages>}
  */
-export default async function getArtwork(serviceName, mediaId) {
-  if (serviceName === ARTWORK_SERVICE.TMDB) {
-    return await getTmdbArtwork(mediaId);
-  }
-  else if (serviceName === ARTWORK_SERVICE.TVDB) {
-    return await getTvdbArtwork(mediaId);
+export default async function getArtwork({tmdbId, tvdbId, imdbId}) {
+  if (!(tmdbId || tvdbId || imdbId)) {
+    throw new Error('You must provide a valid tmdbId, tvdbId, or imdbId to fetch artwork');
   }
 
-  throw new Error('Unsupported artwork service: ' + serviceName);
-}
-
-async function getTmdbArtwork(mediaId) {
   try {
-    const apiKey = config.get(`alexa-libby.${PROVIDER_TYPE.MOVIES}.tmdb.apiKey`);
+    const apiKey = config.get('alexa-libby.artwork.tmdbApiKey');
     const tmdb = new TMDBClient(apiKey);
+    tmdb.configure({ssl: true});
 
-    tmdb.configure({
-      ssl: true
-    });
+    let media;
+    if (tmdbId) {
+      media = await tmdb.call(`/movie/${tmdbId}`);
+    }
+    else {
+      const results = await tmdb.call(`/find/${tmdbId || imdbId}`, {
+        external_source: tmdbId ? 'tvdb_id' : 'imdb_id'
+      });
+      media = results.tv_results.length ? results.tv_results[0] : results.movie_results[0];
+    }
 
-    const movie = await tmdb.call(`/movie/${mediaId}`);
-    if (!movie) {
+    if (!media) {
       return null;
     }
 
     return {
-      smallImageUrl: tmdb.getImageUrl(movie.poster_path, 'w780'),
-      largeImageUrl: tmdb.getImageUrl(movie.poster_path, 'w1280')
-    };
-  }
-  catch (e) {
-    return null;
-  }
-}
-
-async function getTvdbArtwork(mediaId) {
-  try {
-    const apiKey = config.get(`alexa-libby.${PROVIDER_TYPE.SHOWS}.tvdb.apiKey`);
-    const tvdb = new TVDBClient(apiKey);
-
-    const [poster] = await tvdb.getSeriesPosters(mediaId);
-
-    return {
-      smallImageUrl: `https://thetvdb.com/banners/${poster.fileName}`,
-      largeImageUrl: `https://thetvdb.com/banners/${poster.fileName}`
+      smallImageUrl: tmdb.getImageUrl(media.poster_path, 'w780'),
+      largeImageUrl: tmdb.getImageUrl(media.poster_path, 'w1280')
     };
   }
   catch (e) {
