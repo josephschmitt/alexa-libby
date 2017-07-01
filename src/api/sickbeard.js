@@ -5,7 +5,7 @@ import serverConfig from '~/api/config.js';
  * @typedef {Object} MediaResult
  * @property {String} title
  * @property {Number} [year]
- * @property {String} tvdbid
+ * @property {String} tvdbId
  * @property {String} [status]
  * @property {String} [quality]
  */
@@ -34,7 +34,7 @@ export async function list(title) {
     return {
       title: show.show_name,
       year: show.year,
-      tvdbid: show.tvdbid,
+      tvdbId: show.tvdbid,
       status: show.status.toLowerCase(),
       quality: show.quality
     };
@@ -63,7 +63,7 @@ export async function search(query) {
     return {
       title: show.name,
       year: new Date(show.first_aired).getFullYear(),
-      tvdbid: show.tvdbid
+      tvdbId: show.tvdbid
     };
   }) : [];
 }
@@ -75,5 +75,5 @@ export async function search(query) {
  * @returns {Object} -- Sickbeard response object
  */
 export async function add(show) {
-  return await sickbeard().cmd('show.addnew', {tvdbid: show.tvdbid, status: 'wanted'});
+  return await sickbeard().cmd('show.addnew', {tvdbid: show.tvdbId, status: 'wanted'});
 }

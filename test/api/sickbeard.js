@@ -140,7 +140,7 @@ describe('api.sickbeard', () => {
 
     it('should format the show response to use standardized keys', async () => {
       const shows = await sickbeard.list();
-      assert.deepEqual(Object.keys(shows[0]), ['title', 'year', 'tvdbid', 'status', 'quality']);
+      assert.deepEqual(Object.keys(shows[0]), ['title', 'year', 'tvdbId', 'status', 'quality']);
     });
 
     it('should fill in the correct data in the correct fields', async () => {
@@ -149,7 +149,7 @@ describe('api.sickbeard', () => {
       assert.deepEqual(show, {
         title: 'Law & Order: Criminal Intent',
         year: undefined,
-        tvdbid: 71489,
+        tvdbId: 71489,
         status: 'ended',
         quality: 'HD720p'
       });
@@ -170,11 +170,11 @@ describe('api.sickbeard', () => {
 
       assert.deepEqual(shows, [{
         title: 'The Tonight Show with Jay Leno',
-        tvdbid: 70336,
+        tvdbId: 70336,
         year: '1992'
       }, {
         title: 'The Jay Leno Show',
-        tvdbid: 113921,
+        tvdbId: 113921,
         year: '2009'
       }]);
     });
@@ -186,7 +186,7 @@ describe('api.sickbeard', () => {
     beforeEach(() => {
       show = {
         title: 'Conan (2010)',
-        tvdbid: 194751,
+        tvdbId: 194751,
         year: '2011'
       };
 

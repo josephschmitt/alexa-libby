@@ -486,7 +486,7 @@ describe('api.couchpotato', () => {
     it('should format the movie response to use standardized keys', async () => {
       const movies = await couchpotato.list();
       assert.deepEqual(Object.keys(movies[0]),
-          ['title', 'year', 'tmdbId', 'imdb', 'status', 'quality']);
+          ['title', 'year', 'tmdbId', 'imdbId', 'status', 'quality']);
     });
 
     it('should fill in the correct data in the correct fields', async () => {
@@ -496,7 +496,7 @@ describe('api.couchpotato', () => {
         title: '10 Cloverfield Lane',
         year: 2016,
         tmdbId: 333371,
-        imdb: 'tt1179933',
+        imdbId: 'tt1179933',
         status: 'done',
         quality: '1080p'
       });
@@ -519,7 +519,7 @@ describe('api.couchpotato', () => {
         title: '10 Things I Hate About You',
         year: 1999,
         tmdbId: 4951,
-        imdb: 'tt0147800',
+        imdbId: 'tt0147800',
         status: 'done',
         quality: 'brrip'
       });
@@ -534,12 +534,12 @@ describe('api.couchpotato', () => {
         title: '12 Angry Men',
         year: 1957,
         tmdbId: 389,
-        imdb: 'tt0050083',
+        imdbId: 'tt0050083',
         status: 'done',
         quality: 'dvdr'
       };
 
-      cpApiStub.withArgs('movie.add', {title: movie.title, identifier: movie.imdb})
+      cpApiStub.withArgs('movie.add', {title: movie.title, identifier: movie.imdbId})
           .resolves(sampleAddMovieResponse);
     });
 

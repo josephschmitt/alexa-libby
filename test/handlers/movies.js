@@ -39,7 +39,8 @@ const sampleSession = {
 const sampleMovie = {
   title: 'My Movie',
   year: 2000,
-  tvdbid: 12345,
+  tmdbId: 12345,
+  imdbId: 12345,
   status: 'in library',
   quality: '1080p'
 };
@@ -47,7 +48,8 @@ const sampleMovie = {
 const sampleMovieResult = {
   title: 'My Search Movie',
   year: 2010,
-  tvdbid: 123456,
+  tmdbId: 123456,
+  imdbId: 123456,
   status: 'wanted',
   quality: '1080p'
 };
