@@ -469,10 +469,6 @@ describe('api.couchpotato', () => {
       });
     });
 
-    afterEach(() => {
-      sandbox.reset();
-    });
-
     it('should list all the movies', async () => {
       const movies = await couchpotato.list();
       assert.equal(movies.length, 3);
@@ -508,10 +504,6 @@ describe('api.couchpotato', () => {
       cpApiStub.withArgs('movie.search', {q: '10'}).resolves(sampleMoviesResponse);
     });
 
-    afterEach(() => {
-      sandbox.reset();
-    });
-
     it('should return a formatted result', async () => {
       const movies = await couchpotato.search('10');
 
@@ -541,10 +533,6 @@ describe('api.couchpotato', () => {
 
       cpApiStub.withArgs('movie.add', {title: movie.title, identifier: movie.imdbId})
           .resolves(sampleAddMovieResponse);
-    });
-
-    afterEach(() => {
-      sandbox.reset();
     });
 
     it('should return a correct response', async () => {
