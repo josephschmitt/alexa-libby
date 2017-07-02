@@ -258,6 +258,12 @@ describe('api.radarr', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
+
+    sandbox.stub(serverConfig, 'default').returns({
+      hostname: 'http://localhost',
+      apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
+    });
+
     apiStub = sandbox.stub(radarr.default(), 'get');
 
     apiStub.withArgs('rootfolder').resolves([{path: ''}]);
@@ -265,11 +271,6 @@ describe('api.radarr', () => {
       {id: 1, name: 'Any'},
       {id: 2, name: 'HDTV-1080p'}
     ]);
-
-    sandbox.stub(serverConfig, 'default').returns({
-      hostname: 'http://localhost',
-      apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
-    });
   });
 
   afterEach(() => {
@@ -413,7 +414,9 @@ describe('api.radarr', () => {
     });
 
     it('should add using the quality from the config', async () => {
+      sandbox.stub(config, 'has').withArgs('alexa-libby.movies.quality').returns(true);
       sandbox.stub(config, 'get').withArgs('alexa-libby.movies.quality').returns('HDTV-1080p');
+
       const argWithQuality = merge(addArg, {qualityProfileId: 2});
 
       await radarr.add(movie);

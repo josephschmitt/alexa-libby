@@ -112,12 +112,13 @@ describe('api.sickbeard', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sbApiStub = sandbox.stub(sickbeard.default(), 'cmd');
 
     sandbox.stub(serverConfig, 'default').returns({
       url: 'http://localhost',
       apikey: 'abcdefghijklmnopqrstuvwxyz123456'
     });
+
+    sbApiStub = sandbox.stub(sickbeard.default(), 'cmd');
   });
 
   afterEach(() => {

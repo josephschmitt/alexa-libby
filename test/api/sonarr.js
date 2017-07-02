@@ -230,6 +230,11 @@ describe('api.sonarr', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
+    sandbox.stub(serverConfig, 'default').returns({
+      hostname: 'http://localhost',
+      apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
+    });
+
     apiStub = sandbox.stub(sonarr.default(), 'get');
 
     apiStub.withArgs('rootfolder').resolves([{path: ''}]);
@@ -237,11 +242,6 @@ describe('api.sonarr', () => {
       {id: 1, name: 'Any'},
       {id: 2, name: 'HDTV-1080p'}
     ]);
-
-    sandbox.stub(serverConfig, 'default').returns({
-      hostname: 'http://localhost',
-      apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
-    });
   });
 
   afterEach(() => {
@@ -398,7 +398,9 @@ describe('api.sonarr', () => {
     });
 
     it('should add using the quality from the config', async () => {
+      sandbox.stub(config, 'has').withArgs('alexa-libby.shows.quality').returns(true);
       sandbox.stub(config, 'get').withArgs('alexa-libby.shows.quality').returns('HDTV-1080p');
+
       const argWithQuality = merge(addArg, {qualityProfileId: 2});
 
       await sonarr.add(show);

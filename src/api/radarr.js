@@ -68,7 +68,7 @@ export async function search(query) {
  */
 export async function add(movie) {
   const [rootFolderResp] = await radarr().get('rootfolder');
-  const preferredQuality = config.get(`alexa-libby.${PROVIDER_TYPE.MOVIES}.quality`);
+  const preferredQuality = getPreferredQuality();
   const qualities = await loadQualityProfiles();
   const quality = qualities.find((qt) => {
     return qt.name === preferredQuality;
@@ -96,7 +96,7 @@ async function loadQualityProfiles() {
 }
 
 function mapToMediaResult(movie) {
-  const preferredQuality = config.get(`alexa-libby.${PROVIDER_TYPE.MOVIES}.quality`);
+  const preferredQuality = getPreferredQuality();
   const quality = _qualityProfiles.find((profile) => {
     return profile.id === movie.qualityProfileId || profile.name === preferredQuality;
   });
@@ -111,4 +111,14 @@ function mapToMediaResult(movie) {
     status: movie.status,
     quality: quality ? quality.name : 'Any'
   };
+}
+
+function getPreferredQuality() {
+  const path = `alexa-libby.${PROVIDER_TYPE.MOVIES}.quality`;
+
+  if (config.has(path)) {
+    return config.get(path);
+  }
+
+  return null;
 }

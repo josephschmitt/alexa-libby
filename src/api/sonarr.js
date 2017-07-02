@@ -20,7 +20,7 @@ let _sonarr, _qualityProfiles;
 
 export default function sonarr() {
   if (!_sonarr) {
-    _sonarr = new SonarrAPI(serverConfig('shows'));
+    _sonarr = new SonarrAPI(serverConfig(PROVIDER_TYPE.SHOWS));
   }
 
   return _sonarr;
@@ -68,7 +68,7 @@ export async function search(query) {
  */
 export async function add(show) {
   const [rootFolderResp] = await sonarr().get('rootfolder');
-  const preferredQuality = config.get(`alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`);
+  const preferredQuality = getPreferredQuality();
   const qualities = await loadQualityProfiles();
   const quality = qualities.find((qt) => {
     return qt.name === preferredQuality;
@@ -93,7 +93,7 @@ async function loadQualityProfiles() {
 }
 
 function mapToMediaResult(show) {
-  const preferredQuality = config.get(`alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`);
+  const preferredQuality = getPreferredQuality();
   const quality = _qualityProfiles.find((profile) => {
     return profile.id === show.qualityProfileId || profile.name === preferredQuality;
   });
@@ -108,4 +108,14 @@ function mapToMediaResult(show) {
     status: show.status,
     quality: quality ? quality.name : ''
   };
+}
+
+function getPreferredQuality() {
+  const path = `alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`;
+
+  if (config.has(path)) {
+    return config.get(path);
+  }
+
+  return null;
 }

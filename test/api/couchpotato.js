@@ -447,12 +447,13 @@ describe('api.couchpotato', () => {
   let cpApiStub, sandbox;
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    cpApiStub = sandbox.stub(couchpotato.default(), 'get');
 
     sandbox.stub(serverConfig, 'default').returns({
       hostname: 'http://localhost',
       apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
     });
+
+    cpApiStub = sandbox.stub(couchpotato.default(), 'get');
   });
 
   afterEach(() => {
