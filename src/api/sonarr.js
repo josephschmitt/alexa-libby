@@ -1,5 +1,8 @@
+import config from 'config';
 import SonarrAPI from 'sonarr-api';
+
 import serverConfig from '~/api/config.js';
+import {PROVIDER_TYPE} from '~/api/getProvider.js';
 
 /**
  * @typedef {Object} MediaResult
@@ -17,7 +20,7 @@ let _sonarr, _qualityProfiles;
 
 export default function sonarr() {
   if (!_sonarr) {
-    _sonarr = new SonarrAPI(serverConfig('shows'));
+    _sonarr = new SonarrAPI(serverConfig(PROVIDER_TYPE.SHOWS));
   }
 
   return _sonarr;
@@ -64,15 +67,19 @@ export async function search(query) {
  * @returns {Object} -- sonarr response object
  */
 export async function add(show) {
-  const [quality] = _qualityProfiles;
   const [rootFolderResp] = await sonarr().get('rootfolder');
+  const preferredQuality = getPreferredQuality();
+  const qualities = await loadQualityProfiles();
+  const quality = qualities.find((qt) => {
+    return qt.name === preferredQuality;
+  });
 
   return await sonarr().post('series', {
     tvdbId: show.tvdbId,
     title: show.title,
     titleSlug: show.slug,
     images: show.images,
-    qualityProfileId: quality.id || 1,
+    qualityProfileId: quality ? quality.id : 1, // Default to 'Any' if no profile set in config
     rootFolderPath: rootFolderResp.path
   });
 }
@@ -81,10 +88,15 @@ async function loadQualityProfiles() {
   if (!_qualityProfiles) {
     _qualityProfiles = await sonarr().get('profile');
   }
+
+  return _qualityProfiles;
 }
 
 function mapToMediaResult(show) {
-  const quality = _qualityProfiles.find((profile) => profile.id === show.qualityProfileId);
+  const preferredQuality = getPreferredQuality();
+  const quality = _qualityProfiles.find((profile) => {
+    return profile.id === show.qualityProfileId || profile.name === preferredQuality;
+  });
 
   return {
     title: show.title,
@@ -96,4 +108,14 @@ function mapToMediaResult(show) {
     status: show.status,
     quality: quality ? quality.name : ''
   };
+}
+
+function getPreferredQuality() {
+  const path = `alexa-libby.${PROVIDER_TYPE.SHOWS}.quality`;
+
+  if (config.has(path)) {
+    return config.get(path);
+  }
+
+  return null;
 }

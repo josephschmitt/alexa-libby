@@ -447,12 +447,13 @@ describe('api.couchpotato', () => {
   let cpApiStub, sandbox;
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    cpApiStub = sandbox.stub(couchpotato.default(), 'get');
 
     sandbox.stub(serverConfig, 'default').returns({
       hostname: 'http://localhost',
       apiKey: 'abcdefghijklmnopqrstuvwxyz123456'
     });
+
+    cpApiStub = sandbox.stub(couchpotato.default(), 'get');
   });
 
   afterEach(() => {
@@ -467,10 +468,6 @@ describe('api.couchpotato', () => {
           sampleMoviesResponse.movies[2]
         ]
       });
-    });
-
-    afterEach(() => {
-      sandbox.reset();
     });
 
     it('should list all the movies', async () => {
@@ -508,10 +505,6 @@ describe('api.couchpotato', () => {
       cpApiStub.withArgs('movie.search', {q: '10'}).resolves(sampleMoviesResponse);
     });
 
-    afterEach(() => {
-      sandbox.reset();
-    });
-
     it('should return a formatted result', async () => {
       const movies = await couchpotato.search('10');
 
@@ -541,10 +534,6 @@ describe('api.couchpotato', () => {
 
       cpApiStub.withArgs('movie.add', {title: movie.title, identifier: movie.imdbId})
           .resolves(sampleAddMovieResponse);
-    });
-
-    afterEach(() => {
-      sandbox.reset();
     });
 
     it('should return a correct response', async () => {

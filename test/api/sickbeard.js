@@ -112,12 +112,13 @@ describe('api.sickbeard', () => {
 
   beforeEach(() => {
     sandbox = sinon.sandbox.create();
-    sbApiStub = sandbox.stub(sickbeard.default(), 'cmd');
 
     sandbox.stub(serverConfig, 'default').returns({
       url: 'http://localhost',
       apikey: 'abcdefghijklmnopqrstuvwxyz123456'
     });
+
+    sbApiStub = sandbox.stub(sickbeard.default(), 'cmd');
   });
 
   afterEach(() => {
@@ -127,10 +128,6 @@ describe('api.sickbeard', () => {
   describe('.list()', () => {
     beforeEach(() => {
       sbApiStub.withArgs('shows').resolves(sampleShowsResponse);
-    });
-
-    afterEach(() => {
-      sandbox.reset();
     });
 
     it('should list all the shows', async () => {
@@ -166,10 +163,6 @@ describe('api.sickbeard', () => {
       sbApiStub.withArgs('sb.searchtvdb', {name: 'leno'}).resolves(sampleSearchTvdbResponse);
     });
 
-    afterEach(() => {
-      sandbox.reset();
-    });
-
     it('should return a formatted result', async () => {
       const shows = await sickbeard.search('leno');
 
@@ -196,10 +189,6 @@ describe('api.sickbeard', () => {
       };
 
       sbApiStub.withArgs('show.addnew', {tvdbid: 194751, status: 'wanted'}).resolves(sampleAddNew);
-    });
-
-    afterEach(() => {
-      sandbox.reset();
     });
 
     it('should add a show and return the response', async () => {
