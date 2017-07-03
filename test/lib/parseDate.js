@@ -24,7 +24,7 @@ describe('lib.parseDate', () => {
   });
 
   it('should exclude a month if it is not in the string', () => {
-    assert.deepEqual(parseDate('2017-06'), {
+    assert.deepEqual(parseDate('2017'), {
       year: 2017,
       month: null,
       date: null
