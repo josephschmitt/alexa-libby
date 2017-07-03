@@ -248,7 +248,7 @@ describe('handlers.general', () => {
     });
 
     it('should suggest the next result if there are more', (done) => {
-      const results = [{title: 'result 1'}, {title: 'result 2'}];
+      const results = [{title: 'result 1'}, {title: 'result 2'}, {title: 'result 3'}];
       const noSession = merge(sampleSession, {
         session: {
           attributes: {
