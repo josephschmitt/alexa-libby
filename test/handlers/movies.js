@@ -4,6 +4,8 @@ import merge from 'deepmerge';
 import sinon from 'sinon';
 
 import * as getProvider from '~/api/getProvider.js';
+
+import * as getArtwork from '~/lib/getArtwork.js';
 import getResponseSSML from '~/lib/getResponseSSML.js';
 
 import {
@@ -82,6 +84,11 @@ describe('handlers.movies', () => {
           }
         }
       };
+
+      sandbox.stub(getArtwork, 'default').resolves({
+        smallImageUrl: '',
+        largeImageUrl: ''
+      });
     });
 
     it('should respond when there is no movie slot', (done) => {
@@ -93,7 +100,7 @@ describe('handlers.movies', () => {
       }).then(done, done);
     });
 
-    it('should respond when the movie is not found in your library', (done) => {
+    it('should respond when the movie is not found in your library with the movie name', (done) => {
       apiStub().list.resolves([]);
       apiStub().search.resolves([]);
 
@@ -110,6 +117,29 @@ describe('handlers.movies', () => {
       handleFindMovieIntent(request, response).then((movieResp) => {
         assert.equal(getResponseSSML(movieResp),
             NO_MOVIE_FOUND(findMovieRequest.request.intent.slots.movieName.value));
+      }).then(done, done);
+    });
+
+    it('should respond when the movie is not found with the movie name and year', (done) => {
+      apiStub().list.resolves([]);
+      apiStub().search.resolves([]);
+
+      findMovieRequest.request.intent.slots = {
+        movieName: {
+          name: 'movieName',
+          value: 'test movie'
+        },
+        releaseDate: {
+          name: 'releaseDate',
+          value: '2000'
+        }
+      };
+
+      request = new Alexa.request(findMovieRequest);
+      response = new Alexa.response(request.getSession());
+
+      handleFindMovieIntent(request, response).then((movieResp) => {
+        assert.equal(getResponseSSML(movieResp), NO_MOVIE_FOUND('test movie 2000'));
       }).then(done, done);
     });
 
