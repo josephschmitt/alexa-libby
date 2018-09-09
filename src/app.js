@@ -22,6 +22,7 @@ app.intent('AMAZON.HelpIntent', generalHandlers.handleHelpIntent);
 app.post = function (request, response, type, exception) {
   if (exception) {
     // Always turn an exception into a successful response
+    console.error(exception)
     response.clear().say('An error occured: ' + exception).send();
   }
 };

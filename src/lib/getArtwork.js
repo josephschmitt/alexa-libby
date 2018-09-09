@@ -58,6 +58,7 @@ export default async function getArtwork({tmdbId, tvdbId, imdbId}) {
     };
   }
   catch (e) {
+    console.error({"ArtWork Error": e.toString()})
     return null;
   }
 }
