@@ -23,7 +23,7 @@
     "url": "https://github.com/josephschmitt/alexa-libby.git"
   },
   "dependencies": {
-    "alexa-app": "^4.0.1",
+    "alexa-app": "^4.2.2",
     "config": "^1.26.1",
     "couchpotato-api": "^0.1.0",
     "node-sickbeard": "0.0.1",
@@ -42,9 +42,9 @@
     "eslint-plugin-import": "^2.3.0",
     "fs-extra": "^3.0.1",
     "mocha": "^3.4.2",
-    "node-lambda": "^0.11.0",
+    "node-lambda": "^0.11.7",
     "nyc": "^11.0.2",
-    "rimraf": "^2.6.1",
+    "rimraf": "^2.6.2",
     "sinon": "^2.3.2"
   }
 }
