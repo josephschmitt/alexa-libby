@@ -1,0 +1,258 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "libby",
+            "intents": [
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AddMovie",
+                    "slots": [
+                        {
+                            "name": "movieName",
+                            "type": "AMAZON.Movie"
+                        },
+                        {
+                            "name": "releaseDate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "add the movie {movieName} to the list",
+                        "add the film {movieName} to the list",
+                        "add the movie {movieName} to the wanted list",
+                        "add the film {movieName} to the wanted list",
+                        "add the movie {movieName}",
+                        "add the film {movieName}",
+                        "add the movie {movieName} from {releaseDate} to the list",
+                        "add the film {movieName} from {releaseDate} to the list",
+                        "add the movie {movieName} released in {releaseDate} to the list",
+                        "add the film {movieName} released in {releaseDate} to the list",
+                        "add the movie {movieName} year {releaseDate} to the list",
+                        "add the film {movieName} year {releaseDate} to the list",
+                        "add the movie {movieName} came out in {releaseDate} to the list",
+                        "add the film {movieName} came out in {releaseDate} to the list",
+                        "add the movie {movieName} from {releaseDate} to the wanted list",
+                        "add the film {movieName} from {releaseDate} to the wanted list",
+                        "add the movie {movieName} released in {releaseDate} to the wanted list",
+                        "add the film {movieName} released in {releaseDate} to the wanted list",
+                        "add the movie {movieName} year {releaseDate} to the wanted list",
+                        "add the film {movieName} year {releaseDate} to the wanted list",
+                        "add the movie {movieName} came out in {releaseDate} to the wanted list",
+                        "add the film {movieName} came out in {releaseDate} to the wanted list",
+                        "add the movie {movieName} from {releaseDate}",
+                        "add the film {movieName} from {releaseDate}",
+                        "add the movie {movieName} released in {releaseDate}",
+                        "add the film {movieName} released in {releaseDate}",
+                        "add the movie {movieName} year {releaseDate}",
+                        "add the film {movieName} year {releaseDate}",
+                        "add the movie {movieName} came out in {releaseDate}",
+                        "add the film {movieName} came out in {releaseDate}"
+                    ]
+                },
+                {
+                    "name": "AddShow",
+                    "slots": [
+                        {
+                            "name": "showName",
+                            "type": "AMAZON.TVSeries"
+                        }
+                    ],
+                    "samples": [
+                        "add the show {showName} to the list",
+                        "add the series {showName} to the list",
+                        "add the show {showName} to the wanted list",
+                        "add the series {showName} to the wanted list",
+                        "add the show {showName}",
+                        "add the series {showName}"
+                    ]
+                },
+                {
+                    "name": "FindMovie",
+                    "slots": [
+                        {
+                            "name": "movieName",
+                            "type": "AMAZON.Movie"
+                        },
+                        {
+                            "name": "releaseDate",
+                            "type": "AMAZON.DATE"
+                        }
+                    ],
+                    "samples": [
+                        "is the movie {movieName} on the list",
+                        "if the movie {movieName} on the list",
+                        "is the film {movieName} on the list",
+                        "if the film {movieName} on the list",
+                        "is the movie {movieName} is on the list",
+                        "if the movie {movieName} is on the list",
+                        "is the film {movieName} is on the list",
+                        "if the film {movieName} is on the list",
+                        "is the movie {movieName} already",
+                        "if the movie {movieName} already",
+                        "is the film {movieName} already",
+                        "if the film {movieName} already",
+                        "is the movie {movieName} is already",
+                        "if the movie {movieName} is already",
+                        "is the film {movieName} is already",
+                        "if the film {movieName} is already",
+                        "is the movie {movieName} is wanted",
+                        "if the movie {movieName} is wanted",
+                        "is the film {movieName} is wanted",
+                        "if the film {movieName} is wanted",
+                        "is the movie {movieName} is in wanted",
+                        "if the movie {movieName} is in wanted",
+                        "is the film {movieName} is in wanted",
+                        "if the film {movieName} is in wanted",
+                        "is the movie {movieName} from {releaseDate} on the list",
+                        "if the movie {movieName} from {releaseDate} on the list",
+                        "is the film {movieName} from {releaseDate} on the list",
+                        "if the film {movieName} from {releaseDate} on the list",
+                        "is the movie {movieName} released in {releaseDate} on the list",
+                        "if the movie {movieName} released in {releaseDate} on the list",
+                        "is the film {movieName} released in {releaseDate} on the list",
+                        "if the film {movieName} released in {releaseDate} on the list",
+                        "is the movie {movieName} year {releaseDate} on the list",
+                        "if the movie {movieName} year {releaseDate} on the list",
+                        "is the film {movieName} year {releaseDate} on the list",
+                        "if the film {movieName} year {releaseDate} on the list",
+                        "is the movie {movieName} came out in {releaseDate} on the list",
+                        "if the movie {movieName} came out in {releaseDate} on the list",
+                        "is the film {movieName} came out in {releaseDate} on the list",
+                        "if the film {movieName} came out in {releaseDate} on the list",
+                        "is the movie {movieName} from {releaseDate} is on the list",
+                        "if the movie {movieName} from {releaseDate} is on the list",
+                        "is the film {movieName} from {releaseDate} is on the list",
+                        "if the film {movieName} from {releaseDate} is on the list",
+                        "is the movie {movieName} released in {releaseDate} is on the list",
+                        "if the movie {movieName} released in {releaseDate} is on the list",
+                        "is the film {movieName} released in {releaseDate} is on the list",
+                        "if the film {movieName} released in {releaseDate} is on the list",
+                        "is the movie {movieName} year {releaseDate} is on the list",
+                        "if the movie {movieName} year {releaseDate} is on the list",
+                        "is the film {movieName} year {releaseDate} is on the list",
+                        "if the film {movieName} year {releaseDate} is on the list",
+                        "is the movie {movieName} came out in {releaseDate} is on the list",
+                        "if the movie {movieName} came out in {releaseDate} is on the list",
+                        "is the film {movieName} came out in {releaseDate} is on the list",
+                        "if the film {movieName} came out in {releaseDate} is on the list",
+                        "is the movie {movieName} from {releaseDate} already",
+                        "if the movie {movieName} from {releaseDate} already",
+                        "is the film {movieName} from {releaseDate} already",
+                        "if the film {movieName} from {releaseDate} already",
+                        "is the movie {movieName} released in {releaseDate} already",
+                        "if the movie {movieName} released in {releaseDate} already",
+                        "is the film {movieName} released in {releaseDate} already",
+                        "if the film {movieName} released in {releaseDate} already",
+                        "is the movie {movieName} year {releaseDate} already",
+                        "if the movie {movieName} year {releaseDate} already",
+                        "is the film {movieName} year {releaseDate} already",
+                        "if the film {movieName} year {releaseDate} already",
+                        "is the movie {movieName} came out in {releaseDate} already",
+                        "if the movie {movieName} came out in {releaseDate} already",
+                        "is the film {movieName} came out in {releaseDate} already",
+                        "if the film {movieName} came out in {releaseDate} already",
+                        "is the movie {movieName} from {releaseDate} is already",
+                        "if the movie {movieName} from {releaseDate} is already",
+                        "is the film {movieName} from {releaseDate} is already",
+                        "if the film {movieName} from {releaseDate} is already",
+                        "is the movie {movieName} released in {releaseDate} is already",
+                        "if the movie {movieName} released in {releaseDate} is already",
+                        "is the film {movieName} released in {releaseDate} is already",
+                        "if the film {movieName} released in {releaseDate} is already",
+                        "is the movie {movieName} year {releaseDate} is already",
+                        "if the movie {movieName} year {releaseDate} is already",
+                        "is the film {movieName} year {releaseDate} is already",
+                        "if the film {movieName} year {releaseDate} is already",
+                        "is the movie {movieName} came out in {releaseDate} is already",
+                        "if the movie {movieName} came out in {releaseDate} is already",
+                        "is the film {movieName} came out in {releaseDate} is already",
+                        "if the film {movieName} came out in {releaseDate} is already",
+                        "is the movie {movieName} from {releaseDate} is wanted",
+                        "if the movie {movieName} from {releaseDate} is wanted",
+                        "is the film {movieName} from {releaseDate} is wanted",
+                        "if the film {movieName} from {releaseDate} is wanted",
+                        "is the movie {movieName} released in {releaseDate} is wanted",
+                        "if the movie {movieName} released in {releaseDate} is wanted",
+                        "is the film {movieName} released in {releaseDate} is wanted",
+                        "if the film {movieName} released in {releaseDate} is wanted",
+                        "is the movie {movieName} year {releaseDate} is wanted",
+                        "if the movie {movieName} year {releaseDate} is wanted",
+                        "is the film {movieName} year {releaseDate} is wanted",
+                        "if the film {movieName} year {releaseDate} is wanted",
+                        "is the movie {movieName} came out in {releaseDate} is wanted",
+                        "if the movie {movieName} came out in {releaseDate} is wanted",
+                        "is the film {movieName} came out in {releaseDate} is wanted",
+                        "if the film {movieName} came out in {releaseDate} is wanted",
+                        "is the movie {movieName} from {releaseDate} is in wanted",
+                        "if the movie {movieName} from {releaseDate} is in wanted",
+                        "is the film {movieName} from {releaseDate} is in wanted",
+                        "if the film {movieName} from {releaseDate} is in wanted",
+                        "is the movie {movieName} released in {releaseDate} is in wanted",
+                        "if the movie {movieName} released in {releaseDate} is in wanted",
+                        "is the film {movieName} released in {releaseDate} is in wanted",
+                        "if the film {movieName} released in {releaseDate} is in wanted",
+                        "is the movie {movieName} year {releaseDate} is in wanted",
+                        "if the movie {movieName} year {releaseDate} is in wanted",
+                        "is the film {movieName} year {releaseDate} is in wanted",
+                        "if the film {movieName} year {releaseDate} is in wanted",
+                        "is the movie {movieName} came out in {releaseDate} is in wanted",
+                        "if the movie {movieName} came out in {releaseDate} is in wanted",
+                        "is the film {movieName} came out in {releaseDate} is in wanted",
+                        "if the film {movieName} came out in {releaseDate} is in wanted"
+                    ]
+                },
+                {
+                    "name": "FindShow",
+                    "slots": [
+                        {
+                            "name": "showName",
+                            "type": "AMAZON.TVSeries"
+                        }
+                    ],
+                    "samples": [
+                        "is the show {showName} on the list",
+                        "if the show {showName} on the list",
+                        "is the series {showName} on the list",
+                        "if the series {showName} on the list",
+                        "is the show {showName} is on the list",
+                        "if the show {showName} is on the list",
+                        "is the series {showName} is on the list",
+                        "if the series {showName} is on the list",
+                        "is the show {showName} already",
+                        "if the show {showName} already",
+                        "is the series {showName} already",
+                        "if the series {showName} already",
+                        "is the show {showName} is already",
+                        "if the show {showName} is already",
+                        "is the series {showName} is already",
+                        "if the series {showName} is already",
+                        "is the show {showName} is wanted",
+                        "if the show {showName} is wanted",
+                        "is the series {showName} is wanted",
+                        "if the series {showName} is wanted",
+                        "is the show {showName} is in wanted",
+                        "if the show {showName} is in wanted",
+                        "is the series {showName} is in wanted",
+                        "if the series {showName} is in wanted"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
