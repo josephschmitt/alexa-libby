@@ -269,7 +269,7 @@ describe('api.sonarr', () => {
     it('should format the show response to use standardized keys', async () => {
       const shows = await sonarr.list();
       assert.deepEqual(Object.keys(shows[0]),
-          ['title', 'slug', 'year', 'tvdbId', 'imdbId', 'images', 'status', 'quality']);
+          ['title', 'slug', 'year', 'tvdbId', 'imdbId', 'images', 'seasons', 'status', 'quality']);
     });
 
     it('should fill in the correct data in the correct fields', async () => {
@@ -293,6 +293,40 @@ describe('api.sonarr', () => {
           {
             coverType: 'poster',
             url: 'http://thetvdb.com/banners/posters/121361-59.jpg'
+          }
+        ],
+        seasons: [
+          {
+            seasonNumber: 0,
+            monitored: false
+          },
+          {
+            seasonNumber: 1,
+            monitored: true
+          },
+          {
+            seasonNumber: 2,
+            monitored: true
+          },
+          {
+            seasonNumber: 3,
+            monitored: true
+          },
+          {
+            seasonNumber: 4,
+            monitored: true
+          },
+          {
+            seasonNumber: 5,
+            monitored: true
+          },
+          {
+            seasonNumber: 6,
+            monitored: true
+          },
+          {
+            seasonNumber: 7,
+            monitored: true
           }
         ],
         status: 'continuing',
@@ -331,6 +365,12 @@ describe('api.sonarr', () => {
             url: 'http://thetvdb.com/banners/posters/284190-9.jpg'
           }
         ],
+        seasons: [
+          {
+            seasonNumber: 1,
+            monitored: true
+          }
+        ],
         status: 'continuing',
         quality: 'Any'
       });
@@ -361,6 +401,28 @@ describe('api.sonarr', () => {
             url: 'http://thetvdb.com/banners/posters/277165-8.jpg'
           }
         ],
+        seasons: [
+          {
+            seasonNumber: 0,
+            monitored: false
+          },
+          {
+            seasonNumber: 1,
+            monitored: true
+          },
+          {
+            seasonNumber: 2,
+            monitored: true
+          },
+          {
+            seasonNumber: 3,
+            monitored: true
+          },
+          {
+            seasonNumber: 4,
+            monitored: true
+          }
+        ],
         status: 'continuing',
         quality: 'HDTV-1080p'
       };
@@ -381,6 +443,28 @@ describe('api.sonarr', () => {
           {
             coverType: 'poster',
             url: 'http://thetvdb.com/banners/posters/277165-8.jpg'
+          }
+        ],
+        seasons: [
+          {
+            seasonNumber: 0,
+            monitored: false
+          },
+          {
+            seasonNumber: 1,
+            monitored: true
+          },
+          {
+            seasonNumber: 2,
+            monitored: true
+          },
+          {
+            seasonNumber: 3,
+            monitored: true
+          },
+          {
+            seasonNumber: 4,
+            monitored: true
           }
         ],
         qualityProfileId: 1,
