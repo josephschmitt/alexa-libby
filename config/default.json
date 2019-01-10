@@ -1,22 +1,29 @@
 {
   "alexa-libby": {
     "server": {
-      "hostname": "http://my-pvr-server.com",
-      "port": 8080
     },
     "movies": {
-      "provider": "couchpotato",
+      "provider": "radarr",
       "server": {
-        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
+        "apiKey": "b8e24d52b6e1465ab38c0eb19dae9ce6",
+        "hostname": "http://lewis.synology.me",
+	    "port": 7878,
         "urlBase": ""
-      }
+      },
+      "quality": "HD-1080p"
     },
     "shows": {
-      "provider": "sickbeard",
+      "provider": "sonarr",
       "server": {
-        "apiKey": "abcdefghijklmnopqrstuvwxyz123456",
-        "urlBase": ""
-      }
+        "apiKey": "11614ade41b84d5fa2e8041ffa8a68da",
+        "hostname": "http://lewis.synology.me",
+	    "port": 32780,
+	    "urlBase": "sonarr"
+      },
+      "quality": "HD-1080p"
+    },
+		"artwork": {
+    		"tmdbApiKey": "a708b53ddfdf3f939e0d1682b39dfe8e"
     }
   }
 }
