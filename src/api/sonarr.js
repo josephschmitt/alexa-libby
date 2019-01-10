@@ -80,7 +80,8 @@ export async function add(show) {
     titleSlug: show.slug,
     images: show.images,
     qualityProfileId: quality ? quality.id : 1, // Default to 'Any' if no profile set in config
-    rootFolderPath: rootFolderResp.path
+    rootFolderPath: rootFolderResp.path,
+    seasons: show.seasons
   });
 }
 
@@ -105,6 +106,7 @@ function mapToMediaResult(show) {
     tvdbId: show.tvdbId,
     imdbId: show.imdbId,
     images: show.images,
+    seasons: show.seasons,
     status: show.status,
     quality: quality ? quality.name : ''
   };
